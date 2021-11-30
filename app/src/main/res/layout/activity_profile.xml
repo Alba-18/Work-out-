@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#F2EDA7">
 
     <!-- PROFILE -->
@@ -18,7 +21,7 @@
         android:translationY="30dp"
         tools:ignore="MissingConstraints" />
 
-    <FrameLayout
+    <LinearLayout
         android:id="@+id/frameLayout2"
         android:layout_width="362dp"
         android:layout_height="607dp"
@@ -29,140 +32,159 @@
         app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.75">
-
-        <!-- Level of exercise -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/salsa"
-            android:text="Level of exercise:"
-            android:textColor="#592D1D"
-            android:textSize="25dp"
-            android:translationX="15dp"
-            android:translationY="10dp"
-
-            />
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/next_level"
-            android:translationX="230dp"
-            android:translationY="10dp" />
-
-        <Spinner
-            android:id="@+id/levelOfExercise"
-            android:layout_width="200dp"
-            android:layout_height="40dp"
-            android:background="@drawable/edit_text"
-            android:spinnerMode="dropdown"
-            android:translationX="15dp"
-            android:translationY="50dp" />
-
-        <!-- Cardio exercise -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/salsa"
-            android:text="Cardio:"
-            android:textColor="#592D1D"
-            android:textSize="25dp"
-            android:translationX="15dp"
-            android:translationY="110dp"
-
-            />
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/workout"
-            android:translationX="230dp"
-            android:translationY="110dp" />
-
-        <Spinner
-            android:id="@+id/cardio"
-            android:layout_width="200dp"
-            android:layout_height="40dp"
-            android:background="@drawable/edit_text"
-            android:spinnerMode="dropdown"
-            android:translationX="15dp"
-            android:translationY="150dp" />
-
-        <!-- Exercise impact -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/salsa"
-            android:text="Exercise impact:"
-            android:textColor="#592D1D"
-            android:textSize="25dp"
-            android:translationX="15dp"
-            android:translationY="210dp"
-
-            />
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/weakness"
-            android:translationX="230dp"
-            android:translationY="210dp" />
-
-        <Spinner
-            android:id="@+id/exerciseImpact"
-            android:layout_width="200dp"
-            android:layout_height="40dp"
-            android:background="@drawable/edit_text"
-            android:spinnerMode="dropdown"
-            android:translationX="15dp"
-            android:translationY="250dp" />
-
-        <!-- Objetive -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/salsa"
-            android:text="Objetive:"
-            android:textColor="#592D1D"
-            android:textSize="25dp"
-            android:translationX="15dp"
-            android:translationY="310dp"
-
-            />
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/goal"
-            android:translationX="230dp"
-            android:translationY="310dp" />
-
-        <Spinner
-            android:id="@+id/objetive"
-            android:layout_width="200dp"
-            android:layout_height="40dp"
-            android:background="@drawable/edit_text"
-            android:spinnerMode="dropdown"
-            android:translationX="15dp"
-            android:translationY="350dp" />
-
-        <!-- Save button -->
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/saveProfileButton"
-            android:layout_width="200sp"
-            android:layout_height="70dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="390sp"
-            android:background="@drawable/button"
-            android:fontFamily="@font/salsa"
-            android:text="Save"
-            android:textColor="#FFE9C5"
-            android:textSize="30dp"
-            android:translationY="120dp" />
+        app:layout_constraintVertical_bias="0.75"
+        android:orientation="vertical">
 
 
-    </FrameLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- Level of exercise -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/salsa"
+                    android:text="Level of exercise:"
+                    android:textColor="#592D1D"
+                    android:textSize="25dp"
+                    android:translationX="15dp"
+                    android:translationY="10dp"
+
+                    />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/next_level"
+                    android:translationX="230dp"
+                    android:translationY="-25dp" />
+
+                <Spinner
+                    android:id="@+id/levelOfExercise"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/edit_text"
+                    android:spinnerMode="dropdown"
+                    android:translationX="15dp"
+                    android:translationY="-30dp" />
+
+                <!-- Cardio exercise -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/salsa"
+                    android:text="Cardio:"
+                    android:textColor="#592D1D"
+                    android:textSize="25dp"
+                    android:translationX="15dp"
+                    android:translationY="10dp"
+
+                    />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/workout"
+                    android:translationX="230dp"
+                    android:translationY="-25dp" />
+
+                <Spinner
+                    android:id="@+id/cardio"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/edit_text"
+                    android:spinnerMode="dropdown"
+                    android:translationX="15dp"
+                    android:translationY="-30dp" />
+
+                <!-- Exercise impact -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/salsa"
+                    android:text="Exercise impact:"
+                    android:textColor="#592D1D"
+                    android:textSize="25dp"
+                    android:translationX="15dp"
+                    android:translationY="10dp"
+
+                    />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/weakness"
+                    android:translationX="230dp"
+                    android:translationY="-25dp" />
+
+                <Spinner
+                    android:id="@+id/exerciseImpact"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/edit_text"
+                    android:spinnerMode="dropdown"
+                    android:translationX="15dp"
+                    android:translationY="-30dp" />
+
+                <!-- Objetive -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/salsa"
+                    android:text="Objetive:"
+                    android:textColor="#592D1D"
+                    android:textSize="25dp"
+                    android:translationX="15dp"
+                    android:translationY="10dp"
+
+                    />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/goal"
+                    android:translationX="230dp"
+                    android:translationY="-25dp" />
+
+                <Spinner
+                    android:id="@+id/objetive"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/edit_text"
+                    android:spinnerMode="dropdown"
+                    android:translationX="15dp"
+                    android:translationY="-30dp" />
+
+
+                <!-- Save button -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/saveProfileButton"
+                    android:layout_width="200sp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="390sp"
+                    android:background="@drawable/button"
+                    android:fontFamily="@font/salsa"
+                    android:text="Save"
+                    android:textColor="#FFE9C5"
+                    android:textSize="30dp"
+                    android:translationY="-60dp" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
