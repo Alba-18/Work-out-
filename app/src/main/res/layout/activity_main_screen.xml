@@ -5,12 +5,51 @@
     android:background="#F2EDA7"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/gobackmain"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+
+        android:layout_gravity="center_vertical"
+        android:layout_marginHorizontal="25sp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/settingsmain"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+
+        android:layout_gravity="center_vertical"
+        android:layout_marginHorizontal="25sp"
+        android:layout_marginStart="216dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/settings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/profilesmain"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+
+        android:layout_gravity="center_vertical"
+        android:layout_marginHorizontal="25sp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
         android:id="@+id/frameLayout2"
         android:layout_width="362dp"
         android:layout_height="607dp"
         android:background="@drawable/shape"
+
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,5 +60,6 @@
 
 
     </FrameLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
