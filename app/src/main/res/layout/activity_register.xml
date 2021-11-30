@@ -7,30 +7,93 @@
     android:background="#F2EDA7">
 
     <FrameLayout
-        android:id="@+id/framegreen"
+        android:id="@+id/GreenFrame"
         android:layout_width="374dp"
-        android:layout_height="606dp"
+        android:layout_height="620dp"
         android:background="@drawable/shape"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.75">
+        app:layout_constraintVertical_bias="0.752">
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="fill_parent"
+            android:layout_height="610dp"
+            android:layout_x="0dp"
+            android:layout_y="50dp">
+
+                <TextView
+                    android:id="@+id/Textview_Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/salsa"
+                    android:text="Name:"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:translationX="20dp"
+                    android:translationY="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textview_Email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/salsa"
+                    android:text="Email:"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:translationX="20dp"
+                    android:translationY="90dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/FinishButton"
+                    android:layout_width="192dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/button"
+                    android:fontFamily="@font/salsa"
+                    android:text="FINISH"
+                    android:textColor="#FFE9C5"
+                    android:textSize="30dp"
+                    android:translationY="500dp" />
+        </ScrollView>
+
     </FrameLayout>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/loginButton"
-        android:layout_width="200sp"
-        android:layout_marginTop="390sp"
-        android:layout_height="70dp"
-        android:textColor="#FFE9C5"
-        android:background="@drawable/button"
-        android:layout_gravity="center_horizontal"
-        android:fontFamily="@"
-        android:text="" />
+        android:id="@+id/RegisterRow"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginHorizontal="25sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/arrow_back"
+        android:translationX="3dp"
+        android:translationY="3dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
+    <TextView
+        android:id="@+id/Textview_Register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/salsa"
+        android:text="REGISTER"
+        android:textColor="@color/black"
+        android:textSize="40dp"
+        android:translationY="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
