@@ -19,15 +19,32 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/helpmain"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+
+        android:layout_gravity="center_vertical"
+        android:layout_marginHorizontal="25sp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/help"
+        app:layout_constraintEnd_toStartOf="@+id/settingsmain"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/settingsmain"
         android:layout_width="50dp"
         android:layout_height="50dp"
 
         android:layout_gravity="center_vertical"
         android:layout_marginHorizontal="25sp"
-        android:layout_marginStart="216dp"
+        android:layout_marginStart="264dp"
         android:layout_marginTop="4dp"
         android:background="@drawable/settings"
+        app:layout_constraintEnd_toStartOf="@+id/profilesmain"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -38,9 +55,12 @@
 
         android:layout_gravity="center_vertical"
         android:layout_marginHorizontal="25sp"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="4dp"
         android:background="@drawable/profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/settingsmain"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -57,6 +77,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.75">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/activitiesbuttonmain"
+            android:layout_width="182dp"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom|left"
+            android:background="@drawable/button"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            android:fontFamily="@font/salsa"
+            android:text="ACTIVITIES"
+            android:textColor="#FFE9C5"
+            android:textSize="30dp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/mapbuttonmain"
+            android:layout_width="182dp"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom|right"
+            android:background="@drawable/button"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            android:fontFamily="@font/salsa"
+            android:text="MAP"
+            android:textColor="#FFE9C5"
+            android:textSize="30dp"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </FrameLayout>
