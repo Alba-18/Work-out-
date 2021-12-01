@@ -84,8 +84,6 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="5dp"
             android:progressTint="#575757"
-            android:scaleX="1"
-            android:scaleY="2"
             android:thumbTint="#575757" />
 
         <!-- Notifications -->
