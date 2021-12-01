@@ -7,93 +7,65 @@
     android:layout_height="match_parent"
     android:background="#F2EDA7">
 
-    <!-- PROFILE -->
-
-    <!-- Return arrow -->
+    <!--Register Title  -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/salsa"
         android:text="REGISTER"
-        android:textColor="#592D1D"
-        android:textSize="35dp"
-        android:translationX="135dp"
-        android:translationY="50dp"
+        android:textColor="#000000"
+        android:textSize="40dp"
+        android:translationY="20dp"
+        android:translationX="90dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-14dp"
-        tools:layout_editor_absoluteY="-5dp" />
+        tools:layout_editor_absoluteY="-31dp" />
 
+    <!-- Profile Row Back -->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/goBackProfile"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_gravity="center_vertical"
         android:layout_marginHorizontal="25sp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/arrow_back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!-- Help Profile -->
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/helpProfile"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-
-        android:layout_gravity="center_vertical"
-        android:layout_marginHorizontal="25sp"
-        android:layout_marginStart="344dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/help"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!-- Logout -->
-
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/logOutProfile"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-
-        android:layout_gravity="center_vertical"
-        android:layout_marginHorizontal="25sp"
-        android:layout_marginStart="284dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/logout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <LinearLayout
-        android:id="@+id/profileLayout"
-        android:layout_width="362dp"
-        android:layout_height="607dp"
-        android:background="@drawable/shape"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
+        android:translationX="3dp"
+        android:translationY="3dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.75"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <LinearLayout
+        android:id="@+id/Register_Layout"
+        android:layout_width="374dp"
+        android:layout_height="620dp"
+        android:background="@drawable/shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.432"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.752"
         android:orientation="vertical">
 
 
         <ScrollView
+            android:id="@+id/Register_ScrollView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/profileScrollView">
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/profileLinearLayout_ScrollView"
-                android:layout_gravity="center_horizontal"
-                >
+                android:layout_gravity="center_horizontal">
 
-                <!-- Name -->
+                <!-- Register Name Title -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -102,11 +74,12 @@
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="10dp"
-                    android:layout_marginTop="20dp"
-                    />
+                    android:translationY="0dp"
+                    android:layout_marginTop="20dp"/>
+
+                <!-- Register Name -->
                 <EditText
-                    android:id="@+id/profileName"
+                    android:id="@+id/Register_Name"
                     android:layout_width="200dp"
                     android:layout_height="40dp"
                     android:background="@drawable/edit_text"
@@ -116,12 +89,11 @@
                     android:inputType="number"
                     android:textAlignment="center"
                     android:fontFamily="@font/salsa"
-                    android:translationX="15dp"
-                    android:translationY="-30dp"
-                    android:textSize="18dp"
-                    android:layout_marginTop="50dp"/>
+                    android:translationX="25dp"
+                    android:translationY="3dp"
+                    android:textSize="18dp" />
 
-                <!-- Email -->
+                <!--Register Email Title-->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -130,11 +102,12 @@
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="10dp"
-                    android:layout_marginTop="-20dp"
-                    />
+                    android:translationY="30dp"
+                    android:layout_marginTop="-20dp"/>
+
+                <!--Register Email-->
                 <EditText
-                    android:id="@+id/profileEmail"
+                    android:id="@+id/Register_Email"
                     android:layout_width="200dp"
                     android:layout_height="40dp"
                     android:background="@drawable/edit_text"
@@ -144,12 +117,11 @@
                     android:inputType="number"
                     android:textAlignment="center"
                     android:fontFamily="@font/salsa"
-                    android:translationX="15dp"
-                    android:translationY="-30dp"
-                    android:textSize="18dp"
-                    android:layout_marginTop="50dp"/>
+                    android:translationX="25dp"
+                    android:translationY="30dp"
+                    android:textSize="18dp" />
 
-                <!-- Password -->
+                <!-- Register Password Title -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -158,11 +130,12 @@
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="10dp"
-                    android:layout_marginTop="-20dp"
-                    />
+                    android:translationY="60dp"
+                    android:layout_marginTop="-20dp"/>
+
+                <!-- Register Password -->
                 <EditText
-                    android:id="@+id/profilePassword"
+                    android:id="@+id/Register_Password"
                     android:layout_width="200dp"
                     android:layout_height="40dp"
                     android:background="@drawable/edit_text"
@@ -172,13 +145,11 @@
                     android:inputType="number"
                     android:textAlignment="center"
                     android:fontFamily="@font/salsa"
-                    android:translationX="15dp"
-                    android:translationY="-30dp"
-                    android:textSize="18dp"
-                    android:layout_marginTop="50dp"/>
+                    android:translationX="25dp"
+                    android:translationY="60dp"
+                    android:textSize="18dp" />
 
-
-                <!-- Confirm password -->
+                <!-- Register Confirm password Title -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -187,11 +158,12 @@
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="10dp"
-                    android:layout_marginTop="-20dp"
-                    />
+                    android:translationY="80dp"
+                    android:layout_marginTop="-20dp"/>
+
+                <!-- Register Confirm password -->
                 <EditText
-                    android:id="@+id/profileConfirmPassword"
+                    android:id="@+id/Register_ConfirmPassword"
                     android:layout_width="200dp"
                     android:layout_height="40dp"
                     android:background="@drawable/edit_text"
@@ -201,12 +173,11 @@
                     android:inputType="number"
                     android:textAlignment="center"
                     android:fontFamily="@font/salsa"
-                    android:translationX="15dp"
-                    android:translationY="-30dp"
-                    android:textSize="18dp"
-                    android:layout_marginTop="50dp"/>
+                    android:translationX="25dp"
+                    android:translationY="80dp"
+                    android:textSize="18dp"/>
 
-                <!-- Age -->
+                <!-- Register Age Title -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -215,19 +186,19 @@
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="10dp"
+                    android:translationY="80dp"/>
 
-                    />
-
+                <!-- Register Age Image -->
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:background="@drawable/age_group"
                     android:translationX="230dp"
-                    android:translationY="-25dp" />
+                    android:translationY="65dp" />
 
+                <!-- Register Age -->
                 <EditText
-                    android:id="@+id/profileAge"
+                    android:id="@+id/Register_Age"
                     android:layout_width="200dp"
                     android:layout_height="40dp"
                     android:background="@drawable/edit_text"
@@ -237,12 +208,12 @@
                     android:inputType="number"
                     android:textAlignment="center"
                     android:fontFamily="@font/salsa"
-                    android:translationX="15dp"
-                    android:translationY="-30dp"
+                    android:translationX="25dp"
+                    android:translationY="30dp"
                     android:textSize="18dp"/>
 
 
-                <!-- Weight -->
+                <!-- Register Weight Title -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -251,19 +222,20 @@
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="10dp"
+                    android:translationY="40dp"/>
 
-                    />
+                <!-- Register Weight Image -->
 
+                <!-- Register Weight -->
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:background="@drawable/scale"
                     android:translationX="230dp"
-                    android:translationY="-25dp" />
+                    android:translationY="25dp" />
 
                 <EditText
-                    android:id="@+id/profileWeight"
+                    android:id="@+id/Register_Weight"
                     android:layout_width="200dp"
                     android:layout_height="40dp"
                     android:background="@drawable/edit_text"
@@ -272,11 +244,11 @@
                     android:inputType="number"
                     android:textAlignment="center"
                     android:singleLine="true"
-                    android:translationX="15dp"
-                    android:translationY="-30dp"
+                    android:translationX="25dp"
+                    android:translationY="-10dp"
                     android:textSize="18dp"/>
 
-                <!-- Height -->
+                <!-- Register Height Title -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -285,19 +257,19 @@
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="10dp"
+                    android:translationY="-3dp"/>
 
-                    />
-
+                <!-- Register Weight Image -->
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:background="@drawable/height"
                     android:translationX="230dp"
-                    android:translationY="-25dp" />
+                    android:translationY="-15dp" />
 
+                <!-- Register Weight -->
                 <EditText
-                    android:id="@+id/profileHeight"
+                    android:id="@+id/Register_Height"
                     android:layout_width="200dp"
                     android:layout_height="40dp"
                     android:background="@drawable/edit_text"
@@ -306,12 +278,12 @@
                     android:inputType="number"
                     android:textAlignment="center"
                     android:singleLine="true"
-                    android:translationX="15dp"
-                    android:translationY="-30dp"
+                    android:translationX="25dp"
+                    android:translationY="-50dp"
                     android:textSize="18dp" />
 
 
-                <!-- Level of exercise -->
+                <!-- Register Level of exercise Title -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -320,27 +292,28 @@
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="10dp"
+                    android:translationY="-35dp"/>
 
-                    />
-
+                <!-- Register Level of exercise Image -->
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:background="@drawable/next_level"
                     android:translationX="230dp"
-                    android:translationY="-25dp" />
+                    android:translationY="-40dp" />
 
+                <!-- Register Level of exercise -->
                 <Spinner
-                    android:id="@+id/profileLevelOfExercise"
+                    android:id="@+id/Register_LevelOfExercise"
                     android:layout_width="200dp"
                     android:layout_height="40dp"
                     android:background="@drawable/edit_text"
                     android:spinnerMode="dropdown"
-                    android:translationX="15dp"
-                    android:translationY="-30dp" />
+                    android:translationX="25dp"
+                    android:translationY="-80dp"
+                    tools:ignore="SpeakableTextPresentCheck" />
 
-                <!-- Cardio exercise -->
+                <!-- Register Cardio Exercise Title-->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -349,27 +322,27 @@
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="10dp"
+                    android:translationY="-70dp" />
 
-                    />
-
+                <!-- Register Cardio Exercise Image -->
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:background="@drawable/workout"
                     android:translationX="230dp"
-                    android:translationY="-25dp" />
+                    android:translationY="-80dp" />
 
+                <!-- Register Cardio Exercise -->
                 <Spinner
-                    android:id="@+id/profileCardio"
+                    android:id="@+id/Register_CardioExercise"
                     android:layout_width="200dp"
                     android:layout_height="40dp"
                     android:background="@drawable/edit_text"
                     android:spinnerMode="dropdown"
-                    android:translationX="15dp"
-                    android:translationY="-30dp" />
+                    android:translationX="25dp"
+                    android:translationY="-115dp" />
 
-                <!-- Exercise impact -->
+                <!-- Register Exercise Impact Title -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -378,27 +351,27 @@
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="10dp"
+                    android:translationY="-105dp"/>
 
-                    />
-
+                <!-- Register Exercise Impact Image -->
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:background="@drawable/weakness"
                     android:translationX="230dp"
-                    android:translationY="-25dp" />
+                    android:translationY="-120dp" />
 
+                <!-- Register Exercise Impact -->
                 <Spinner
-                    android:id="@+id/profileExerciseImpact"
+                    android:id="@+id/Register_ExerciseImpact"
                     android:layout_width="200dp"
                     android:layout_height="40dp"
                     android:background="@drawable/edit_text"
                     android:spinnerMode="dropdown"
-                    android:translationX="15dp"
-                    android:translationY="-30dp" />
+                    android:translationX="25dp"
+                    android:translationY="-150dp" />
 
-                <!-- Objetive -->
+                <!-- Register Objetive Title-->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -407,49 +380,43 @@
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="10dp"
+                    android:translationY="-140dp" />
 
-                    />
-
+                <!-- Register Objetive Image-->
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:background="@drawable/goal"
                     android:translationX="230dp"
-                    android:translationY="-25dp" />
+                    android:translationY="-150dp" />
 
+                <!-- Register Objetive -->
                 <Spinner
                     android:id="@+id/profileObjetive"
                     android:layout_width="200dp"
                     android:layout_height="40dp"
                     android:background="@drawable/edit_text"
                     android:spinnerMode="dropdown"
-                    android:translationX="15dp"
-                    android:translationY="-30dp" />
+                    android:translationX="25dp"
+                    android:translationY="-185dp" />
 
-
-                <!-- Save button -->
+                <!-- Finish Button -->
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/profileSaveButton"
-                    android:layout_width="200dp"
+                    android:id="@+id/Register_FinishButton"
+                    android:layout_width="192dp"
                     android:layout_height="70dp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="390sp"
                     android:background="@drawable/button"
                     android:fontFamily="@font/salsa"
-                    android:text="Save"
+                    android:text="FINISH"
                     android:textColor="#FFE9C5"
-                    android:textSize="30dp"
-                    android:layout_marginVertical="20dp"
-                    android:layout_marginBottom="20dp" />
+                    android:translationY="-100dp"
+                    android:textSize="30dp" />
 
             </LinearLayout>
 
         </ScrollView>
 
-
-
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
