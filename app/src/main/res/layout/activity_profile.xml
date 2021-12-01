@@ -26,7 +26,7 @@
         tools:layout_editor_absoluteY="-5dp" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/goBackProfile"
+        android:id="@+id/goBackConfig"
         android:layout_width="50dp"
         android:layout_height="50dp"
 

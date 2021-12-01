@@ -28,7 +28,7 @@
         android:fontFamily="@font/salsa"
         android:text="@string/application_name"
         android:textColor="#592D1D"
-        android:textSize="60sp"
+        android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/home_screen_image_id" />

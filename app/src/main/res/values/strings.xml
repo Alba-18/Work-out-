@@ -9,6 +9,11 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="application_name">Work(Out)</string>
+    <string name="application_name">WORK(OUT)</string>
+    <string name="configuration">CONFIG</string>
+    <string name="brightness">Brightness:</string>
+    <string name="notifications">Notifications:</string>
+    <string name="font_size">Font Size:</string>
+
     <string name="home_image">Home screen image</string>
 </resources>
