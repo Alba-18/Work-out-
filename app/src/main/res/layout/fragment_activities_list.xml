@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirstFragment"
+    android:background="#B2BE50">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/Title_ActivityList"
+        android:layout_width="269dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/salsa"
+        android:gravity="center_horizontal"
+        android:text="What do you want to do?"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/GreenFrameActivityList"
+        android:layout_width="374dp"
+        android:layout_height="620dp"
+        android:background="@drawable/shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.432"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.752"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:id="@+id/scroll_view_activities_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- First Activity -->
+                <FrameLayout
+                    android:id="@+id/FirstActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/activityshape">
+
+                    <!-- Activity Title -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/salsa"
+                        android:text="PUSH-UP ROUTINE"
+                        android:textColor="#592D1D"
+                        android:textSize="25dp"
+                        android:translationX="80dp"
+                        android:translationY="10dp"/>
+
+                    <!--Activity Image-->
+                    <ImageView
+                        android:layout_width="117dp"
+                        android:layout_height="117dp"
+                        android:layout_gravity="left|bottom"
+                        android:background="@drawable/push_up"/>
+
+                    <!--Clock Image -->
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="60dp"
+                        android:layout_marginLeft="150dp"
+                        android:background="@drawable/stopwatch" />
+
+                    <!-- Time Text-->
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:text="30 min"
+                        android:layout_marginTop="65dp"
+                        android:layout_marginLeft="190dp"
+                        android:fontFamily="@font/salsa"
+                        android:textColor="#592D1D"
+                        android:textSize="25dp"/>
+
+                    <!--Level Frame -->
+                    <FrameLayout
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="100dp"
+                        android:layout_marginLeft="150dp"
+                        android:background="@drawable/lightshape">
+
+                        <!--Level Text -->
+                        <TextView
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:text="Intermediate"
+                            android:fontFamily="@font/salsa"
+                            android:textColor="#592D1D"
+                            android:textSize="25dp"/>
+                    </FrameLayout>
+                </FrameLayout>
+
+                <!-- Second Activity -->
+                <FrameLayout
+                    android:id="@+id/SecondActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/activityshape">
+
+                    <!-- Activity Title -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/salsa"
+                        android:text="WALKING ROUTINE"
+                        android:textColor="#592D1D"
+                        android:textSize="25dp"
+                        android:translationX="80dp"
+                        android:translationY="10dp"/>
+
+                    <!--Activity Image-->
+                    <ImageView
+                        android:layout_width="117dp"
+                        android:layout_height="117dp"
+                        android:layout_gravity="left|bottom"
+                        android:background="@drawable/walking" />
+
+                    <!--Clock Image -->
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="60dp"
+                        android:layout_marginLeft="150dp"
+                        android:background="@drawable/stopwatch" />
+
+                    <!-- Time Text-->
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:text="30 min"
+                        android:layout_marginTop="65dp"
+                        android:layout_marginLeft="190dp"
+                        android:fontFamily="@font/salsa"
+                        android:textColor="#592D1D"
+                        android:textSize="25dp"/>
+
+                    <!--Level Frame -->
+                    <FrameLayout
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="100dp"
+                        android:layout_marginLeft="150dp"
+                        android:background="@drawable/lightshape">
+
+                        <!--Level Text -->
+                        <TextView
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:text="Intermediate"
+                            android:fontFamily="@font/salsa"
+                            android:textColor="#592D1D"
+                            android:textSize="25dp"/>
+                    </FrameLayout>
+                </FrameLayout>
+
+                <!-- Third Activity -->
+                <FrameLayout
+                    android:id="@+id/ThirdActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/activityshape">
+
+                    <!-- Activity Title -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/salsa"
+                        android:text="RUNNING ROUTINE"
+                        android:textColor="#592D1D"
+                        android:textSize="25dp"
+                        android:translationX="80dp"
+                        android:translationY="10dp"/>
+
+                    <!--Activity Image-->
+                    <ImageView
+                        android:layout_width="117dp"
+                        android:layout_height="117dp"
+                        android:layout_gravity="left|bottom"
+                        android:background="@drawable/running" />
+
+                    <!--Clock Image -->
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="60dp"
+                        android:layout_marginLeft="150dp"
+                        android:background="@drawable/stopwatch" />
+
+                    <!-- Time Text-->
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:text="30 min"
+                        android:layout_marginTop="65dp"
+                        android:layout_marginLeft="190dp"
+                        android:fontFamily="@font/salsa"
+                        android:textColor="#592D1D"
+                        android:textSize="25dp"/>
+
+                    <!--Level Frame -->
+                    <FrameLayout
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="100dp"
+                        android:layout_marginLeft="150dp"
+                        android:background="@drawable/lightshape">
+
+                        <!--Level Text -->
+                        <TextView
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:text="Intermediate"
+                            android:fontFamily="@font/salsa"
+                            android:textColor="#592D1D"
+                            android:textSize="25dp"/>
+                    </FrameLayout>
+                </FrameLayout>
+
+                <!-- Fourth Activity -->
+                <FrameLayout
+                    android:id="@+id/FourthActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/activityshape">
+
+                    <!-- Activity Title -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/salsa"
+                        android:text="SIT-UP ROUTINE"
+                        android:textColor="#592D1D"
+                        android:textSize="25dp"
+                        android:translationX="90dp"
+                        android:translationY="10dp"/>
+
+                    <!--Activity Image-->
+                    <ImageView
+                        android:layout_width="117dp"
+                        android:layout_height="117dp"
+                        android:layout_gravity="left|bottom"
+                        android:background="@drawable/sit_up" />
+
+                    <!--Clock Image -->
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="60dp"
+                        android:layout_marginLeft="150dp"
+                        android:background="@drawable/stopwatch" />
+
+                    <!-- Time Text-->
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:text="30 min"
+                        android:layout_marginTop="65dp"
+                        android:layout_marginLeft="190dp"
+                        android:fontFamily="@font/salsa"
+                        android:textColor="#592D1D"
+                        android:textSize="25dp"/>
+
+                    <!--Level Frame -->
+                    <FrameLayout
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="100dp"
+                        android:layout_marginLeft="150dp"
+                        android:background="@drawable/lightshape">
+
+                        <!--Level Text -->
+                        <TextView
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:text="Intermediate"
+                            android:fontFamily="@font/salsa"
+                            android:textColor="#592D1D"
+                            android:textSize="25dp"/>
+                    </FrameLayout>
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

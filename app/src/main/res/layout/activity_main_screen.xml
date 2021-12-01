@@ -1,65 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F2EDA7"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <!--Main Row Back-->
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/gobackmain"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-
+        android:id="@+id/MainRow"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_gravity="center_vertical"
         android:layout_marginHorizontal="25sp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="4dp"
-        android:background="@drawable/arrow_back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/settingsmain"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-
-        android:layout_gravity="center_vertical"
-        android:layout_marginHorizontal="25sp"
-        android:layout_marginStart="216dp"
-        android:layout_marginTop="4dp"
-        android:background="@drawable/settings"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/profilesmain"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-
-        android:layout_gravity="center_vertical"
-        android:layout_marginHorizontal="25sp"
-        android:layout_marginStart="116dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/profile"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <FrameLayout
-        android:id="@+id/frameLayout2"
-        android:layout_width="362dp"
-        android:layout_height="607dp"
-        android:background="@drawable/shape"
-
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
+        android:background="@drawable/arrow_back"
+        android:translationX="3dp"
+        android:translationY="3dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.75">
+        tools:ignore="SpeakableTextPresentCheck" />
 
+    <!--Main Help-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/HelpMain"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/help"
+        android:translationX="250dp"
+        android:translationY="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <!--Main Settings-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/SettingsMain"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/settings"
+        android:translationX="300dp"
+        android:translationY="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <!--Main Profile-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/ProfilesMain"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/profile"
+        android:translationX="355dp"
+        android:translationY="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <FrameLayout
+        android:id="@+id/GreenFrameMain"
+        android:layout_width="374dp"
+        android:layout_height="620dp"
+        android:background="@drawable/shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.432"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.752">
+
+        <!--Activities Button-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/activitiesbuttonmain"
+            android:layout_width="182dp"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom|left"
+            android:background="@drawable/button"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            android:fontFamily="@font/salsa"
+            android:text="ACTIVITIES"
+            android:textColor="#FFE9C5"
+            android:textSize="30dp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--Map Button-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/mapbuttonmain"
+            android:layout_width="182dp"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom|right"
+            android:background="@drawable/button"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            android:fontFamily="@font/salsa"
+            android:text="MAP"
+            android:textColor="#FFE9C5"
+            android:textSize="30dp"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </FrameLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

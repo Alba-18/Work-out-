@@ -4,24 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondFragment">
+    tools:context=".FirstFragment"
+    android:background="#B2BE50">
 
+    <!--Title Map-->
     <TextView
-        android:id="@+id/textview_second"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/button_second"
+        android:id="@+id/Title_Map"
+        android:layout_width="269dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/salsa"
+        android:gravity="center_horizontal"
+        android:text="Parks near you:"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button_second"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/previous"
+    <!--Map view-->
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/Map_View"
+        android:layout_width="356dp"
+        android:layout_height="534dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_second" />
+        app:layout_constraintTop_toBottomOf="@+id/Title_Map"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
