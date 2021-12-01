@@ -10,6 +10,8 @@
     android:background="#F2EDA7">
 
     <!-- PROFILE -->
+
+    <!-- Return arrow -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,11 +20,56 @@
         android:textColor="#592D1D"
         android:textSize="35dp"
         android:translationX="135dp"
-        android:translationY="30dp"
-        tools:ignore="MissingConstraints" />
+        android:translationY="50dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-14dp"
+        tools:layout_editor_absoluteY="-5dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/goBackProfile"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+
+        android:layout_gravity="center_vertical"
+        android:layout_marginHorizontal="25sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Help Profile -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/helpProfile"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+
+        android:layout_gravity="center_vertical"
+        android:layout_marginHorizontal="25sp"
+        android:layout_marginStart="344dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/help"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Logout -->
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/logOutProfile"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+
+        android:layout_gravity="center_vertical"
+        android:layout_marginHorizontal="25sp"
+        android:layout_marginStart="284dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/logout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/frameLayout2"
+        android:id="@+id/profileLayout"
         android:layout_width="362dp"
         android:layout_height="607dp"
         android:background="@drawable/shape"
@@ -36,16 +83,144 @@
         android:orientation="vertical">
 
 
-
-
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:id="@+id/profileScrollView">
 
             <LinearLayout
                 android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/profileLinearLayout_ScrollView"
+                android:layout_gravity="center_horizontal"
+                >
+                <!-- User Profile Image -->
+                <ImageView
+                    android:id="@+id/profileImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/default_profile_image"
+                    android:translationX="125dp"
+                    android:translationY="10dp" />
+                <EditText
+                    android:id="@+id/profileUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/salsa"
+                    android:text="Default username"
+                    android:singleLine="true"
+                    android:textColor="#000000"
+                    android:textSize="25dp"
+                    android:translationX="80dp"
+                    android:translationY="10dp"
+                    android:layout_marginBottom="20dp"
+                    />
+
+                <!-- Age -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/salsa"
+                    android:text="Age:"
+                    android:textColor="#000000"
+                    android:textSize="25dp"
+                    android:translationX="15dp"
+                    android:translationY="10dp"
+
+                    />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/age_group"
+                    android:translationX="230dp"
+                    android:translationY="-25dp" />
+
+                <EditText
+                    android:id="@+id/profileAge"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/edit_text"
+                    android:textColor="#592D1D"
+                    android:singleLine="true"
+                    android:padding="10dp"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/salsa"
+                    android:translationX="15dp"
+                    android:translationY="-30dp"
+                    android:textSize="18dp"/>
+
+
+                <!-- Weight -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/salsa"
+                    android:text="Weight:"
+                    android:textColor="#000000"
+                    android:textSize="25dp"
+                    android:translationX="15dp"
+                    android:translationY="10dp"
+
+                    />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/scale"
+                    android:translationX="230dp"
+                    android:translationY="-25dp" />
+
+                <EditText
+                    android:id="@+id/profileWeight"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/edit_text"
+                    android:textColor="#592D1D"
+                    android:fontFamily="@font/salsa"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:singleLine="true"
+                    android:translationX="15dp"
+                    android:translationY="-30dp"
+                    android:textSize="18dp"/>
+
+                <!-- Height -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/salsa"
+                    android:text="Height:"
+                    android:textColor="#000000"
+                    android:textSize="25dp"
+                    android:translationX="15dp"
+                    android:translationY="10dp"
+
+                    />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/height"
+                    android:translationX="230dp"
+                    android:translationY="-25dp" />
+
+                <EditText
+                    android:id="@+id/profileHeight"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/edit_text"
+                    android:textColor="#592D1D"
+                    android:fontFamily="@font/salsa"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:singleLine="true"
+                    android:translationX="15dp"
+                    android:translationY="-30dp"
+                    android:textSize="18dp" />
+
 
                 <!-- Level of exercise -->
                 <TextView
@@ -53,7 +228,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/salsa"
                     android:text="Level of exercise:"
-                    android:textColor="#592D1D"
+                    android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
                     android:translationY="10dp"
@@ -68,7 +243,7 @@
                     android:translationY="-25dp" />
 
                 <Spinner
-                    android:id="@+id/levelOfExercise"
+                    android:id="@+id/profileLevelOfExercise"
                     android:layout_width="200dp"
                     android:layout_height="40dp"
                     android:background="@drawable/edit_text"
@@ -82,7 +257,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/salsa"
                     android:text="Cardio:"
-                    android:textColor="#592D1D"
+                    android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
                     android:translationY="10dp"
@@ -97,7 +272,7 @@
                     android:translationY="-25dp" />
 
                 <Spinner
-                    android:id="@+id/cardio"
+                    android:id="@+id/profileCardio"
                     android:layout_width="200dp"
                     android:layout_height="40dp"
                     android:background="@drawable/edit_text"
@@ -111,7 +286,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/salsa"
                     android:text="Exercise impact:"
-                    android:textColor="#592D1D"
+                    android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
                     android:translationY="10dp"
@@ -126,7 +301,7 @@
                     android:translationY="-25dp" />
 
                 <Spinner
-                    android:id="@+id/exerciseImpact"
+                    android:id="@+id/profileExerciseImpact"
                     android:layout_width="200dp"
                     android:layout_height="40dp"
                     android:background="@drawable/edit_text"
@@ -140,7 +315,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/salsa"
                     android:text="Objetive:"
-                    android:textColor="#592D1D"
+                    android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
                     android:translationY="10dp"
@@ -155,7 +330,7 @@
                     android:translationY="-25dp" />
 
                 <Spinner
-                    android:id="@+id/objetive"
+                    android:id="@+id/profileObjetive"
                     android:layout_width="200dp"
                     android:layout_height="40dp"
                     android:background="@drawable/edit_text"
@@ -166,8 +341,8 @@
 
                 <!-- Save button -->
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/saveProfileButton"
-                    android:layout_width="200sp"
+                    android:id="@+id/profileSaveButton"
+                    android:layout_width="200dp"
                     android:layout_height="70dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="390sp"
@@ -176,7 +351,8 @@
                     android:text="Save"
                     android:textColor="#FFE9C5"
                     android:textSize="30dp"
-                    android:translationY="-60dp" />
+                    android:layout_marginVertical="20dp"
+                    android:layout_marginBottom="20dp" />
 
             </LinearLayout>
 
