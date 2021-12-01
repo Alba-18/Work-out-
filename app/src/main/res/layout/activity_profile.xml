@@ -9,100 +9,101 @@
 
     <!-- PROFILE -->
 
-    <!-- Return arrow -->
+    <!-- Profile Title -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/salsa"
         android:text="PROFILE"
-        android:textColor="#592D1D"
-        android:textSize="35dp"
-        android:translationX="135dp"
-        android:translationY="50dp"
+        android:textColor="#000000"
+        android:textSize="40dp"
+        android:translationY="20dp"
+        android:translationX="90dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-14dp"
-        tools:layout_editor_absoluteY="-5dp" />
+        tools:layout_editor_absoluteY="-31dp"/>
 
+    <!-- Profile Row Back -->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/goBackProfile"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_gravity="center_vertical"
         android:layout_marginHorizontal="25sp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/arrow_back"
+        android:translationX="3dp"
+        android:translationY="3dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <!-- Help Profile -->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/helpProfile"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_gravity="center_vertical"
-        android:layout_marginHorizontal="25sp"
-        android:layout_marginStart="344dp"
-        android:layout_marginTop="16dp"
         android:background="@drawable/help"
+        android:translationX="350dp"
+        android:translationY="15dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-    <!-- Logout -->
-
-
+    <!--Profile Logout -->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/logOutProfile"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_gravity="center_vertical"
-        android:layout_marginHorizontal="25sp"
-        android:layout_marginStart="284dp"
-        android:layout_marginTop="16dp"
         android:background="@drawable/logout"
+        android:translationX="300dp"
+        android:translationY="15dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <LinearLayout
         android:id="@+id/profileLayout"
-        android:layout_width="362dp"
-        android:layout_height="607dp"
+        android:layout_width="374dp"
+        android:layout_height="620dp"
         android:background="@drawable/shape"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.75"
+        app:layout_constraintVertical_bias="0.752"
         android:orientation="vertical">
 
 
         <ScrollView
+            android:id="@+id/profileScrollView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/profileScrollView">
+            android:layout_height="wrap_content">
 
             <LinearLayout
+                android:id="@+id/profileLinearLayout_ScrollView"
                 android:orientation="vertical"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/profileLinearLayout_ScrollView"
-                android:layout_gravity="center_horizontal"
-                >
+                android:layout_gravity="center_horizontal">
+
                 <!-- User Profile Image -->
                 <ImageView
                     android:id="@+id/profileImage"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:background="@drawable/default_profile_image"
-                    android:translationX="125dp"
+                    android:translationX="140dp"
                     android:translationY="10dp" />
 
                 <!-- Edit Profile Image -->
-
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/editImageProfile"
                     android:layout_width="30dp"
@@ -113,6 +114,7 @@
                     android:translationX="230dp"
                     android:translationY="10dp" />
 
+                <!-- Profile Name -->
                 <EditText
                     android:id="@+id/profileUserName"
                     android:layout_width="wrap_content"
@@ -124,12 +126,10 @@
                     android:textSize="25dp"
                     android:translationX="80dp"
                     android:translationY="10dp"
-                    android:layout_marginBottom="20dp"
-
-                    />
+                    android:layout_marginBottom="20dp"/>
 
 
-                <!-- Age -->
+                <!-- Profile Age Title-->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -138,10 +138,9 @@
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="10dp"
+                    android:translationY="10dp"/>
 
-                    />
-
+                <!-- Profile Age Image-->
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -149,6 +148,7 @@
                     android:translationX="230dp"
                     android:translationY="-25dp" />
 
+                <!-- Profile Age-->
                 <EditText
                     android:id="@+id/profileAge"
                     android:layout_width="200dp"
@@ -165,7 +165,7 @@
                     android:textSize="18dp"/>
 
 
-                <!-- Weight -->
+                <!-- Profile Weight Title -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -174,10 +174,9 @@
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="10dp"
+                    android:translationY="10dp"/>
 
-                    />
-
+                <!-- Profile Weight Image-->
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -185,6 +184,7 @@
                     android:translationX="230dp"
                     android:translationY="-25dp" />
 
+                <!-- Profile Weight-->
                 <EditText
                     android:id="@+id/profileWeight"
                     android:layout_width="200dp"
@@ -199,7 +199,7 @@
                     android:translationY="-30dp"
                     android:textSize="18dp"/>
 
-                <!-- Height -->
+                <!-- Profile Height Title-->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -208,10 +208,9 @@
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="10dp"
+                    android:translationY="10dp"/>
 
-                    />
-
+                <!-- Profile Height Image-->
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -219,6 +218,7 @@
                     android:translationX="230dp"
                     android:translationY="-25dp" />
 
+                <!-- Profile Height -->
                 <EditText
                     android:id="@+id/profileHeight"
                     android:layout_width="200dp"
@@ -234,7 +234,7 @@
                     android:textSize="18dp" />
 
 
-                <!-- Level of exercise -->
+                <!-- Profile Level of exercise Title -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -243,10 +243,9 @@
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="10dp"
+                    android:translationY="10dp"/>
 
-                    />
-
+                <!-- Profile Level of exercise Image -->
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -254,6 +253,7 @@
                     android:translationX="230dp"
                     android:translationY="-25dp" />
 
+                <!-- Profile Level of exercise -->
                 <Spinner
                     android:id="@+id/profileLevelOfExercise"
                     android:layout_width="200dp"
@@ -263,7 +263,7 @@
                     android:translationX="15dp"
                     android:translationY="-30dp" />
 
-                <!-- Cardio exercise -->
+                <!-- Profile Cardio exercise Title-->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -272,10 +272,9 @@
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="10dp"
+                    android:translationY="10dp"/>
 
-                    />
-
+                <!-- Profile Cardio exercise -->
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -283,6 +282,7 @@
                     android:translationX="230dp"
                     android:translationY="-25dp" />
 
+                <!-- Profile Cardio exercise-->
                 <Spinner
                     android:id="@+id/profileCardio"
                     android:layout_width="200dp"
@@ -292,7 +292,7 @@
                     android:translationX="15dp"
                     android:translationY="-30dp" />
 
-                <!-- Exercise impact -->
+                <!-- Profile Exercise impact Title-->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -301,10 +301,9 @@
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="10dp"
+                    android:translationY="10dp"/>
 
-                    />
-
+                <!-- Profile Exercise impact Image-->
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -312,6 +311,7 @@
                     android:translationX="230dp"
                     android:translationY="-25dp" />
 
+                <!-- Profile Exercise impact-->
                 <Spinner
                     android:id="@+id/profileExerciseImpact"
                     android:layout_width="200dp"
@@ -321,7 +321,7 @@
                     android:translationX="15dp"
                     android:translationY="-30dp" />
 
-                <!-- Objetive -->
+                <!-- Profile Objetive Title-->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -330,10 +330,9 @@
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="10dp"
+                    android:translationY="10dp"/>
 
-                    />
-
+                <!-- Profile Objetive Image-->
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -341,6 +340,7 @@
                     android:translationX="230dp"
                     android:translationY="-25dp" />
 
+                <!-- Profile Objetive -->
                 <Spinner
                     android:id="@+id/profileObjetive"
                     android:layout_width="200dp"
@@ -354,13 +354,13 @@
                 <!-- Save button -->
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/profileSaveButton"
-                    android:layout_width="200dp"
+                    android:layout_width="192dp"
                     android:layout_height="70dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="390sp"
                     android:background="@drawable/button"
                     android:fontFamily="@font/salsa"
-                    android:text="Save"
+                    android:text="SAVE"
                     android:textColor="#FFE9C5"
                     android:textSize="30dp"
                     android:layout_marginVertical="20dp"
@@ -370,9 +370,6 @@
 
         </ScrollView>
 
-
-
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
