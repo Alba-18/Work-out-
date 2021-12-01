@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -29,7 +27,6 @@
         android:id="@+id/goBackProfile"
         android:layout_width="50dp"
         android:layout_height="50dp"
-
         android:layout_gravity="center_vertical"
         android:layout_marginHorizontal="25sp"
         android:layout_marginStart="16dp"
