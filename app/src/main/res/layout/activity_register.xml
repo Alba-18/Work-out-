@@ -2,71 +2,27 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F2EDA7">
 
-    <FrameLayout
-        android:id="@+id/GreenFrame"
-        android:layout_width="374dp"
-        android:layout_height="620dp"
-        android:background="@drawable/shape"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/Title_Register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/salsa"
+        android:text="REGISTER"
+        android:textColor="@color/black"
+        android:textSize="40dp"
+        android:translationY="20dp"
+        android:translationX="90dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.432"
+        app:layout_constraintHorizontal_bias="0.123"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.752">
-
-        <ScrollView
-            android:id="@+id/scroll_view"
-            android:layout_width="fill_parent"
-            android:layout_height="610dp"
-            android:layout_x="0dp"
-            android:layout_y="50dp">
-
-                <TextView
-                    android:id="@+id/Textview_Name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/salsa"
-                    android:text="Name:"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
-                    android:translationX="20dp"
-                    android:translationY="20dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/textview_Email"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/salsa"
-                    android:text="Email:"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
-                    android:translationX="20dp"
-                    android:translationY="90dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/FinishButton"
-                    android:layout_width="192dp"
-                    android:layout_height="70dp"
-                    android:layout_gravity="center_horizontal"
-                    android:background="@drawable/button"
-                    android:fontFamily="@font/salsa"
-                    android:text="FINISH"
-                    android:textColor="#FFE9C5"
-                    android:textSize="30dp"
-                    android:translationY="500dp" />
-        </ScrollView>
-
-    </FrameLayout>
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="-31dp" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/RegisterRow"
@@ -83,17 +39,325 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <TextView
-        android:id="@+id/Textview_Register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/salsa"
-        android:text="REGISTER"
-        android:textColor="@color/black"
-        android:textSize="40dp"
-        android:translationY="20dp"
+
+    <LinearLayout
+        android:id="@+id/GreenFrameRegister"
+        android:layout_width="374dp"
+        android:layout_height="620dp"
+        android:background="@drawable/shape"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.752"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:id="@+id/scroll_view_register"
+            android:layout_width="586dp"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Name -->
+                <TextView
+                    android:id="@+id/Name_Register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/salsa"
+                    android:text="Name:"
+                    android:textColor="@color/black"
+                    android:textSize="25dp"
+                    android:translationX="20dp"
+                    android:translationY="10dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/Text_Name_Register"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/edit_text"
+                    android:translationX="30dp"
+                    android:translationY="15dp" />
+
+
+                <!-- Email -->
+                <TextView
+                    android:id="@+id/Email_Register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/salsa"
+                    android:text="Email:"
+                    android:textColor="@color/black"
+                    android:textSize="25dp"
+                    android:translationX="20dp"
+                    android:translationY="30dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/Text_Email_Register"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/edit_text"
+                    android:translationX="30dp"
+                    android:translationY="35dp" />
+
+                <!-- Password -->
+                <TextView
+                    android:id="@+id/Password_Register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/salsa"
+                    android:text="Password:"
+                    android:textColor="@color/black"
+                    android:textSize="25dp"
+                    android:translationX="20dp"
+                    android:translationY="50dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/Text_Password_Register"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/edit_text"
+                    android:translationX="30dp"
+                    android:translationY="55dp" />
+
+                <!-- Confirm Password -->
+                <TextView
+                    android:id="@+id/ConfirmPassword_Register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/salsa"
+                    android:text="Confirm Password:"
+                    android:textColor="@color/black"
+                    android:textSize="25dp"
+                    android:translationX="20dp"
+                    android:translationY="70dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/Text_ConfirmPassword_Register"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/edit_text"
+                    android:translationX="30dp"
+                    android:translationY="75dp" />
+
+                <!-- Age -->
+                <TextView
+                    android:id="@+id/Age_Register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/salsa"
+                    android:text="Age:"
+                    android:textColor="@color/black"
+                    android:textSize="25dp"
+                    android:translationX="20dp"
+                    android:translationY="90dp" />
+
+                <ImageView
+                    android:id="@+id/Image_Age_Register"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/next_level"
+                    android:translationX="70dp"
+                    android:translationY="60dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/Text_Age_Register"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/edit_text"
+                    android:translationX="30dp"
+                    android:translationY="95dp" />
+
+                <!-- Weight -->
+                <TextView
+                    android:id="@+id/Weight_Register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/salsa"
+                    android:text="Weight:"
+                    android:textColor="@color/black"
+                    android:textSize="25dp"
+                    android:translationX="20dp"
+                    android:translationY="110dp" />
+
+                <ImageView
+                    android:id="@+id/Image_Weight_Register"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/next_level"
+                    android:translationX="230dp"
+                    android:translationY="110dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/Text_Weight_Register"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/edit_text"
+                    android:translationX="30dp"
+                    android:translationY="115dp" />
+
+                <!-- Height -->
+                <TextView
+                    android:id="@+id/Height_Register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/salsa"
+                    android:text="Height:"
+                    android:textColor="@color/black"
+                    android:textSize="25dp"
+                    android:translationX="20dp"
+                    android:translationY="130dp" />
+
+                <ImageView
+                    android:id="@+id/Image_Height_Register"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/next_level"
+                    android:translationX="230dp"
+                    android:translationY="130dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/Text_Height_Register"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/edit_text"
+                    android:translationX="30dp"
+                    android:translationY="135dp" />
+
+
+                <!-- Level of Exercise -->
+                <TextView
+                    android:id="@+id/LevelOfExercise_Register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/salsa"
+                    android:text="Level of exercise:"
+                    android:textColor="@color/black"
+                    android:textSize="25dp"
+                    android:translationX="20dp"
+                    android:translationY="150dp" />
+
+                <ImageView
+                    android:id="@+id/Image_LevelOfExercise_Register"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/next_level"
+                    android:translationX="230dp"
+                    android:translationY="150dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/Text_LevelOfExercise_Register"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/edit_text"
+                    android:translationX="30dp"
+                    android:translationY="155dp" />
+
+                <!-- Cardio Exercise -->
+                <TextView
+                    android:id="@+id/CardioExercise_Register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/salsa"
+                    android:text="Cardio exercise:"
+                    android:textColor="@color/black"
+                    android:textSize="25dp"
+                    android:translationX="20dp"
+                    android:translationY="170dp" />
+
+                <ImageView
+                    android:id="@+id/Image_CardioExercise_Register"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/workout"
+                    android:translationX="230dp"
+                    android:translationY="170dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/Text_CardioExercise_Register"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/edit_text"
+                    android:translationX="30dp"
+                    android:translationY="175dp" />
+
+                <!-- Exercise Impact -->
+                <TextView
+                    android:id="@+id/ExerciseImpact_Register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/salsa"
+                    android:text="Exercise Impact:"
+                    android:textColor="@color/black"
+                    android:textSize="25dp"
+                    android:translationX="20dp"
+                    android:translationY="190dp" />
+
+                <ImageView
+                    android:id="@+id/Image_ExerciseImpact_Register"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/weakness"
+                    android:translationX="230dp"
+                    android:translationY="190dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/Text_ExerciseImpact_Register"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/edit_text"
+                    android:translationX="30dp"
+                    android:translationY="195dp" />
+
+                <!-- Objetive -->
+                <TextView
+                    android:id="@+id/Objetive_Register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/salsa"
+                    android:text="Objetive:"
+                    android:textColor="@color/black"
+                    android:textSize="25dp"
+                    android:translationX="20dp"
+                    android:translationY="210dp" />
+
+                <ImageView
+                    android:id="@+id/Image_Objetive_Register"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/goal"
+                    android:translationX="230dp"
+                    android:translationY="210dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/Text_Objetive_Register"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/edit_text"
+                    android:translationX="30dp"
+                    android:translationY="215dp" />
+
+                <!-- Finish Button -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/FinishButton_Register"
+                    android:layout_width="192dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/button"
+                    android:fontFamily="@font/salsa"
+                    android:text="FINISH"
+                    android:textColor="#FFE9C5"
+                    android:textSize="30dp"
+                    android:translationY="240dp" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
