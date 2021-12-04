@@ -258,6 +258,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         return pass.equals(confirmPass);
     }
 
+    //https://stackoverflow.com/questions/3934331/how-to-hash-a-string-in-android
     public static String md5(String s) {
         try {
             // Create MD5 Hash
