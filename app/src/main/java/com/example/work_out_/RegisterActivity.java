@@ -24,6 +24,8 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -175,76 +177,105 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
 
         this.registerEmail = this.registerEmailView.getText().toString();
         this.registerPassword = this.registerPasswordView.getText().toString();
+        this.registerConfirmPassword = this.registerConfirmPasswordView.getText().toString();
 
-        this.mAuth.createUserWithEmailAndPassword(this.registerEmail, this.registerPassword)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Toast.makeText(RegisterActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                            updateUI(null);
+
+        if(checkPassword(this.registerPassword, this.registerConfirmPassword)){
+            this.mAuth.createUserWithEmailAndPassword(this.registerEmail, this.registerPassword)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                // Sign in success, update UI with the signed-in user's information
+                                FirebaseUser user = mAuth.getCurrentUser();
+                                updateUI(user);
+                            } else {
+                                // If sign in fails, display a message to the user.
+                                Toast.makeText(RegisterActivity.this, "Authentication failed.",
+                                        Toast.LENGTH_SHORT).show();
+                                updateUI(null);
+                            }
                         }
-                    }
-                });
+                    });
+        }
+        else{
+            Toast.makeText(RegisterActivity.this, "Passwords do not match",
+                    Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void updateUI(FirebaseUser user) {
-        this.registerName = this.registerNameView.getText().toString();
-        this.registerAge =  this.registerAgeView.getText().toString();
-        this.registerWeight =  this.registerWeightView.getText().toString();
-        this.registerHeight =  this.registerHeightView.getText().toString();
-        this.registerEmail = this.registerEmailView.getText().toString();
-        this.registerPassword = this.registerPasswordView.getText().toString();
+        if(user != null){
+            this.registerName = this.registerNameView.getText().toString();
+            this.registerAge =  this.registerAgeView.getText().toString();
+            this.registerWeight =  this.registerWeightView.getText().toString();
+            this.registerHeight =  this.registerHeightView.getText().toString();
+            this.registerEmail = this.registerEmailView.getText().toString();
+            this.registerPassword = this.registerPasswordView.getText().toString();
 
-        CollectionReference mCollRef = db.collection("sampleData/users/" + this.registerEmail);
-        DocumentReference mDocRef = mCollRef.document("data");
+            CollectionReference mCollRef = db.collection("sampleData/users/" + this.registerEmail);
+            DocumentReference mDocRef = mCollRef.document("data");
 
-        Map<String,Object> dataToSave = new HashMap<String, Object>();
-        dataToSave.put(NAME_KEY ,this.registerName);
-        dataToSave.put(AGE_KEY,this.registerAge);
-        dataToSave.put(WEIGHT_KEY,this.registerWeight);
-        dataToSave.put(HEIGHT_KEY,this.registerHeight);
+            Map<String,Object> dataToSave = new HashMap<String, Object>();
+            dataToSave.put(NAME_KEY ,this.registerName);
+            dataToSave.put(AGE_KEY,this.registerAge);
+            dataToSave.put(WEIGHT_KEY,this.registerWeight);
+            dataToSave.put(HEIGHT_KEY,this.registerHeight);
 
-        dataToSave.put(LEVEL_OF_EXERCISE_KEY, this.registerLevelOfExercise);
-        dataToSave.put(CARDIO_KEY, this.registerCardio);
-        dataToSave.put(EXERCISE_IMPACT_KEY, this.registerExerciseImpact);
-        dataToSave.put(OBJETIVE_KEY, this.registerObjetive);
+            dataToSave.put(LEVEL_OF_EXERCISE_KEY, this.registerLevelOfExercise);
+            dataToSave.put(CARDIO_KEY, this.registerCardio);
+            dataToSave.put(EXERCISE_IMPACT_KEY, this.registerExerciseImpact);
+            dataToSave.put(OBJETIVE_KEY, this.registerObjetive);
+            dataToSave.put(PASSWORD_KEY, md5(this.registerPassword));
 
 
-        mDocRef.set(dataToSave).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
-                Context context = getApplicationContext();
-                CharSequence text = "Data saved";
-                int duration = Toast.LENGTH_SHORT;
+            mDocRef.set(dataToSave).addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+                    Context context = getApplicationContext();
+                    CharSequence text = "Data saved";
+                    int duration = Toast.LENGTH_SHORT;
 
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Context context = getApplicationContext();
-                CharSequence text = "CAGASTE";
-                int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Context context = getApplicationContext();
+                    CharSequence text = "CAGASTE";
+                    int duration = Toast.LENGTH_SHORT;
 
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
-            }
-        });
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                }
+            });
+        }
+
     }
 
     public boolean checkPassword(String pass, String confirmPass){
-        return pass == confirmPass;
+        return pass.equals(confirmPass);
     }
 
+    public static String md5(String s) {
+        try {
+            // Create MD5 Hash
+            MessageDigest digest = java.security.MessageDigest.getInstance("MD5");
+            digest.update(s.getBytes());
+            byte messageDigest[] = digest.digest();
 
+            // Create Hex String
+            StringBuffer hexString = new StringBuffer();
+            for (int i=0; i<messageDigest.length; i++)
+                hexString.append(Integer.toHexString(0xFF & messageDigest[i]));
+            return hexString.toString();
+
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
 
 }
 
