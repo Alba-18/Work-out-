@@ -84,7 +84,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         this.registerPasswordView = (EditText) findViewById(R.id.Register_Password);
         this.registerConfirmPasswordView = (EditText) findViewById(R.id.Register_ConfirmPassword);
 
-        this.registerNameView = (EditText) findViewById(R.id.Register_Name);
+        this.registerNameView = (EditText) findViewById(R.id.user_Name);
         this.registerAgeView = (EditText) findViewById(R.id.Register_Age);
         this.registerWeightView = (EditText) findViewById(R.id.Register_Weight);
         this.registerHeightView = (EditText) findViewById(R.id.Register_Height);
@@ -139,7 +139,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     public void onItemSelected(AdapterView<?> parent, View view,
                                int pos, long id) {
         switch (parent.getId()) {
-            case R.id.Register_Name:
+            case R.id.user_Name:
                 this.registerName = (String) parent.getItemAtPosition(pos);
                 break;
 
