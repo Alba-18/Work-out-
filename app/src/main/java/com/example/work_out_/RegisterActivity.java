@@ -39,8 +39,6 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     private static final String CARDIO_KEY = "Cardio";
     private static final String EXERCISE_IMPACT_KEY = "ExerciseImpact";
     private static final String OBJETIVE_KEY = "Objetive";
-    private static final String EMAIL_KEY = "Email";
-    private static final String PASSWORD_KEY = "Password";
 
     private Spinner levelOfExerciseSpinner;
     private Spinner cardioSpinner;
@@ -226,14 +224,13 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
             dataToSave.put(CARDIO_KEY, this.registerCardio);
             dataToSave.put(EXERCISE_IMPACT_KEY, this.registerExerciseImpact);
             dataToSave.put(OBJETIVE_KEY, this.registerObjetive);
-            dataToSave.put(PASSWORD_KEY, md5(this.registerPassword));
 
 
             mDocRef.set(dataToSave).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void aVoid) {
                     Context context = getApplicationContext();
-                    CharSequence text = "Data saved";
+                    CharSequence text = "Registration completes";
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
@@ -243,7 +240,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                 @Override
                 public void onFailure(@NonNull Exception e) {
                     Context context = getApplicationContext();
-                    CharSequence text = "CAGASTE";
+                    CharSequence text = "Something went wrong :((";
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
@@ -258,25 +255,6 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         return pass.equals(confirmPass);
     }
 
-    //https://stackoverflow.com/questions/3934331/how-to-hash-a-string-in-android
-    public static String md5(String s) {
-        try {
-            // Create MD5 Hash
-            MessageDigest digest = java.security.MessageDigest.getInstance("MD5");
-            digest.update(s.getBytes());
-            byte messageDigest[] = digest.digest();
-
-            // Create Hex String
-            StringBuffer hexString = new StringBuffer();
-            for (int i=0; i<messageDigest.length; i++)
-                hexString.append(Integer.toHexString(0xFF & messageDigest[i]));
-            return hexString.toString();
-
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-        return "";
-    }
 
 }
 
