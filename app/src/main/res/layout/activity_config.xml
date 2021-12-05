@@ -12,10 +12,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:fontFamily="@font/salsa"
         android:text="@string/configuration"
         android:textColor="#592D1D"
         android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@+id/profileLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -30,7 +32,11 @@
         android:layout_marginHorizontal="25sp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/arrow_back"
+        app:layout_constraintBottom_toTopOf="@+id/profileLayout"
+        app:layout_constraintEnd_toStartOf="@+id/config"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
@@ -43,10 +49,12 @@
 
         android:layout_gravity="center_vertical"
         android:layout_marginHorizontal="25sp"
-        android:layout_marginStart="81dp"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/help"
+        app:layout_constraintBottom_toTopOf="@+id/profileLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/config"
         app:layout_constraintTop_toTopOf="parent"
@@ -71,12 +79,12 @@
             android:id="@+id/brightness"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="15dp"
             android:fontFamily="@font/salsa"
             android:text="@string/brightness"
             android:textColor="#000000"
-            android:textSize="25sp"
-            android:layout_marginHorizontal="15dp"
-            android:layout_marginVertical="15dp" />
+            android:textSize="25sp" />
 
         <SeekBar
             android:id="@+id/seekBar"
@@ -91,12 +99,12 @@
             android:id="@+id/notifications"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="10dp"
             android:fontFamily="@font/salsa"
             android:text="@string/notifications"
             android:textColor="#000000"
-            android:textSize="25sp"
-            android:layout_marginHorizontal="15dp"
-            android:layout_marginVertical="10dp" />
+            android:textSize="25sp" />
 
         <Switch
             android:id="@+id/switchNotifications"
@@ -104,19 +112,18 @@
             android:layout_height="76dp"
             android:layout_marginHorizontal="15dp"
             android:scaleX="1.8"
-            android:scaleY="1.8"
-            />
+            android:scaleY="1.8" />
 
         <!-- Font Size -->
         <TextView
             android:id="@+id/fontSize"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
             android:fontFamily="@font/salsa"
             android:text="@string/font_size"
             android:textColor="#000000"
-            android:textSize="25sp"
-            android:layout_marginHorizontal="15dp" />
+            android:textSize="25sp" />
 
         <EditText
             android:id="@+id/fontSizeInput"
@@ -140,14 +147,14 @@
             android:layout_width="200dp"
             android:layout_height="70dp"
             android:layout_gravity="center_horizontal"
+            android:layout_marginVertical="20dp"
             android:layout_marginTop="390sp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/button"
             android:fontFamily="@font/salsa"
             android:text="Save"
             android:textColor="#FFE9C5"
-            android:textSize="30dp"
-            android:layout_marginVertical="20dp"
-            android:layout_marginBottom="20dp" />
+            android:textSize="30dp" />
 
     </LinearLayout>
 
