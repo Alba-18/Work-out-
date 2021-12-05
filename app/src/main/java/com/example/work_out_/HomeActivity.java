@@ -8,6 +8,6 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstance){
         super.onCreate(savedInstance);
-        setContentView(R.layout.activity_home_screen);
+        setContentView(R.layout.activity_login);
     }
 }
