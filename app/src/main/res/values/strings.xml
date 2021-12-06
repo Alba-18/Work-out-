@@ -14,6 +14,7 @@
     <string name="brightness">Brightness:</string>
     <string name="notifications">Notifications:</string>
     <string name="font_size">Font Size:</string>
+    <string name="save_button">SAVE</string>
 
     <string name="home_image">Home screen image</string>
 </resources>

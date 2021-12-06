@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
 package com.example.work_out_;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -69,7 +70,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstance){
         super.onCreate(savedInstance);
-        setContentView(R.layout.activity_login);
+
+        setContentView(R.layout.activity_config);
+        Intent secondActivityIntent = new Intent(this, ConfigActivity.class);
+        startActivity(secondActivityIntent);
+
         mAuth = FirebaseAuth.getInstance();
     }
 
