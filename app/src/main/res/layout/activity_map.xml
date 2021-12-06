@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2EDA7"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--Main Row Back-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/MainRow"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginHorizontal="25sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/arrow_back"
+        android:translationX="3dp"
+        android:translationY="3dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <!--Main Help-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/HelpMain"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/help"
+        android:translationX="250dp"
+        android:translationY="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <!--Main Settings-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/SettingsMain"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/settings"
+        android:translationX="300dp"
+        android:translationY="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <!--Main Profile-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/ProfilesMain"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/profile"
+        android:translationX="355dp"
+        android:translationY="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <FrameLayout
+        android:id="@+id/GreenFrameMain"
+        android:layout_width="371dp"
+        android:layout_height="603dp"
+        android:background="@drawable/shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.656">
+
+        <!--Map view-->
+
+        <!--Activities Button-->
+        <TextView
+            android:id="@+id/Title_Map"
+            android:layout_width="match_parent"
+            android:layout_height="98dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/salsa"
+            android:text="Parks near you:"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <fragment
+            android:id="@+id/google_map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="323dp"
+            android:layout_height="379dp"
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Title_Map"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/activitiesbuttonmain"
+            android:layout_width="182dp"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom|left"
+            android:background="@drawable/button"
+            android:fontFamily="@font/salsa"
+            android:text="ACTIVITIES"
+            android:textColor="#FFE9C5"
+            android:textSize="30dp"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--Map Button-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/mapbuttonmain"
+            android:layout_width="182dp"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom|right"
+            android:background="@drawable/button"
+            android:fontFamily="@font/salsa"
+            android:text="MAP"
+            android:textColor="#FFE9C5"
+            android:textSize="30dp"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
