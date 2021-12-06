@@ -19,15 +19,19 @@
         <entry key="..\:/Users/Pc/AndroidStudioProjects/Work-out-/app/src/main/res/layout/fragment_second.xml" value="0.1546875" />
         <entry key="app/src/main/res/drawable/activityshape.xml" value="0.3260416666666667" />
         <entry key="app/src/main/res/layout/activity_config.xml" value="0.32608695652173914" />
+        <entry key="app/src/main/res/layout/activity_finished_activitiy.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_home_screen.xml" value="0.32563405797101447" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.26979166666666665" />
         <entry key="app/src/main/res/layout/activity_main_screen.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_map.xml" value="0.2028847992588998" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_pullups_doing.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_pushups.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_pushups_doing.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_running.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_running_start.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_runningwalking_doing.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_situps.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_walking.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/fragment_activities_list.xml" value="0.3098958333333333" />
