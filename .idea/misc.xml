@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Antonio/AndroidStudioProjects/Work-out-/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/Users/Antonio/AndroidStudioProjects/Work-out-/app/src/main/res/layout/activity_register.xml" value="0.1453804347826087" />
         <entry key="..\:/Users/Pc/AndroidStudioProjects/Work-out-/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/Pc/AndroidStudioProjects/Work-out-/app/src/main/res/drawable/arrow_back.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/Pc/AndroidStudioProjects/Work-out-/app/src/main/res/drawable/button.xml" value="0.19583333333333333" />
@@ -17,12 +19,17 @@
         <entry key="..\:/Users/Pc/AndroidStudioProjects/Work-out-/app/src/main/res/layout/fragment_first.xml" value="0.1546875" />
         <entry key="..\:/Users/Pc/AndroidStudioProjects/Work-out-/app/src/main/res/layout/fragment_map.xml" value="0.1796875" />
         <entry key="..\:/Users/Pc/AndroidStudioProjects/Work-out-/app/src/main/res/layout/fragment_second.xml" value="0.1546875" />
-        <entry key="app/src/main/res/layout/activity_config.xml" value="0.32608695652173914" />
-        <entry key="app/src/main/res/layout/activity_home_screen.xml" value="0.32563405797101447" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.26979166666666665" />
-        <entry key="app/src/main/res/layout/activity_main_screen.xml" value="0.15070921985815602" />
-        <entry key="app/src/main/res/layout/activity_map.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_map.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/sergi/StudioProjects/Work-out-/app/src/main/res/layout/activity_home_screen.xml" value="0.18568840579710144" />
+        <entry key="..\:/Users/sergi/StudioProjects/Work-out-/app/src/main/res/layout/activity_login.xml" value="0.18115942028985507" />
+        <entry key="..\:/Users/sergi/StudioProjects/Work-out-/app/src/main/res/layout/activity_main_screen.xml" value="0.1" />
+        <entry key="..\:/Users/sergi/StudioProjects/Work-out-/app/src/main/res/layout/activity_profile.xml" value="0.1" />
+        <entry key="..\:/Users/sergi/StudioProjects/Work-out-/app/src/main/res/layout/activity_register.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_config.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_home_screen.xml" value="0.23229166666666667" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.23229166666666667" />
+        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.2921195652173913" />
+        <entry key="app/src/main/res/layout/fragment_first.xml" value="0.2921195652173913" />
+        <entry key="app/src/main/res/layout/fragment_map.xml" value="0.2046875" />
       </map>
     </option>
   </component>
