@@ -25,7 +25,11 @@
         <entry key="..\:/Users/sergi/StudioProjects/Work-out-/app/src/main/res/layout/activity_profile.xml" value="0.1" />
         <entry key="..\:/Users/sergi/StudioProjects/Work-out-/app/src/main/res/layout/activity_register.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_config.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_home_screen.xml" value="0.23229166666666667" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.23229166666666667" />
+        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.2921195652173913" />
+        <entry key="app/src/main/res/layout/fragment_first.xml" value="0.2921195652173913" />
+        <entry key="app/src/main/res/layout/fragment_map.xml" value="0.2046875" />
       </map>
     </option>
   </component>
