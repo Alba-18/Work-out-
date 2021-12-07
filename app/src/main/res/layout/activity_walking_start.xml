@@ -100,6 +100,7 @@
 
             <!-- Time Text-->
             <TextView
+                android:id="@+id/time_start_walking"
                 android:layout_width="80dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="190dp"
@@ -117,6 +118,7 @@
 
                 <!--Level Text -->
                 <TextView
+                    android:id="@+id/difficulty_start_walking"
                     android:layout_width="150dp"
                     android:layout_height="40dp"
                     android:fontFamily="@font/salsa"

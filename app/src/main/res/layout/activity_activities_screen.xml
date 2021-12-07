@@ -148,6 +148,7 @@
 
                         <!-- Time Text-->
                         <TextView
+                            android:id="@+id/time_pushups"
                             android:layout_width="80dp"
                             android:layout_height="40dp"
                             android:layout_marginLeft="190dp"
@@ -167,6 +168,7 @@
 
                             <!--Level Text -->
                             <TextView
+                                android:id="@+id/difficulty_pushups"
                                 android:layout_width="150dp"
                                 android:layout_height="40dp"
                                 android:fontFamily="@font/salsa"
@@ -214,6 +216,7 @@
 
                         <!-- Time Text-->
                         <TextView
+                            android:id="@+id/time_walking"
                             android:layout_width="80dp"
                             android:layout_height="40dp"
                             android:layout_marginLeft="190dp"
@@ -233,6 +236,7 @@
 
                             <!--Level Text -->
                             <TextView
+                                android:id="@+id/difficulty_walking"
                                 android:layout_width="150dp"
                                 android:layout_height="40dp"
                                 android:fontFamily="@font/salsa"
@@ -278,6 +282,7 @@
 
                         <!-- Time Text-->
                         <TextView
+                            android:id="@+id/time_running"
                             android:layout_width="80dp"
                             android:layout_height="40dp"
                             android:layout_marginLeft="190dp"
@@ -297,6 +302,7 @@
                             android:background="@drawable/lightshape">
 
                             <TextView
+                                android:id="@+id/difficulty_running"
                                 android:layout_width="150dp"
                                 android:layout_height="40dp"
                                 android:fontFamily="@font/salsa"
@@ -343,6 +349,7 @@
 
                         <!-- Time Text-->
                         <TextView
+                            android:id="@+id/time_situps"
                             android:layout_width="80dp"
                             android:layout_height="40dp"
                             android:layout_marginLeft="190dp"
@@ -362,6 +369,7 @@
 
                             <!--Level Text -->
                             <TextView
+                                android:id="@+id/difficulty_situps"
                                 android:layout_width="150dp"
                                 android:layout_height="40dp"
                                 android:fontFamily="@font/salsa"
