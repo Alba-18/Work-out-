@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2EDA7"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--Main Row Back-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/MainRow"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginHorizontal="25sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/arrow_back"
+        android:translationX="3dp"
+        android:translationY="3dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <!--Main Help-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/HelpMain"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/help"
+        android:translationX="250dp"
+        android:translationY="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <!--Main Settings-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/SettingsMain"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/settings"
+        android:translationX="300dp"
+        android:translationY="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <!--Main Profile-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/ProfilesMain"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/profile"
+        android:translationX="355dp"
+        android:translationY="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <FrameLayout
+        android:id="@+id/GreenFrameMain"
+        android:layout_width="371dp"
+        android:layout_height="603dp"
+        android:background="@drawable/shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.656">
+
+        <TextView
+            android:id="@+id/Title_ActivityList"
+            android:layout_width="match_parent"
+            android:layout_height="98dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/salsa"
+            android:gravity="center_horizontal"
+            android:text="What do you want to do?"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/GreenFrameActivityList"
+            android:layout_width="374dp"
+            android:layout_height="420dp"
+            android:background="@drawable/shape"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.432"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.752">
+
+            <ScrollView
+                android:id="@+id/scroll_view_activities_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- First Activity -->
+                    <FrameLayout
+                        android:id="@+id/FirstActivity"
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/activityshape">
+
+                        <!-- Activity Title -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/salsa"
+                            android:text="PUSH-UP ROUTINE"
+                            android:textColor="#592D1D"
+                            android:textSize="25dp"
+                            android:translationX="80dp"
+                            android:translationY="10dp" />
+
+                        <!--Activity Image-->
+                        <ImageView
+                            android:layout_width="117dp"
+                            android:layout_height="117dp"
+                            android:layout_gravity="left|bottom"
+                            android:background="@drawable/push_up" />
+
+                        <!--Clock Image -->
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="150dp"
+                            android:layout_marginTop="60dp"
+                            android:background="@drawable/stopwatch" />
+
+                        <!-- Time Text-->
+                        <TextView
+                            android:id="@+id/time_pushups"
+                            android:layout_width="80dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="190dp"
+                            android:layout_marginTop="65dp"
+                            android:fontFamily="@font/salsa"
+                            android:text="30 min"
+                            android:textColor="#592D1D"
+                            android:textSize="25dp" />
+
+                        <!--Level Frame -->
+                        <FrameLayout
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="150dp"
+                            android:layout_marginTop="100dp"
+                            android:background="@drawable/lightshape">
+
+                            <!--Level Text -->
+                            <TextView
+                                android:id="@+id/difficulty_pushups"
+                                android:layout_width="150dp"
+                                android:layout_height="40dp"
+                                android:fontFamily="@font/salsa"
+                                android:text="Intermediate"
+                                android:textColor="#592D1D"
+                                android:textSize="25dp" />
+                        </FrameLayout>
+
+
+                    </FrameLayout>
+
+                    <!-- Second Activity -->
+                    <FrameLayout
+                        android:id="@+id/SecondActivity"
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/activityshape">
+
+                        <!-- Activity Title -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/salsa"
+                            android:text="WALKING ROUTINE"
+                            android:textColor="#592D1D"
+                            android:textSize="25dp"
+                            android:translationX="80dp"
+                            android:translationY="10dp" />
+
+                        <!--Activity Image-->
+                        <ImageView
+                            android:layout_width="117dp"
+                            android:layout_height="117dp"
+                            android:layout_gravity="left|bottom"
+                            android:background="@drawable/walking" />
+
+                        <!--Clock Image -->
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="150dp"
+                            android:layout_marginTop="60dp"
+                            android:background="@drawable/stopwatch" />
+
+                        <!-- Time Text-->
+                        <TextView
+                            android:id="@+id/time_walking"
+                            android:layout_width="80dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="190dp"
+                            android:layout_marginTop="65dp"
+                            android:fontFamily="@font/salsa"
+                            android:text="30 min"
+                            android:textColor="#592D1D"
+                            android:textSize="25dp" />
+
+                        <!--Level Frame -->
+                        <FrameLayout
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="150dp"
+                            android:layout_marginTop="100dp"
+                            android:background="@drawable/lightshape">
+
+                            <!--Level Text -->
+                            <TextView
+                                android:id="@+id/difficulty_walking"
+                                android:layout_width="150dp"
+                                android:layout_height="40dp"
+                                android:fontFamily="@font/salsa"
+                                android:text="Intermediate"
+                                android:textColor="#592D1D"
+                                android:textSize="25dp" />
+                        </FrameLayout>
+                    </FrameLayout>
+
+                    <!-- Third Activity -->
+                    <FrameLayout
+                        android:id="@+id/ThirdActivity"
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/activityshape">
+
+                        <!-- Activity Title -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/salsa"
+                            android:text="RUNNING ROUTINE"
+                            android:textColor="#592D1D"
+                            android:textSize="25dp"
+                            android:translationX="80dp"
+                            android:translationY="10dp" />
+
+                        <!--Activity Image-->
+                        <ImageView
+                            android:layout_width="117dp"
+                            android:layout_height="117dp"
+                            android:layout_gravity="left|bottom"
+                            android:background="@drawable/running" />
+
+                        <!--Clock Image -->
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="150dp"
+                            android:layout_marginTop="60dp"
+                            android:background="@drawable/stopwatch" />
+
+                        <!-- Time Text-->
+                        <TextView
+                            android:id="@+id/time_running"
+                            android:layout_width="80dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="190dp"
+                            android:layout_marginTop="65dp"
+                            android:fontFamily="@font/salsa"
+                            android:text="30 min"
+                            android:textColor="#592D1D"
+                            android:textSize="25dp" />
+
+
+                        <!--Level Frame -->
+                        <FrameLayout
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="150dp"
+                            android:layout_marginTop="100dp"
+                            android:background="@drawable/lightshape">
+
+                            <TextView
+                                android:id="@+id/difficulty_running"
+                                android:layout_width="150dp"
+                                android:layout_height="40dp"
+                                android:fontFamily="@font/salsa"
+                                android:text="Intermediate"
+                                android:textColor="#592D1D"
+                                android:textSize="25dp" />
+                            <!--Level Text -->
+                        </FrameLayout>
+                    </FrameLayout>
+
+                    <!-- Fourth Activity -->
+                    <FrameLayout
+                        android:id="@+id/FourthActivity"
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/activityshape">
+
+                        <!-- Activity Title -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/salsa"
+                            android:text="SIT-UP ROUTINE"
+                            android:textColor="#592D1D"
+                            android:textSize="25dp"
+                            android:translationX="90dp"
+                            android:translationY="10dp" />
+
+                        <!--Activity Image-->
+                        <ImageView
+                            android:layout_width="117dp"
+                            android:layout_height="117dp"
+                            android:layout_gravity="left|bottom"
+                            android:background="@drawable/sit_up" />
+
+                        <!--Clock Image -->
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="150dp"
+                            android:layout_marginTop="60dp"
+                            android:background="@drawable/stopwatch" />
+
+                        <!-- Time Text-->
+                        <TextView
+                            android:id="@+id/time_situps"
+                            android:layout_width="80dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="190dp"
+                            android:layout_marginTop="65dp"
+                            android:fontFamily="@font/salsa"
+                            android:text="30 min"
+                            android:textColor="#592D1D"
+                            android:textSize="25dp" />
+
+                        <!--Level Frame -->
+                        <FrameLayout
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="150dp"
+                            android:layout_marginTop="100dp"
+                            android:background="@drawable/lightshape">
+
+                            <!--Level Text -->
+                            <TextView
+                                android:id="@+id/difficulty_situps"
+                                android:layout_width="150dp"
+                                android:layout_height="40dp"
+                                android:fontFamily="@font/salsa"
+                                android:text="Intermediate"
+                                android:textColor="#592D1D"
+                                android:textSize="25dp" />
+                        </FrameLayout>
+
+                    </FrameLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+        <!--Activities Button-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/activitiesbuttonmain"
+            android:layout_width="182dp"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom|left"
+            android:background="@drawable/button"
+            android:fontFamily="@font/salsa"
+            android:text="ACTIVITIES"
+            android:textColor="#FFE9C5"
+            android:textSize="30dp"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--Map Button-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/mapbuttonmain"
+            android:layout_width="182dp"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom|right"
+            android:background="@drawable/button"
+            android:fontFamily="@font/salsa"
+            android:text="MAP"
+            android:textColor="#FFE9C5"
+            android:textSize="30dp"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

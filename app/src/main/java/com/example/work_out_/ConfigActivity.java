@@ -1,5 +1,6 @@
 package com.example.work_out_;
 
+import android.app.NotificationManager;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.os.Build;
@@ -16,6 +17,7 @@ import android.widget.Switch;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
 public class ConfigActivity extends AppCompatActivity {
 
@@ -26,6 +28,9 @@ public class ConfigActivity extends AppCompatActivity {
     private ContentResolver cResolver;
     private Window window;
     private WindowManager.LayoutParams layoutParams;
+
+    private NotificationManager mNotificationManager;
+    private NotificationCompat.Builder mBuilder;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -55,7 +60,7 @@ public class ConfigActivity extends AppCompatActivity {
 
         seekbar.setProgress(defaultBrightness);
 
-        if(!Settings.System.canWrite(getApplicationContext())){
+        if(!System.canWrite(getApplicationContext())){
             Intent intent = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS);
             startActivity(intent);
         }
