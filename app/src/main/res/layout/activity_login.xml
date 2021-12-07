@@ -39,7 +39,7 @@
             app:layout_constraintVertical_bias="0.787" />
 
         <EditText
-            android:id="@+id/Register_Password"
+            android:id="@+id/user_Password"
             android:layout_width="200dp"
             android:layout_height="40dp"
             android:background="@drawable/edit_text"
@@ -51,7 +51,7 @@
             android:textSize="18dp"
             android:translationX="25dp"
             android:translationY="60dp"
-            app:layout_constraintBottom_toTopOf="@+id/RegisterButton"
+            app:layout_constraintBottom_toTopOf="@+id/login_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -65,7 +65,7 @@
             android:backgroundTint="#7A8C51"
             android:onClick="login"
             android:text="Login"
-            app:layout_constraintBottom_toTopOf="@+id/RegisterButton"
+            app:layout_constraintBottom_toTopOf="@+id/login_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
@@ -74,7 +74,7 @@
             tools:ignore="TextContrastCheck" />
 
         <Button
-            android:id="@+id/RegisterButton"
+            android:id="@+id/login_button"
             android:layout_width="160dp"
             android:layout_height="60dp"
             android:backgroundTint="#7A8C51"

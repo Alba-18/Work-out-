@@ -133,7 +133,7 @@
 
                 <!-- Register Password -->
                 <EditText
-                    android:id="@+id/Register_Password"
+                    android:id="@+id/user_Password"
                     android:layout_width="200dp"
                     android:layout_height="40dp"
                     android:background="@drawable/edit_text"
