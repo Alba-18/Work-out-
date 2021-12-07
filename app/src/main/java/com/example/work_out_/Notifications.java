@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 
 public class Notifications extends BroadcastReceiver {
+
     @Override
     public void onReceive(Context context, Intent intent) {
 
@@ -43,14 +44,6 @@ public class Notifications extends BroadcastReceiver {
         Notification notification = builder.build();
 
         manager.notify(1, notification);
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.M)
-    public static void scheduleNotification(Context context, long time) {
-        Intent intent = new Intent(context, Notifications.class);
-        PendingIntent pending = PendingIntent.getBroadcast(context, 1, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-        AlarmManager manager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-        manager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, time, pending);
     }
 
 }
