@@ -1,4 +1,4 @@
-package com.example.work_out_;
+package com.example.work_out_.model;
 
 public class User {
 

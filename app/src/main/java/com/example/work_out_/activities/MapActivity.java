@@ -1,4 +1,4 @@
-package com.example.work_out_;
+package com.example.work_out_.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +10,8 @@ import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
+import com.example.work_out_.JsonParser;
+import com.example.work_out_.R;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
