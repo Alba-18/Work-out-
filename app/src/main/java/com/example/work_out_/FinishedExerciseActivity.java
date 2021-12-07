@@ -18,7 +18,7 @@ public class FinishedExerciseActivity extends AppCompatActivity {
         TextView info = findViewById(R.id.info_finished_exercise);
 
         //Get from last activity done
-        String input ="";
+        String input =" ";
         info.setText(input);
     }
 }
