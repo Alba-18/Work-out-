@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 package com.example.work_out_;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -37,6 +38,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -53,10 +55,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FirebaseAuth mAuth;
 
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstance){
         super.onCreate(savedInstance);
         setContentView(R.layout.activity_login);
+
+        //Notifications.scheduleNotification(this, java.lang.System.currentTimeMillis() + 5000);
 
         loginButton = (Button) findViewById(R.id.login_button);
         loginButton.setOnClickListener(this);

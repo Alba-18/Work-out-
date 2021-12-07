@@ -95,7 +95,7 @@
             android:progressTint="#575757"
             android:thumbTint="#575757" />
 
-        <!-- Notifications -->
+        <!-- NotificationReceiver -->
         <TextView
             android:id="@+id/notifications"
             android:layout_width="match_parent"
