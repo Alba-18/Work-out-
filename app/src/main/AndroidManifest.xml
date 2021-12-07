@@ -17,7 +17,7 @@
             android:value="AIzaSyBH9uOx_OK0kGKw0w8IYSFG9LOeV6spC8Q"
             ></meta-data>
         <activity
-            android:name=".MapActivity"
+            android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Workout.NoActionBar">
