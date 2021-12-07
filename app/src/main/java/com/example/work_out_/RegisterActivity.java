@@ -1,5 +1,6 @@
 package com.example.work_out_;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -15,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Objects;
@@ -84,7 +86,16 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
                                     if(task.isSuccessful()){
                                         Toast.makeText(RegisterActivity.this, "User has beenn registered succesfully",Toast.LENGTH_SHORT).show();
+                                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
+                                        if(user.isEmailVerified()){
+                                            startActivity(new Intent(RegisterActivity.this,ProfileActivity.class));
+                                        }
+                                        else{
+                                            user.sendEmailVerification();
+                                            Toast.makeText(RegisterActivity.this, "Check your email to verify",Toast.LENGTH_SHORT).show();
+
+                                        }
 
                                     }{
                                         Toast.makeText(RegisterActivity.this, "Failed to register try again",Toast.LENGTH_SHORT).show();
