@@ -55,10 +55,6 @@ public class MapActivity extends AppCompatActivity {
         }else{
             ActivityCompat.requestPermissions(MapActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION},44);
         }
-        String url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json" + "?location="+currentLat
-                + "," + currentLong + "&radius=5000" + "&type=" + placeType + "&sensor=true" + "&key="+"AIzaSyBH9uOx_OK0kGKw0w8IYSFG9LOeV6spC8Q";
-
-        new PlaceTask().execute(url);
     }
 
     private void getCurrentLocation() {
@@ -84,6 +80,10 @@ public class MapActivity extends AppCompatActivity {
                         public void onMapReady(@NonNull GoogleMap googleMap) {
                             map = googleMap;
                             map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(currentLat,currentLong),10));
+                            String url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json" + "?location="+currentLat
+                                    + "," + currentLong + "&radius=500" + "&type=" + "park" + "&sensor=true" + "&key="+"AIzaSyCqbo86VByiGB8AKpuMo5MK9b6ZHULj_vs";
+
+                            new PlaceTask().execute(url);
                         }
                     });
                 }
@@ -154,11 +154,6 @@ public class MapActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(List<HashMap<String,String>> hashMaps){
-            map.clear();
-            String url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json" + "?location="+currentLat
-                    + "," + currentLong + "&radius=500" + "&type=" + "park" + "&sensor=true" + "&key="+"AIzaSyBH9uOx_OK0kGKw0w8IYSFG9LOeV6spC8Q";
-
-            new PlaceTask().execute(url);
             for(int i=0; i<hashMaps.size(); i++){
                 HashMap<String,String> hashMapList = hashMaps.get(i);
                 double lat = Double.parseDouble(hashMapList.get("lat"));
