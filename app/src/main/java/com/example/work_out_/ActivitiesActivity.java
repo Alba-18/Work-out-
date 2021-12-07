@@ -9,7 +9,10 @@ public class ActivitiesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstance){
         super.onCreate(savedInstance);
         setContentView(R.layout.activity_activities_screen);
+        setUpText();
+    }
 
+    private void setUpText(){
         TextView difficultyPushups = findViewById(R.id.difficulty_pushups);
         TextView difficultySitups = findViewById(R.id.difficulty_situps);
         TextView difficultyWalking = findViewById(R.id.difficulty_walking);
