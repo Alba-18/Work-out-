@@ -5,12 +5,14 @@ import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 
 public class Notifications extends BroadcastReceiver {
@@ -26,11 +28,19 @@ public class Notifications extends BroadcastReceiver {
             manager.createNotificationChannel(channel);
         }
 
-        Notification notification = new NotificationCompat.Builder(context, CHANNEL_ID)
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
                 .setSmallIcon(R.drawable.running_man)
                 .setContentTitle("Exercise reminder")
-                .setContentText("Go to WORK(OUT) app and do your routines !")
-                .build();
+                .setContentText("Go to WORK(OUT) app and do your routines !");
+
+        Intent resultIntent = new Intent(context, HomeActivity.class);
+        TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
+        stackBuilder.addParentStack(HomeActivity.class);
+        stackBuilder.addNextIntent(resultIntent);
+        PendingIntent resultPendingIntent = stackBuilder.getPendingIntent(0,PendingIntent.FLAG_UPDATE_CURRENT);
+        builder.setContentIntent(resultPendingIntent);
+
+        Notification notification = builder.build();
 
         manager.notify(1, notification);
     }
