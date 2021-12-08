@@ -12,9 +12,16 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.work_out_.model.User;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -24,15 +31,6 @@ import java.util.Map;
 
 
 public class ProfileActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-
-    private static final String NAME_KEY = "Name";
-    private static final String AGE_KEY = "Age";
-    private static final String WEIGHT_KEY = "Weight";
-    private static final String HEIGHT_KEY = "Height";
-    private static final String LEVEL_OF_EXERCISE_KEY = "LevelofExercise";
-    private static final String CARDIO_KEY = "Cardio";
-    private static final String EXERCISE_IMPACT_KEY = "ExerciseImpact";
-    private static final String OBJETIVE_KEY = "Objetive";
 
     private Spinner levelOfExerciseSpinner;
     private Spinner cardioSpinner;
@@ -53,66 +51,53 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
     private String profileExerciseImpact;
     private String profileObjetive;
 
-    private final FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private FirebaseAuth mAuth;
+
+    private FirebaseUser user;
+    private DatabaseReference reference;
+    private String userID;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        this.mAuth = FirebaseAuth.getInstance();
+
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("users");
+        userID = user.getUid();
 
         //Creation of EditText Views
-        this.profileNameView = (EditText) findViewById(R.id.profileUserName);
-        this.profileAgeView = (EditText) findViewById(R.id.profileAge);
-        this.profileWeightView = (EditText) findViewById(R.id.profileWeight);
-        this.profileHeightView = (EditText) findViewById(R.id.profileHeight);
+        profileNameView = (EditText) findViewById(R.id.profileUserName);
+        profileAgeView = (EditText) findViewById(R.id.profileAge);
+        profileWeightView = (EditText) findViewById(R.id.profileWeight);
+        profileHeightView = (EditText) findViewById(R.id.profileHeight);
 
-        //Creation of Spinners
-        //Creation of Profile Level of Exercise Spinner
-        this.levelOfExerciseSpinner = (Spinner) findViewById(R.id.profileLevelOfExercise);
-        // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> levelOfExerciseAdapter = ArrayAdapter.createFromResource(this,
-                R.array.levelOfExerciseArray, android.R.layout.simple_spinner_item);
-        // Specify the layout to use when the list of choices appears
-        levelOfExerciseAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Apply the adapter to the spinner
-        this.levelOfExerciseSpinner.setAdapter(levelOfExerciseAdapter);
-        this.levelOfExerciseSpinner.setOnItemSelectedListener(this);
+        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User userProfile = snapshot.getValue(User.class);
 
-        //Creation of Cardio Spinner
-        this.cardioSpinner = (Spinner) findViewById(R.id.profileCardio);
-        // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> cardioAdapter = ArrayAdapter.createFromResource(this,
-                R.array.cardioArray, android.R.layout.simple_spinner_item);
-        // Specify the layout to use when the list of choices appears
-        cardioAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Apply the adapter to the spinner
-        this.cardioSpinner.setAdapter(cardioAdapter);
-        this.cardioSpinner.setOnItemSelectedListener(this);
+                if(userProfile != null){
+                    String fullName = userProfile.getName();
+                    String email = userProfile.getEmail();
+                    String age = userProfile.getAge();
 
-        //Creation of Exercise Impact Spinner
-        this.exerciseImpactSpinner = (Spinner) findViewById(R.id.profileExerciseImpact);
-        // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> exerciseImpactAdapter = ArrayAdapter.createFromResource(this,
-                R.array.levelOfExerciseArray, android.R.layout.simple_spinner_item);
-        // Specify the layout to use when the list of choices appears
-        cardioAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Apply the adapter to the spinner
-        this.exerciseImpactSpinner.setAdapter(exerciseImpactAdapter);
-        this.exerciseImpactSpinner.setOnItemSelectedListener(this);
+                    profileNameView.setText(fullName);
+                    profileAgeView.setText(age);
 
-        //Creation of Objetive Spinner
-        this.objetiveSpinner = (Spinner) findViewById(R.id.profileObjetive);
-        // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> objetiveAdapter = ArrayAdapter.createFromResource(this,
-                R.array.objetiveArray, android.R.layout.simple_spinner_item);
-        // Specify the layout to use when the list of choices appears
-        cardioAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Apply the adapter to the spinner
-        this.objetiveSpinner.setAdapter(objetiveAdapter);
-        this.objetiveSpinner.setOnItemSelectedListener(this);
+                    Toast.makeText(ProfileActivity.this,fullName,Toast.LENGTH_LONG).show();
+                }
+                else{
+                    Toast.makeText(ProfileActivity.this,"User not found",Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
     }
 
@@ -141,48 +126,4 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
         // Another interface callback
     }
 
-    public void saveQuote(View view){
-
-        this.profileName = this.profileNameView.getText().toString();
-        this.profileAge =  this.profileAgeView.getText().toString();
-        this.profileWeight =  this.profileWeightView.getText().toString();
-        this.profileHeight =  this.profileHeightView.getText().toString();
-
-        CollectionReference mCollRef = db.collection("sampleData/users/" + profileName);
-        DocumentReference mDocRef = mCollRef.document("data");
-
-        Map<String,Object> dataToSave = new HashMap<String, Object>();
-        dataToSave.put(NAME_KEY ,this.profileName);
-        dataToSave.put(AGE_KEY,this.profileAge);
-        dataToSave.put(WEIGHT_KEY,this.profileWeight);
-        dataToSave.put(HEIGHT_KEY,this.profileHeight);
-
-        dataToSave.put(LEVEL_OF_EXERCISE_KEY, this.profileLevelOfExercise);
-        dataToSave.put(CARDIO_KEY, this.profileCardio);
-        dataToSave.put(EXERCISE_IMPACT_KEY, this.profileExerciseImpact);
-        dataToSave.put(OBJETIVE_KEY, this.profileObjetive);
-
-
-        mDocRef.set(dataToSave).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
-                Context context = getApplicationContext();
-                CharSequence text = "Data saved";
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Context context = getApplicationContext();
-                CharSequence text = "CAGASTE";
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
-            }
-        });
-    }
 }
