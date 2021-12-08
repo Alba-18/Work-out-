@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="levelOfExerciseArray">
+        <item>Begginer</item>
+        <item>Intermediate</item>
+        <item>Advanced</item>
+    </string-array>
+    <string-array name="exerciseImpact">
         <item>Low</item>
-        <item>Medium</item>
         <item>High</item>
     </string-array>
     <string-array name="cardioArray">

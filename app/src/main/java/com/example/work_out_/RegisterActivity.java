@@ -42,6 +42,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         emailView = (EditText) findViewById(R.id.Register_Email);
         ageView = (EditText) findViewById(R.id.Register_Age);
         passView = (EditText) findViewById(R.id.user_Password);
+        heightView = (EditText) findViewById(R.id.Register_Height);
+        weightView = (EditText) findViewById(R.id.Register_Weight);
 
         Button registerButtonView = (Button) findViewById(R.id.Register_FinishButton);
         registerButtonView.setOnClickListener(this);
@@ -73,7 +75,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         this.exerciseImpactSpinner = (Spinner) findViewById(R.id.Register_ExerciseImpact);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> exerciseImpactAdapter = ArrayAdapter.createFromResource(this,
-                R.array.levelOfExerciseArray, android.R.layout.simple_spinner_item);
+                R.array.exerciseImpact, android.R.layout.simple_spinner_item);
         // Specify the layout to use when the list of choices appears
         cardioAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
