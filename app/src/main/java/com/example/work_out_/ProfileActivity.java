@@ -4,10 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.graphics.Picture;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -33,7 +35,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class ProfileActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class ProfileActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
 
     private Spinner levelOfExerciseSpinner, cardioSpinner, exerciseImpactSpinner, objetiveSpinner;
 
@@ -42,9 +44,10 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
     private EditText profileWeightView;
     private EditText profileHeightView;
 
+    private Button buttonLogin;
     private String profileLevelOfExercise, profileName, profileAge, profileWeight, profileHeight, profileCardio, profileExerciseImpact, profileObjetive;
 
-
+    private User userProfile;
     private FirebaseUser user;
     private DatabaseReference reference;
     private String userID;
@@ -65,6 +68,8 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
         profileAgeView = (EditText) findViewById(R.id.profileAge);
         profileWeightView = (EditText) findViewById(R.id.profileWeight);
         profileHeightView = (EditText) findViewById(R.id.profileHeight);
+        buttonLogin = findViewById(R.id.profileSaveButton);
+        buttonLogin.setOnClickListener(this);
 
         //Creation of Spinners
         //Creation of Profile Level of Exercise Spinner
@@ -110,11 +115,10 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
         // Apply the adapter to the spinner
         this.objetiveSpinner.setAdapter(objetiveAdapter);
         this.objetiveSpinner.setOnItemSelectedListener(this);
-
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                User userProfile = snapshot.getValue(User.class);
+                userProfile = snapshot.getValue(User.class);
 
                 if(userProfile != null){
                     String fullName = userProfile.getName();
@@ -129,6 +133,8 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
                     profileAgeView.setText(age);
                     profileWeightView.setText(weight);
                     profileHeightView.setText(height);
+
+
 
                     switch (levelOfExercise){
                         case "Beginner":
@@ -165,16 +171,7 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
 
                     Toast.makeText(ProfileActivity.this,fullName,Toast.LENGTH_LONG).show();
 
-                    Map<String, Object> childUpdates = new HashMap<>();
 
-                    childUpdates.put("/users/" + userID + "/weight", weight);
-                    childUpdates.put("/users/" + userID + "/name", fullName);
-                    childUpdates.put("/users/" + userID + "/age", age);
-                    childUpdates.put("/users/" + userID + "/exerciseImpact", exerciseImpact);
-                    childUpdates.put("/users/" + userID + "/height", height);
-                    childUpdates.put("/users/" + userID + "/objetive", objetive);
-                    childUpdates.put("/users/" + userID + "/levelofExercise", levelOfExercise);
-                    reference.child(userID).updateChildren(childUpdates);
 
                 }
                 else{
@@ -215,4 +212,17 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
         // Another interface callback
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.profileSaveButton:
+                saveUser();
+                break;
+        }
+    }
+
+    private void saveUser() {
+        userProfile.setAge(profileAgeView.getText().toString().trim());
+        reference.child(userID).setValue(userProfile);
+    }
 }

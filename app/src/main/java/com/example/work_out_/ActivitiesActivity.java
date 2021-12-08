@@ -10,6 +10,7 @@ public class ActivitiesActivity extends AppCompatActivity {
         super.onCreate(savedInstance);
         setContentView(R.layout.activity_activities_screen);
         setUpText();
+
     }
 
     private void setUpText(){

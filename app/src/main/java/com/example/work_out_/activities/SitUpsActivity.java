@@ -1,6 +1,7 @@
 package com.example.work_out_.activities;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -20,17 +21,18 @@ public class SitUpsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_situps_doing);
         counterView = findViewById(R.id.situps_counter);
-
-
+        
         counterView.setText(Integer.toString(count[0]));
         gyroscope = new Gyroscope(this);
 
         gyroscope.setListener((rx,ry,rz)-> {
-            if(rx > 2.0f){
+            if(rx > 4.0f){
                 count[0] += 1;
                 counterView.setText(Integer.toString(count[0]));
             }
         });
+
+
     }
 
     @Override
