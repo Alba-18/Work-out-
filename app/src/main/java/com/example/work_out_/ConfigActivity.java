@@ -1,8 +1,8 @@
 package com.example.work_out_;
 
-import android.app.NotificationManager;
 import android.content.ContentResolver;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -10,27 +10,20 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.provider.Settings.System;
 import android.widget.Switch;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
 
 public class ConfigActivity extends AppCompatActivity {
 
     private SeekBar seekbar;
     private Switch switchNotif;
-    private int defaultBrightness;
-    private boolean defaultSwitchNotif;
     private ContentResolver cResolver;
     private Window window;
     private WindowManager.LayoutParams layoutParams;
-
-    private NotificationManager mNotificationManager;
-    private NotificationCompat.Builder mBuilder;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -42,51 +35,51 @@ public class ConfigActivity extends AppCompatActivity {
         seekbar.setOnSeekBarChangeListener(new SeekbarListener());
         window = getWindow();
         cResolver =  getContentResolver();
-
         layoutParams = window.getAttributes();
-        layoutParams.screenBrightness = defaultBrightness / (float)255;
-        window.setAttributes(layoutParams);
 
         switchNotif = findViewById(R.id.switchNotifications);
-        defaultSwitchNotif = switchNotif.isChecked();
-        switchNotif.setOnCheckedChangeListener(new SwitchListener());
-
-        try {
-            defaultBrightness = System.getInt(cResolver, System.SCREEN_BRIGHTNESS);
-
-        } catch (Settings.SettingNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        seekbar.setProgress(defaultBrightness);
 
         if(!System.canWrite(getApplicationContext())){
             Intent intent = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS);
             startActivity(intent);
         }
 
+        loadSettings();
+
+
     }
 
-    public void save(View view) throws Settings.SettingNotFoundException {
-        defaultBrightness = System.getInt(cResolver, System.SCREEN_BRIGHTNESS);
-        defaultSwitchNotif = switchNotif.isChecked();
+    public void loadSettings(){
+        SharedPreferences sharedPreferences = getSharedPreferences("appSettings", MODE_PRIVATE);
+
+        int brightness = sharedPreferences.getInt("brightness", 80);
+        boolean notifications = sharedPreferences.getBoolean("notifications", false);
+        this.seekbar.setProgress(brightness);
+        this.switchNotif.setChecked(notifications);
+
+        layoutParams.screenBrightness = brightness / (float)255;
+        window.setAttributes(layoutParams);
+    }
+
+    public void save(View view){
+        SharedPreferences sharedPreferences = getSharedPreferences("appSettings", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("brightness", this.seekbar.getProgress());
+        editor.putBoolean("notifications", switchNotif.isChecked());
+        editor.apply();
     }
 
     public void goBack(View view){
-        System.putInt(cResolver, System.SCREEN_BRIGHTNESS, defaultBrightness);
-        layoutParams.screenBrightness = defaultBrightness / (float)100;
-        window.setAttributes(layoutParams);
-        seekbar.setProgress(defaultBrightness);
-        switchNotif.setChecked(defaultSwitchNotif);
+        // TODO go back to main activity
     }
 
     private class SeekbarListener implements SeekBar.OnSeekBarChangeListener {
 
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-            System.putInt(cResolver, System.SCREEN_BRIGHTNESS, progress);
             layoutParams.screenBrightness = progress / (float)100;
             window.setAttributes(layoutParams);
+
 
         }
 
@@ -101,11 +94,5 @@ public class ConfigActivity extends AppCompatActivity {
         }
     }
 
-    private class SwitchListener implements CompoundButton.OnCheckedChangeListener {
-        @Override
-        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            //TODO enable notifications or not
-        }
-    }
 
 }

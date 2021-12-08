@@ -64,7 +64,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstance){
         super.onCreate(savedInstance);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_config);
+        startActivity(new Intent(this, ConfigActivity.class));
 
         notificationAlarm(1);
 

@@ -5,6 +5,7 @@ public class Activities {
     private int[] sets = new int[]{2,3,4,5,2,3};
 
     public Activities(String description, String name, int[] sets, User user) {
+        /*
         String level = user.getLevel();
         int difficulty;
         switch (level){
@@ -27,6 +28,8 @@ public class Activities {
         this.description = description;
         this.name = name;
         this.sets = sets;
+
+         */
     }
 
 
