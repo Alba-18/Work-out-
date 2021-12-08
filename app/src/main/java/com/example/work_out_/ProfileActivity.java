@@ -13,10 +13,13 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.work_out_.model.User;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -115,7 +118,6 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
 
                 if(userProfile != null){
                     String fullName = userProfile.getName();
-                    String email = userProfile.getEmail();
                     String age = userProfile.getAge();
                     String weight = userProfile.getWeight();
                     String height = userProfile.getHeight();
@@ -162,6 +164,18 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
                     }
 
                     Toast.makeText(ProfileActivity.this,fullName,Toast.LENGTH_LONG).show();
+
+                    Map<String, Object> childUpdates = new HashMap<>();
+
+                    childUpdates.put("/users/" + userID + "/weight", weight);
+                    childUpdates.put("/users/" + userID + "/name", fullName);
+                    childUpdates.put("/users/" + userID + "/age", age);
+                    childUpdates.put("/users/" + userID + "/exerciseImpact", exerciseImpact);
+                    childUpdates.put("/users/" + userID + "/height", height);
+                    childUpdates.put("/users/" + userID + "/objetive", objetive);
+                    childUpdates.put("/users/" + userID + "/levelofExercise", levelOfExercise);
+                    reference.child(userID).updateChildren(childUpdates);
+
                 }
                 else{
                     Toast.makeText(ProfileActivity.this,"User not found",Toast.LENGTH_LONG).show();
