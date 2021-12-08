@@ -223,6 +223,14 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
 
     private void saveUser() {
         userProfile.setAge(profileAgeView.getText().toString().trim());
+        userProfile.setWeight(profileWeightView.getText().toString().trim());
+        userProfile.setHeight(profileHeightView.getText().toString().trim());
+        userProfile.setName(profileNameView.getText().toString().trim());
+        userProfile.setLevelOfExercise(profileLevelOfExercise);
+        userProfile.setCardio(profileCardio);
+        userProfile.setExerciseImpact(profileExerciseImpact);
+        userProfile.setCardio(profileCardio);
+
         reference.child(userID).setValue(userProfile);
     }
 }
