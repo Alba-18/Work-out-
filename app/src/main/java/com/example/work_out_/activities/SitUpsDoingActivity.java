@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.work_out_.R;
 import com.example.work_out_.sensors.Gyroscope;
 
-public class SitUpsActivity extends AppCompatActivity {
+public class SitUpsDoingActivity extends AppCompatActivity {
 
     private TextView counterView;
     private Gyroscope gyroscope;
