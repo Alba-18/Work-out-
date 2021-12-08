@@ -21,9 +21,7 @@
             android:name=".Notifications"
             android:enabled="true" />
 
-        <activity
-            android:name=".ForgotPasswordActivity"
-            android:exported="false" />
+
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -41,9 +39,21 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:exported="false" />
+
         <activity android:name=".HomeActivity"></activity>
         <activity android:name=".ProfileActivity"></activity>
         <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".FinishedExerciseActivity"></activity>
+        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".PushupsStartActivity"></activity>
+        <activity android:name=".RunningStartActivity"></activity>
+        <activity android:name=".SitupsStartActivity"></activity>
+        <activity android:name=".WalkingStartActivity"></activity>
+
+
         <!-- <activity android:name=".RegisterActivity"></activity> -->
 
         <activity android:name=".MainActivity"
