@@ -30,12 +30,12 @@
             android:value="AIzaSyCqbo86VByiGB8AKpuMo5MK9b6ZHULj_vs" />
 
         <activity
-            android:name=".MapActivity"
+            android:name=".activities.SitUpsActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Workout.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MapActivity" />
+                <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

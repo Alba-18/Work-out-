@@ -19,13 +19,13 @@ public class Gyroscope {
     private Sensor sensor;
     private SensorEventListener sensorEventListener;
 
-    Gyroscope(Context context){
+    public Gyroscope(Context context) {
         sensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
         sensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
         sensorEventListener = new SensorEventListener() {
             @Override
             public void onSensorChanged(SensorEvent event) {
-                if(listener != null){
+                if (listener != null) {
                     listener.onRotation(event.values[0], event.values[1], event.values[2]);
                 }
             }
@@ -35,5 +35,13 @@ public class Gyroscope {
 
             }
         };
+    }
+    public void register(){
+        sensorManager.registerListener(sensorEventListener, sensor, SensorManager.SENSOR_DELAY_NORMAL);
+
+    }
+
+    public void unregister(){
+        sensorManager.unregisterListener(sensorEventListener);
     }
 }
