@@ -1,15 +1,30 @@
 package com.example.work_out_;
 
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnContextClickListener;
+import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ActivitiesActivity extends AppCompatActivity {
+    @RequiresApi(api = Build.VERSION_CODES.M)
     protected void onCreate(Bundle savedInstance){
         super.onCreate(savedInstance);
         setContentView(R.layout.activity_activities_screen);
         setUpText();
+
+        Button helpPopup = (Button) findViewById(R.id.HelpMain);
+        helpPopup.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(ActivitiesActivity.this,Help_PopUp.class));
+            }
+        });
 
     }
 

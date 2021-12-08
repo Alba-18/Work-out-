@@ -16,5 +16,8 @@
     <string name="font_size">Font Size:</string>
     <string name="save_button">SAVE</string>
 
+    <string name="help_text_activities">En esta pantalla podrás encontrar todas las actividades que
+    puedes realizar. Para acceder a ellas, simplemente presiona sobre su recuadro.</string>
+
     <string name="home_image">Home screen image</string>
 </resources>
