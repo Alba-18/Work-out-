@@ -65,7 +65,7 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
 
         //Creation of Spinners
         //Creation of Profile Level of Exercise Spinner
-        this.levelOfExerciseSpinner = (Spinner) findViewById(R.id.Register_LevelOfExercise);
+        this.levelOfExerciseSpinner = (Spinner) findViewById(R.id.profileLevelOfExercise);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> levelOfExerciseAdapter = ArrayAdapter.createFromResource(this,
                 R.array.levelOfExerciseArray, android.R.layout.simple_spinner_item);
@@ -76,7 +76,7 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
         this.levelOfExerciseSpinner.setOnItemSelectedListener(this);
 
         //Creation of Cardio Spinner
-        this.cardioSpinner = (Spinner) findViewById(R.id.Register_CardioExercise);
+        this.cardioSpinner = (Spinner) findViewById(R.id.profileCardio);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> cardioAdapter = ArrayAdapter.createFromResource(this,
                 R.array.cardioArray, android.R.layout.simple_spinner_item);
@@ -87,7 +87,7 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
         this.cardioSpinner.setOnItemSelectedListener(this);
 
         //Creation of Exercise Impact Spinner
-        this.exerciseImpactSpinner = (Spinner) findViewById(R.id.Register_ExerciseImpact);
+        this.exerciseImpactSpinner = (Spinner) findViewById(R.id.profileExerciseImpact);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> exerciseImpactAdapter = ArrayAdapter.createFromResource(this,
                 R.array.exerciseImpact, android.R.layout.simple_spinner_item);
@@ -98,7 +98,7 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
         this.exerciseImpactSpinner.setOnItemSelectedListener(this);
 
         //Creation of Objetive Spinner
-        this.objetiveSpinner = (Spinner) findViewById(R.id.registerObjetive);
+        this.objetiveSpinner = (Spinner) findViewById(R.id.profileObjetive);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> objetiveAdapter = ArrayAdapter.createFromResource(this,
                 R.array.objetiveArray, android.R.layout.simple_spinner_item);
