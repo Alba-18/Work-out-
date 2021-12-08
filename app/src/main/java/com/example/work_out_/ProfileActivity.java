@@ -13,10 +13,13 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.work_out_.model.User;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -32,24 +35,14 @@ import java.util.Map;
 
 public class ProfileActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    private Spinner levelOfExerciseSpinner;
-    private Spinner cardioSpinner;
-    private Spinner exerciseImpactSpinner;
-    private Spinner objetiveSpinner;
+    private Spinner levelOfExerciseSpinner, cardioSpinner, exerciseImpactSpinner, objetiveSpinner;
 
     private EditText profileNameView;
     private EditText profileAgeView;
     private EditText profileWeightView;
     private EditText profileHeightView;
 
-    private String profileLevelOfExercise;
-    private String profileName;
-    private String profileAge;
-    private String profileWeight;
-    private String profileHeight;
-    private String profileCardio;
-    private String profileExerciseImpact;
-    private String profileObjetive;
+    private String profileLevelOfExercise, profileName, profileAge, profileWeight, profileHeight, profileCardio, profileExerciseImpact, profileObjetive;
 
 
     private FirebaseUser user;
@@ -73,6 +66,51 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
         profileWeightView = (EditText) findViewById(R.id.profileWeight);
         profileHeightView = (EditText) findViewById(R.id.profileHeight);
 
+        //Creation of Spinners
+        //Creation of Profile Level of Exercise Spinner
+        this.levelOfExerciseSpinner = (Spinner) findViewById(R.id.profileLevelOfExercise);
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> levelOfExerciseAdapter = ArrayAdapter.createFromResource(this,
+                R.array.levelOfExerciseArray, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        levelOfExerciseAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        this.levelOfExerciseSpinner.setAdapter(levelOfExerciseAdapter);
+        this.levelOfExerciseSpinner.setOnItemSelectedListener(this);
+
+        //Creation of Cardio Spinner
+        this.cardioSpinner = (Spinner) findViewById(R.id.profileCardio);
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> cardioAdapter = ArrayAdapter.createFromResource(this,
+                R.array.cardioArray, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        cardioAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        this.cardioSpinner.setAdapter(cardioAdapter);
+        this.cardioSpinner.setOnItemSelectedListener(this);
+
+        //Creation of Exercise Impact Spinner
+        this.exerciseImpactSpinner = (Spinner) findViewById(R.id.profileExerciseImpact);
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> exerciseImpactAdapter = ArrayAdapter.createFromResource(this,
+                R.array.exerciseImpact, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        cardioAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        this.exerciseImpactSpinner.setAdapter(exerciseImpactAdapter);
+        this.exerciseImpactSpinner.setOnItemSelectedListener(this);
+
+        //Creation of Objetive Spinner
+        this.objetiveSpinner = (Spinner) findViewById(R.id.profileObjetive);
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> objetiveAdapter = ArrayAdapter.createFromResource(this,
+                R.array.objetiveArray, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        cardioAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        this.objetiveSpinner.setAdapter(objetiveAdapter);
+        this.objetiveSpinner.setOnItemSelectedListener(this);
+
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -80,13 +118,64 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
 
                 if(userProfile != null){
                     String fullName = userProfile.getName();
-                    String email = userProfile.getEmail();
                     String age = userProfile.getAge();
+                    String weight = userProfile.getWeight();
+                    String height = userProfile.getHeight();
+                    String levelOfExercise = userProfile.getLevelOfExercise();
+                    String exerciseImpact = userProfile.getExerciseImpact();
+                    String objetive = userProfile.getObjetive();
 
                     profileNameView.setText(fullName);
                     profileAgeView.setText(age);
+                    profileWeightView.setText(weight);
+                    profileHeightView.setText(height);
+
+                    switch (levelOfExercise){
+                        case "Beginner":
+                            levelOfExerciseSpinner.setSelection(1);
+                            break;
+                        case "Intermediate":
+                            levelOfExerciseSpinner.setSelection(2);
+                            break;
+                        case "Advanced":
+                            levelOfExerciseSpinner.setSelection(3);
+                            break;
+                    }
+
+                    switch (exerciseImpact){
+                        case "Low":
+                            exerciseImpactSpinner.setSelection(1);
+                            break;
+                        case "High":
+                            exerciseImpactSpinner.setSelection(2);
+                            break;
+                    }
+
+                    switch (objetive){
+                        case "7 days":
+                            objetiveSpinner.setSelection(1);
+                            break;
+                        case "15 days":
+                            objetiveSpinner.setSelection(2);
+                            break;
+                        case "30 days":
+                            objetiveSpinner.setSelection(3);
+                            break;
+                    }
 
                     Toast.makeText(ProfileActivity.this,fullName,Toast.LENGTH_LONG).show();
+
+                    Map<String, Object> childUpdates = new HashMap<>();
+
+                    childUpdates.put("/users/" + userID + "/weight", weight);
+                    childUpdates.put("/users/" + userID + "/name", fullName);
+                    childUpdates.put("/users/" + userID + "/age", age);
+                    childUpdates.put("/users/" + userID + "/exerciseImpact", exerciseImpact);
+                    childUpdates.put("/users/" + userID + "/height", height);
+                    childUpdates.put("/users/" + userID + "/objetive", objetive);
+                    childUpdates.put("/users/" + userID + "/levelofExercise", levelOfExercise);
+                    reference.child(userID).updateChildren(childUpdates);
+
                 }
                 else{
                     Toast.makeText(ProfileActivity.this,"User not found",Toast.LENGTH_LONG).show();

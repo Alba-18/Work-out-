@@ -5,16 +5,16 @@ public class Activities {
     private int[] sets = new int[]{2,3,4,5,2,3};
 
     public Activities(String description, String name, int[] sets, User user) {
-        String level = user.getLevel();
+        String level = user.getLevelOfExercise();
         int difficulty;
         switch (level){
-            case "beginner":
+            case "Beginner":
                 difficulty = 1;
                 break;
-            case "intermediate":
+            case "Intermediate":
                 difficulty = 2;
                 break;
-            case "advanced":
+            case "Advanced":
                 difficulty = 3;
                 break;
             default:
