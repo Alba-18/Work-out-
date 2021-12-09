@@ -49,9 +49,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import java.util.Calendar;
-import java.util.Date;
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText emailView, passView;

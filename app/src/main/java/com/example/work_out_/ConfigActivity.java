@@ -61,12 +61,14 @@ public class ConfigActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("appSettings", MODE_PRIVATE);
 
         int brightness = sharedPreferences.getInt("brightness", 80);
-        boolean notifications = sharedPreferences.getBoolean("notifications", false);
         this.seekbar.setProgress(brightness);
+        layoutParams.screenBrightness = brightness / (float)100;
+        window.setAttributes(layoutParams);
+
+        boolean notifications = sharedPreferences.getBoolean("notifications", false);
         this.switchNotif.setChecked(notifications);
 
-        layoutParams.screenBrightness = brightness / (float)255;
-        window.setAttributes(layoutParams);
+
     }
 
     public void save(View view){
