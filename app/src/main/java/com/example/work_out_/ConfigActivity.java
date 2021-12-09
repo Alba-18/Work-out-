@@ -70,7 +70,7 @@ public class ConfigActivity extends AppCompatActivity {
     }
 
     public void goBack(View view){
-        // TODO go back to main activity
+        startActivity(new Intent(this, ActivitiesActivity.class));
     }
 
     private class SeekbarListener implements SeekBar.OnSeekBarChangeListener {
@@ -79,8 +79,6 @@ public class ConfigActivity extends AppCompatActivity {
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
             layoutParams.screenBrightness = progress / (float)100;
             window.setAttributes(layoutParams);
-
-
         }
 
         @Override
