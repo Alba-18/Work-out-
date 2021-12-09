@@ -28,12 +28,11 @@ public class MainActivity extends AppCompatActivity {
  */
 package com.example.work_out_;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -74,6 +73,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         passView = (EditText) findViewById(R.id.user_Password);
 
         mAuth = FirebaseAuth.getInstance();
+
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop() ;
+        SharedPreferences sharedPreferences = getSharedPreferences("appSettings", MODE_PRIVATE);
+        if(sharedPreferences.getBoolean("notifications", false)){
+            startService( new Intent( this, NotificationService.class ));
+        }
 
 
     }

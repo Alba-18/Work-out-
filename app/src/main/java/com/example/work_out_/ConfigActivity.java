@@ -49,6 +49,14 @@ public class ConfigActivity extends AppCompatActivity {
 
     }
 
+    protected void onStop() {
+        super.onStop();
+        SharedPreferences sharedPreferences = getSharedPreferences("appSettings", MODE_PRIVATE);
+        if(sharedPreferences.getBoolean("notifications", false)){
+            startService( new Intent( this, NotificationService.class ));
+        }
+    }
+
     public void loadSettings(){
         SharedPreferences sharedPreferences = getSharedPreferences("appSettings", MODE_PRIVATE);
 
