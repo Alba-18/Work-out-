@@ -9,6 +9,11 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.Button;
+import android.widget.PopupWindow;
+import android.widget.RadioGroup;
 
 import com.example.work_out_.JsonParser;
 import com.example.work_out_.R;
@@ -41,6 +46,12 @@ public class MapActivity extends AppCompatActivity {
     FusedLocationProviderClient fusedLocationProviderClient;
     double currentLat = 0, currentLong = 0;
 
+    Button btn_open_popUp;
+    Button btn_close;
+    LayoutInflater layoutInflater;
+    View popupView;
+    PopupWindow popupWindow;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +68,25 @@ public class MapActivity extends AppCompatActivity {
         }else{
             ActivityCompat.requestPermissions(MapActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION},44);
         }
+
+        btn_open_popUp = (Button)findViewById(R.id.HelpMap);
+        btn_open_popUp.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View arg0){
+                layoutInflater =(LayoutInflater)getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+                popupView = layoutInflater.inflate(R.layout.activity_map_popup, null);
+                popupWindow = new PopupWindow(popupView, RadioGroup.LayoutParams.WRAP_CONTENT,
+                        RadioGroup.LayoutParams.WRAP_CONTENT);
+                btn_close = (Button)popupView.findViewById(R.id.id_close);
+                btn_close.setOnClickListener(new Button.OnClickListener(){
+                    @Override
+                    public void onClick(View v) {
+                        popupWindow.dismiss();
+                    }});
+
+                popupWindow.showAsDropDown(btn_open_popUp);
+
+            }});
     }
 
     private void getCurrentLocation() {
