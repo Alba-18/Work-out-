@@ -1,10 +1,12 @@
-package com.example.work_out_;
+package com.example.work_out_.activities;
 
 import android.os.Bundle;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.work_out_.R;
 
 public class FinishedExerciseActivity extends AppCompatActivity {
     @Override

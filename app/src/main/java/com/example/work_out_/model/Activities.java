@@ -4,7 +4,7 @@ public class Activities {
     private String description,name;
     private int[] sets = new int[]{2,3,4,5,2,3};
 
-    public Activities(String description, String name, int[] sets, User user) {
+    public Activities(String description, String name, User user) {
         String level = user.getLevelOfExercise();
         int difficulty;
         switch (level){
@@ -18,15 +18,13 @@ public class Activities {
                 difficulty = 3;
                 break;
             default:
-                difficulty = 1;
-                break;
+                throw new IllegalStateException("Unexpected value: " + level);
         }
         for (int i= 0; i < sets.length; i++){
             sets[i] = difficulty * sets[i];
         }
         this.description = description;
         this.name = name;
-        this.sets = sets;
     }
 
 
