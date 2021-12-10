@@ -47,6 +47,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         Button registerButtonView = (Button) findViewById(R.id.Register_FinishButton);
         registerButtonView.setOnClickListener(this);
 
+
+
         //Creation of Spinners
         //Creation of Profile Level of Exercise Spinner
         this.levelOfExerciseSpinner = (Spinner) findViewById(R.id.Register_LevelOfExercise);
@@ -120,10 +122,19 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     }
 
     public void onClick(View v){
-        if (v.getId() == R.id.Register_FinishButton) {
-            registerUser();
+        switch (v.getId()){
+            case R.id.Register_FinishButton:
+                registerUser();
+                break;
+
+            case R.id.goBackRegister:
+                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                break;
         }
+
     }
+
+
 
     public void registerUser(){
 
@@ -165,12 +176,14 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                                         Toast.makeText(RegisterActivity.this, "User has been registered successfully",Toast.LENGTH_SHORT).show();
                                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
+                                        //Not sure if it really makes sense
                                         if(user.isEmailVerified()){
                                             startActivity(new Intent(RegisterActivity.this, ProfileActivity.class));
                                         }
                                         else{
                                             user.sendEmailVerification();
                                             Toast.makeText(RegisterActivity.this, "Check your email to verify",Toast.LENGTH_SHORT).show();
+                                            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
 
                                         }
 

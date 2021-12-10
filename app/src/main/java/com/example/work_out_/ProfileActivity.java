@@ -41,6 +41,9 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
     private EditText profileWeightView;
     private EditText profileHeightView;
 
+    private Uri profileImageUri;
+    private ImageView profileImageView;
+
     private Button buttonUpdateProfile;
     private String profileLevelOfExercise, profileName, profileAge, profileWeight, profileHeight, profileCardio, profileExerciseImpact, profileObjetive;
 
@@ -79,6 +82,7 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
         profileAgeView = (EditText) findViewById(R.id.profileAge);
         profileWeightView = (EditText) findViewById(R.id.profileWeight);
         profileHeightView = (EditText) findViewById(R.id.profileHeight);
+        profileImageView = (ImageView) findViewById(R.id.profileImage);
         buttonUpdateProfile = findViewById(R.id.profileSaveButton);
         buttonUpdateProfile.setOnClickListener(this);
 
@@ -141,12 +145,13 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
                     String levelOfExercise = userProfile.getLevelOfExercise();
                     String exerciseImpact = userProfile.getExerciseImpact();
                     String objetive = userProfile.getObjetive();
+                    profileImageUri = userProfile.getImage();
 
+                    profileImageView.setImageURI(profileImageUri);
                     profileNameView.setText(fullName);
                     profileAgeView.setText(age);
                     profileWeightView.setText(weight);
                     profileHeightView.setText(height);
-
 
 
                     switch (levelOfExercise){
@@ -267,6 +272,9 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
         switch (v.getId()){
             case R.id.profileSaveButton:
                 saveUser();
+                break;
+            case R.id.helpProfile:
+                startActivity(new Intent(ProfileActivity.this,ActivitiesActivity.class));
                 break;
         }
     }

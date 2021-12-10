@@ -7,6 +7,8 @@
     android:background="#F2EDA7">
 
 
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/frameLayout"
         android:layout_width="305dp"
@@ -94,7 +96,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="56dp"
             android:fontFamily="@font/salsa"
-            android:text="Username"
+            android:text="Email"
             android:textColor="@color/black"
             android:textSize="24sp"
             android:translationY="20dp"
@@ -132,29 +134,48 @@
             app:layout_constraintHorizontal_bias="0.105"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:id="@+id/forgotPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Forgot Password?"
-            app:layout_constraintBottom_toTopOf="@+id/login_button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.056"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/user_Password"
-            app:layout_constraintVertical_bias="0.766" />
 
-        <TextView
-            android:id="@+id/nav_to_register"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Register"
-            app:layout_constraintBottom_toTopOf="@+id/login_button"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/forgotPassword"
+            android:layout_width="147dp"
+            android:layout_height="51dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginVertical="20dp"
+            android:layout_marginTop="390sp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/button"
+            android:fontFamily="@font/salsa"
+            android:text="Forgot password?"
+            android:textColor="#FFE9C5"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.782"
-            app:layout_constraintStart_toEndOf="@+id/forgotPassword"
-            app:layout_constraintTop_toBottomOf="@+id/user_Password"
-            app:layout_constraintVertical_bias="0.727" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.698" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/nav_to_register"
+            android:layout_width="147dp"
+            android:layout_height="51dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginVertical="20dp"
+            android:layout_marginTop="390sp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/button"
+            android:fontFamily="@font/salsa"
+            android:text="Register"
+            android:textColor="#FFE9C5"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.698" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

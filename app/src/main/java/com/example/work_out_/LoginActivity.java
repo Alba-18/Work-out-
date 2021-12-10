@@ -89,7 +89,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    startActivity(new Intent(LoginActivity.this, PushupsStartActivity.class));
+                    startActivity(new Intent(LoginActivity.this, ActivitiesActivity.class));
                 }else{
                     Toast.makeText(LoginActivity.this, "Failed to login" , Toast.LENGTH_LONG).show();
 

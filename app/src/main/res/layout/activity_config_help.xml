@@ -24,7 +24,7 @@ android:background="#592D1D">
             android:layout_marginTop="40dp">
 
             <TextView
-                android:text="@string/help_text_config"
+                android:text="In this screen you are able to change the brightness of the screen. You can also turn on/off the notifications."
                 android:layout_margin="30dp"
                 android:fontFamily="@font/salsa"
                 android:textSize="20dp"

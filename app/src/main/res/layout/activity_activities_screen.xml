@@ -24,7 +24,7 @@
 
     <!--Main Help-->
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/HelpMap"
+        android:id="@+id/HelpActivitiesScreen"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_gravity="center_vertical"
