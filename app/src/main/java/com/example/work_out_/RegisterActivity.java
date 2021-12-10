@@ -167,7 +167,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
                                         if(user.isEmailVerified()){
-                                            startActivity(new Intent(RegisterActivity.this,ProfileActivity.class));
+                                            startActivity(new Intent(RegisterActivity.this, ProfileActivity.class));
                                         }
                                         else{
                                             user.sendEmailVerification();
