@@ -1,6 +1,9 @@
 package com.example.work_out_.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,8 +24,9 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Arrays;
 
-public class PushupsStartActivity extends AppCompatActivity {
+public class PushupsStartActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private Button startActivityButton;
     private User userProfile;
     private FirebaseUser user;
     private DatabaseReference reference;
@@ -32,6 +36,9 @@ public class PushupsStartActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pushups_start);
+
+        startActivityButton = findViewById(R.id.activitiesbuttonmain);
+        startActivityButton.setOnClickListener(this);
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("users");
@@ -69,5 +76,12 @@ public class PushupsStartActivity extends AppCompatActivity {
         time.setText(inputTime);
         difficulty.setText(inputDifficulty);
         serie.setText(inputSerie);
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent goToDoingPushUps = new Intent(getApplicationContext(),PushUpsDoingActivity.class);
+        goToDoingPushUps.putExtra("sets",0);
+        startActivity(goToDoingPushUps);
     }
 }
