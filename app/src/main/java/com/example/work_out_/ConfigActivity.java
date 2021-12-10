@@ -6,10 +6,13 @@ import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.PopupWindow;
+import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.provider.Settings.System;
 import android.widget.Switch;
@@ -24,6 +27,12 @@ public class ConfigActivity extends AppCompatActivity {
     private ContentResolver cResolver;
     private Window window;
     private WindowManager.LayoutParams layoutParams;
+
+    Button btn_open_popUp;
+    Button btn_close;
+    LayoutInflater layoutInflater;
+    View popupView;
+    PopupWindow popupWindow;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -46,19 +55,47 @@ public class ConfigActivity extends AppCompatActivity {
 
         loadSettings();
 
+        btn_open_popUp = (Button)findViewById(R.id.helpConfig);
+        btn_open_popUp.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View arg0){
+                layoutInflater =(LayoutInflater)getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+                popupView = layoutInflater.inflate(R.layout.activity_config_help, null);
+                popupWindow = new PopupWindow(popupView, RadioGroup.LayoutParams.WRAP_CONTENT,
+                        RadioGroup.LayoutParams.WRAP_CONTENT);
+                btn_close = (Button)popupView.findViewById(R.id.id_close);
+                btn_close.setOnClickListener(new Button.OnClickListener(){
+                    @Override
+                    public void onClick(View v) {
+                        popupWindow.dismiss();
+                    }});
 
+                popupWindow.showAsDropDown(btn_open_popUp);
+
+            }});
+
+    }
+
+    protected void onStop() {
+        super.onStop();
+        SharedPreferences sharedPreferences = getSharedPreferences("appSettings", MODE_PRIVATE);
+        if(sharedPreferences.getBoolean("notifications", false)){
+            startService( new Intent( this, NotificationService.class ));
+        }
     }
 
     public void loadSettings(){
         SharedPreferences sharedPreferences = getSharedPreferences("appSettings", MODE_PRIVATE);
 
         int brightness = sharedPreferences.getInt("brightness", 80);
-        boolean notifications = sharedPreferences.getBoolean("notifications", false);
         this.seekbar.setProgress(brightness);
+        layoutParams.screenBrightness = brightness / (float)100;
+        window.setAttributes(layoutParams);
+
+        boolean notifications = sharedPreferences.getBoolean("notifications", false);
         this.switchNotif.setChecked(notifications);
 
-        layoutParams.screenBrightness = brightness / (float)255;
-        window.setAttributes(layoutParams);
+
     }
 
     public void save(View view){
@@ -70,7 +107,7 @@ public class ConfigActivity extends AppCompatActivity {
     }
 
     public void goBack(View view){
-        // TODO go back to main activity
+        startActivity(new Intent(this, ActivitiesActivity.class));
     }
 
     private class SeekbarListener implements SeekBar.OnSeekBarChangeListener {
@@ -79,8 +116,6 @@ public class ConfigActivity extends AppCompatActivity {
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
             layoutParams.screenBrightness = progress / (float)100;
             window.setAttributes(layoutParams);
-
-
         }
 
         @Override
@@ -93,6 +128,7 @@ public class ConfigActivity extends AppCompatActivity {
 
         }
     }
+
 
 
 }

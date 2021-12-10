@@ -10,17 +10,6 @@
     <!--Main Settings-->
 
     <!--Main Profile-->
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/ProfilesMain"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_gravity="center_vertical"
-        android:background="@drawable/help"
-        android:translationX="355dp"
-        android:translationY="15dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
 
     <FrameLayout
         android:id="@+id/GreenFrameMain"
@@ -35,53 +24,51 @@
         app:layout_constraintVertical_bias="0.656">
 
 
+        <!--Map view-->
 
-            <!--Map view-->
-
-            <!--Activities Button-->
+        <!--Activities Button-->
 
         <ImageView
-                android:layout_width="170dp"
-                android:layout_height="170dp"
-                android:layout_marginTop="50dp"
-                android:layout_gravity="top|center"
-                android:background="@drawable/motivation" />
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_gravity="top|center"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/motivation" />
 
-            <!-- Time Text-->
-            <FrameLayout
-                android:layout_width="300dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center|top"
-                android:layout_marginTop="240dp"
-                android:background="@drawable/lightshape">
+        <!-- Time Text-->
+        <FrameLayout
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="240dp"
+            android:background="@drawable/lightshape">
 
-                <!--Level Text -->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:fontFamily="@font/salsa"
-                    android:text="10 reps"
-                    android:textAlignment="center"
-                    android:textColor="#592D1D"
-                    android:textSize="25dp" />
-            </FrameLayout>
+            <!--Level Text -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/salsa"
+                android:text="10 reps"
+                android:textAlignment="center"
+                android:textColor="#592D1D"
+                android:textSize="25dp" />
+        </FrameLayout>
 
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/dopushup"
             android:layout_width="200dp"
             android:layout_height="100dp"
-            android:layout_marginTop="300dp"
             android:layout_gravity="top|center"
+            android:layout_marginTop="300dp"
             android:background="@drawable/activityshape"
             android:fontFamily="@font/salsa"
+            android:text="ADD push-up"
             android:textColor="#FFE9C5"
             android:textSize="30dp"
-            android:text="ADD push-up"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
 
 
         <FrameLayout
@@ -108,8 +95,8 @@
             android:id="@+id/activitiesbuttonmain"
             android:layout_width="300dp"
             android:layout_height="60dp"
-            android:layout_marginBottom="10dp"
             android:layout_gravity="bottom|center"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/button"
             android:fontFamily="@font/salsa"
             android:text="FINISH"

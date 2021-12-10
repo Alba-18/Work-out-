@@ -25,17 +25,6 @@
     <!--Main Settings-->
 
     <!--Main Profile-->
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/ProfilesMain"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_gravity="center_vertical"
-        android:background="@drawable/help"
-        android:translationX="355dp"
-        android:translationY="15dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
 
     <FrameLayout
         android:id="@+id/GreenFrameMain"
