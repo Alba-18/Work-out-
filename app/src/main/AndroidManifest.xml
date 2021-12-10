@@ -28,7 +28,7 @@
             android:value="AIzaSyCqbo86VByiGB8AKpuMo5MK9b6ZHULj_vs" />
 
         <activity
-            android:name=".ConfigActivity"
+            android:name=".LoginActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Workout.NoActionBar">
@@ -47,11 +47,10 @@
         <activity android:name=".ProfileActivity"></activity>
         <activity android:name=".RegisterActivity"></activity>
         <activity android:name=".FinishedExerciseActivity"></activity>
-        <activity android:name=".LoginActivity"></activity>
-        <activity android:name=".PushupsStartActivity"></activity>
-        <activity android:name=".RunningStartActivity"></activity>
-        <activity android:name=".SitupsStartActivity"></activity>
-        <activity android:name=".WalkingStartActivity"></activity>
+        <activity android:name=".activities.PushupsStartActivity"></activity>
+        <activity android:name=".activities.RunningStartActivity"></activity>
+        <activity android:name=".activities.SitupsStartActivity"></activity>
+        <activity android:name=".activities.WalkingStartActivity"></activity>
 
 
         <!-- <activity android:name=".RegisterActivity"></activity> -->

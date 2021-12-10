@@ -115,6 +115,8 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
         // Apply the adapter to the spinner
         this.objetiveSpinner.setAdapter(objetiveAdapter);
         this.objetiveSpinner.setOnItemSelectedListener(this);
+
+
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
