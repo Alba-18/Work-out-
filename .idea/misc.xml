@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Antonio/AndroidStudioProjects/Work-out-/app/src/main/res/layout/activity_config_help.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/Antonio/AndroidStudioProjects/Work-out-/app/src/main/res/layout/activity_map_pop_up.xml" value="0.4" />
+        <entry key="..\:/Users/Antonio/AndroidStudioProjects/Work-out-/app/src/main/res/layout/activity_profile_popup.xml" value="0.8928571428571429" />
+        <entry key="..\:/Users/Antonio/AndroidStudioProjects/Work-out-/app/src/main/res/layout/activity_pushups_doing.xml" value="0.24048913043478262" />
         <entry key="..\:/Users/Antonio/AndroidStudioProjects/Work-out-/app/src/main/res/layout/activity_pushups_start.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Pc/AndroidStudioProjects/Work-out-/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/Pc/AndroidStudioProjects/Work-out-/app/src/main/res/drawable/arrow_back.xml" value="0.19583333333333333" />
