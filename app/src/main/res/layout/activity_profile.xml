@@ -99,7 +99,7 @@
                     android:id="@+id/profileImage"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:background="@drawable/default_profile_image"
+                    android:src="@drawable/default_profile_image"
                     android:translationX="140dp"
                     android:translationY="10dp" />
 

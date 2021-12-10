@@ -1,13 +1,17 @@
 package com.example.work_out_.model;
 
+import android.net.Uri;
+
 public class User {
 
     private String name,email,age, weight, height, levelOfExercise, cardio, exerciseImpact, objetive;
+    private Uri image;
 
     public User() {
     }
 
     public User(String name, String email, String age, String weight, String height, String levelOfExercise,String exerciseImpact, String cardio,  String objetive) {
+        this.image = null;
         this.name = name;
         this.email = email;
         this.age = age;
@@ -89,5 +93,13 @@ public class User {
 
     public void setObjetive(String objetive) {
         this.objetive = objetive;
+    }
+
+    public Uri getImage() {
+        return image;
+    }
+
+    public void setImage(Uri image) {
+        this.image = image;
     }
 }

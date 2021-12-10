@@ -3,42 +3,36 @@ package com.example.work_out_;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
-import android.graphics.Picture;
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.work_out_.model.User;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.util.HashMap;
-import java.util.Map;
 
 
 public class ProfileActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
+
+    public static final int PICK_IMAGE = 1;
 
     private Spinner levelOfExerciseSpinner, cardioSpinner, exerciseImpactSpinner, objetiveSpinner;
 
@@ -47,7 +41,7 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
     private EditText profileWeightView;
     private EditText profileHeightView;
 
-    private Button buttonLogin;
+    private Button buttonUpdateProfile;
     private String profileLevelOfExercise, profileName, profileAge, profileWeight, profileHeight, profileCardio, profileExerciseImpact, profileObjetive;
 
     private User userProfile;
@@ -55,16 +49,25 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
     private DatabaseReference reference;
     private String userID;
 
-    Button btn_open_popUp;
-    Button btn_close;
-    LayoutInflater layoutInflater;
-    View popupView;
-    PopupWindow popupWindow;
+    private Button btn_open_popUp;
+    private Button btn_close;
+    private LayoutInflater layoutInflater;
+    private View popupView;
+    private PopupWindow popupWindow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        Button imageProfile = findViewById(R.id.editImageProfile);
+        imageProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(intent, 3);
+            }
+        });
 
 
         user = FirebaseAuth.getInstance().getCurrentUser();
@@ -76,8 +79,8 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
         profileAgeView = (EditText) findViewById(R.id.profileAge);
         profileWeightView = (EditText) findViewById(R.id.profileWeight);
         profileHeightView = (EditText) findViewById(R.id.profileHeight);
-        buttonLogin = findViewById(R.id.profileSaveButton);
-        buttonLogin.setOnClickListener(this);
+        buttonUpdateProfile = findViewById(R.id.profileSaveButton);
+        buttonUpdateProfile.setOnClickListener(this);
 
         //Creation of Spinners
         //Creation of Profile Level of Exercise Spinner
@@ -215,6 +218,24 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
             }});
 
     }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        //Hay que checkear el tamaño de la imagen
+        if(resultCode == RESULT_OK && data != null ){
+            Uri selectedImage = data.getData();
+            ImageView imageView = findViewById(R.id.profileImage);
+            imageView.setImageURI(selectedImage);
+            userProfile.setImage(selectedImage);
+            reference.child(userID).setValue(userProfile);
+            //imageView.setBackground(Drawable.createFromPath("#B2BE50"));
+
+        }
+
+    }
+
 
     public void onItemSelected(AdapterView<?> parent, View view,
                                int pos, long id) {
