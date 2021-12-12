@@ -33,10 +33,12 @@
         android:layout_marginHorizontal="25sp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="17dp"
         android:background="@drawable/arrow_back"
         android:onClick="onClick"
         android:translationX="3dp"
         android:translationY="3dp"
+        app:layout_constraintBottom_toTopOf="@+id/Register_Layout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
@@ -46,13 +48,13 @@
         android:layout_width="374dp"
         android:layout_height="620dp"
         android:background="@drawable/shape"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.752"
-        android:orientation="vertical">
+        app:layout_constraintVertical_bias="0.752">
 
 
         <ScrollView
@@ -61,22 +63,22 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal">
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
 
                 <!-- Register Name Title -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
                     android:fontFamily="@font/salsa"
                     android:text="Name:"
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="0dp"
-                    android:layout_marginTop="20dp"/>
+                    android:translationY="0dp" />
 
                 <!-- Register Name -->
                 <EditText
@@ -84,26 +86,26 @@
                     android:layout_width="200dp"
                     android:layout_height="40dp"
                     android:background="@drawable/edit_text"
-                    android:textColor="#592D1D"
-                    android:singleLine="true"
-                    android:padding="10dp"
-                    android:textAlignment="center"
                     android:fontFamily="@font/salsa"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:textAlignment="center"
+                    android:textColor="#592D1D"
+                    android:textSize="18dp"
                     android:translationX="25dp"
-                    android:translationY="3dp"
-                    android:textSize="18dp" />
+                    android:translationY="3dp" />
 
                 <!--Register Email Title-->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="-20dp"
                     android:fontFamily="@font/salsa"
                     android:text="Email:"
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="30dp"
-                    android:layout_marginTop="-20dp"/>
+                    android:translationY="30dp" />
 
                 <!--Register Email-->
                 <EditText
@@ -111,26 +113,26 @@
                     android:layout_width="200dp"
                     android:layout_height="40dp"
                     android:background="@drawable/edit_text"
-                    android:textColor="#592D1D"
-                    android:singleLine="true"
-                    android:padding="10dp"
-                    android:textAlignment="center"
                     android:fontFamily="@font/salsa"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:textAlignment="center"
+                    android:textColor="#592D1D"
+                    android:textSize="18dp"
                     android:translationX="25dp"
-                    android:translationY="30dp"
-                    android:textSize="18dp" />
+                    android:translationY="30dp" />
 
                 <!-- Register Password Title -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="-20dp"
                     android:fontFamily="@font/salsa"
                     android:text="Password:"
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="60dp"
-                    android:layout_marginTop="-20dp"/>
+                    android:translationY="60dp" />
 
                 <!-- Register Password -->
                 <EditText
@@ -138,26 +140,26 @@
                     android:layout_width="200dp"
                     android:layout_height="40dp"
                     android:background="@drawable/edit_text"
-                    android:textColor="#592D1D"
-                    android:singleLine="true"
-                    android:padding="10dp"
-                    android:textAlignment="center"
                     android:fontFamily="@font/salsa"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:textAlignment="center"
+                    android:textColor="#592D1D"
+                    android:textSize="18dp"
                     android:translationX="25dp"
-                    android:translationY="60dp"
-                    android:textSize="18dp" />
+                    android:translationY="60dp" />
 
                 <!-- Register Confirm password Title -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="-20dp"
                     android:fontFamily="@font/salsa"
                     android:text="Confirm password:"
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="80dp"
-                    android:layout_marginTop="-20dp"/>
+                    android:translationY="80dp" />
 
                 <!-- Register Confirm password -->
                 <EditText
@@ -165,14 +167,14 @@
                     android:layout_width="200dp"
                     android:layout_height="40dp"
                     android:background="@drawable/edit_text"
-                    android:textColor="#592D1D"
-                    android:singleLine="true"
-                    android:padding="10dp"
-                    android:textAlignment="center"
                     android:fontFamily="@font/salsa"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:textAlignment="center"
+                    android:textColor="#592D1D"
+                    android:textSize="18dp"
                     android:translationX="25dp"
-                    android:translationY="80dp"
-                    android:textSize="18dp"/>
+                    android:translationY="80dp" />
 
                 <!-- Register Age Title -->
                 <TextView
@@ -183,7 +185,7 @@
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="80dp"/>
+                    android:translationY="80dp" />
 
                 <!-- Register Age Image -->
                 <ImageView
@@ -199,15 +201,15 @@
                     android:layout_width="200dp"
                     android:layout_height="40dp"
                     android:background="@drawable/edit_text"
-                    android:textColor="#592D1D"
-                    android:singleLine="true"
-                    android:padding="10dp"
-                    android:inputType="number"
-                    android:textAlignment="center"
                     android:fontFamily="@font/salsa"
+                    android:inputType="number"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:textAlignment="center"
+                    android:textColor="#592D1D"
+                    android:textSize="18dp"
                     android:translationX="25dp"
-                    android:translationY="30dp"
-                    android:textSize="18dp"/>
+                    android:translationY="30dp" />
 
 
                 <!-- Register Weight Title -->
@@ -219,7 +221,7 @@
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="40dp"/>
+                    android:translationY="40dp" />
 
                 <!-- Register Weight Image -->
 
@@ -236,14 +238,14 @@
                     android:layout_width="200dp"
                     android:layout_height="40dp"
                     android:background="@drawable/edit_text"
-                    android:textColor="#592D1D"
                     android:fontFamily="@font/salsa"
                     android:inputType="number"
-                    android:textAlignment="center"
                     android:singleLine="true"
+                    android:textAlignment="center"
+                    android:textColor="#592D1D"
+                    android:textSize="18dp"
                     android:translationX="25dp"
-                    android:translationY="-10dp"
-                    android:textSize="18dp"/>
+                    android:translationY="-10dp" />
 
                 <!-- Register Height Title -->
                 <TextView
@@ -254,7 +256,7 @@
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="-3dp"/>
+                    android:translationY="-3dp" />
 
                 <!-- Register Weight Image -->
                 <ImageView
@@ -270,14 +272,14 @@
                     android:layout_width="200dp"
                     android:layout_height="40dp"
                     android:background="@drawable/edit_text"
-                    android:textColor="#592D1D"
                     android:fontFamily="@font/salsa"
                     android:inputType="number"
-                    android:textAlignment="center"
                     android:singleLine="true"
+                    android:textAlignment="center"
+                    android:textColor="#592D1D"
+                    android:textSize="18dp"
                     android:translationX="25dp"
-                    android:translationY="-50dp"
-                    android:textSize="18dp" />
+                    android:translationY="-50dp" />
 
 
                 <!-- Register Level of exercise Title -->
@@ -289,7 +291,7 @@
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="-35dp"/>
+                    android:translationY="-35dp" />
 
                 <!-- Register Level of exercise Image -->
                 <ImageView
@@ -348,7 +350,7 @@
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="-105dp"/>
+                    android:translationY="-105dp" />
 
                 <!-- Register Exercise Impact Image -->
                 <ImageView

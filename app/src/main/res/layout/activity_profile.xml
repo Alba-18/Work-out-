@@ -35,38 +35,46 @@
         android:layout_marginHorizontal="25sp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="17dp"
         android:background="@drawable/arrow_back"
         android:translationX="3dp"
         android:translationY="3dp"
+        app:layout_constraintBottom_toTopOf="@+id/profileLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <!-- Help Profile -->
+
+    <!--Profile Logout -->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/helpProfile"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_gravity="center_vertical"
+        android:layout_marginBottom="22dp"
         android:background="@drawable/help"
-        android:onClick="onClick"
-        android:translationX="350dp"
-        android:translationY="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/profileLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.955"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <!--Profile Logout -->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/logOutProfile"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_gravity="center_vertical"
+        android:layout_marginBottom="22dp"
         android:background="@drawable/logout"
-        android:translationX="300dp"
-        android:translationY="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/profileLayout"
+        app:layout_constraintEnd_toStartOf="@+id/helpProfile"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <LinearLayout
@@ -74,13 +82,13 @@
         android:layout_width="374dp"
         android:layout_height="620dp"
         android:background="@drawable/shape"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.752"
-        android:orientation="vertical">
+        app:layout_constraintVertical_bias="0.752">
 
 
         <ScrollView
@@ -90,10 +98,10 @@
 
             <LinearLayout
                 android:id="@+id/profileLinearLayout_ScrollView"
-                android:orientation="vertical"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal">
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
 
                 <!-- User Profile Image -->
                 <ImageView
@@ -120,14 +128,14 @@
                     android:id="@+id/profileUserName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
                     android:fontFamily="@font/salsa"
-                    android:text="Default username"
                     android:singleLine="true"
+                    android:text="Default username"
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="80dp"
-                    android:translationY="10dp"
-                    android:layout_marginBottom="20dp"/>
+                    android:translationY="10dp" />
 
 
                 <!-- Profile Age Title-->
@@ -139,7 +147,7 @@
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="10dp"/>
+                    android:translationY="10dp" />
 
                 <!-- Profile Age Image-->
                 <ImageView
@@ -155,15 +163,15 @@
                     android:layout_width="200dp"
                     android:layout_height="40dp"
                     android:background="@drawable/edit_text"
-                    android:textColor="#592D1D"
-                    android:singleLine="true"
-                    android:padding="10dp"
-                    android:inputType="number"
-                    android:textAlignment="center"
                     android:fontFamily="@font/salsa"
+                    android:inputType="number"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:textAlignment="center"
+                    android:textColor="#592D1D"
+                    android:textSize="18dp"
                     android:translationX="15dp"
-                    android:translationY="-30dp"
-                    android:textSize="18dp"/>
+                    android:translationY="-30dp" />
 
 
                 <!-- Profile Weight Title -->
@@ -175,7 +183,7 @@
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="10dp"/>
+                    android:translationY="10dp" />
 
                 <!-- Profile Weight Image-->
                 <ImageView
@@ -191,14 +199,14 @@
                     android:layout_width="200dp"
                     android:layout_height="40dp"
                     android:background="@drawable/edit_text"
-                    android:textColor="#592D1D"
                     android:fontFamily="@font/salsa"
                     android:inputType="number"
-                    android:textAlignment="center"
                     android:singleLine="true"
+                    android:textAlignment="center"
+                    android:textColor="#592D1D"
+                    android:textSize="18dp"
                     android:translationX="15dp"
-                    android:translationY="-30dp"
-                    android:textSize="18dp"/>
+                    android:translationY="-30dp" />
 
                 <!-- Profile Height Title-->
                 <TextView
@@ -209,7 +217,7 @@
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="10dp"/>
+                    android:translationY="10dp" />
 
                 <!-- Profile Height Image-->
                 <ImageView
@@ -225,14 +233,14 @@
                     android:layout_width="200dp"
                     android:layout_height="40dp"
                     android:background="@drawable/edit_text"
-                    android:textColor="#592D1D"
                     android:fontFamily="@font/salsa"
                     android:inputType="number"
-                    android:textAlignment="center"
                     android:singleLine="true"
+                    android:textAlignment="center"
+                    android:textColor="#592D1D"
+                    android:textSize="18dp"
                     android:translationX="15dp"
-                    android:translationY="-30dp"
-                    android:textSize="18dp" />
+                    android:translationY="-30dp" />
 
 
                 <!-- Profile Level of exercise Title -->
@@ -244,7 +252,7 @@
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="10dp"/>
+                    android:translationY="10dp" />
 
                 <!-- Profile Level of exercise Image -->
                 <ImageView
@@ -273,7 +281,7 @@
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="10dp"/>
+                    android:translationY="10dp" />
 
                 <!-- Profile Cardio exercise -->
                 <ImageView
@@ -302,7 +310,7 @@
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="10dp"/>
+                    android:translationY="10dp" />
 
                 <!-- Profile Exercise impact Image-->
                 <ImageView
@@ -331,7 +339,7 @@
                     android:textColor="#000000"
                     android:textSize="25dp"
                     android:translationX="15dp"
-                    android:translationY="10dp"/>
+                    android:translationY="10dp" />
 
                 <!-- Profile Objetive Image-->
                 <ImageView
@@ -358,14 +366,14 @@
                     android:layout_width="192dp"
                     android:layout_height="70dp"
                     android:layout_gravity="center_horizontal"
+                    android:layout_marginVertical="20dp"
                     android:layout_marginTop="390sp"
+                    android:layout_marginBottom="20dp"
                     android:background="@drawable/button"
                     android:fontFamily="@font/salsa"
                     android:text="SAVE"
                     android:textColor="#FFE9C5"
-                    android:textSize="30dp"
-                    android:layout_marginVertical="20dp"
-                    android:layout_marginBottom="20dp" />
+                    android:textSize="30dp" />
 
             </LinearLayout>
 

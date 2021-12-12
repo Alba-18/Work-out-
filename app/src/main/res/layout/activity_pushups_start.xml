@@ -15,37 +15,47 @@
         android:layout_marginHorizontal="25sp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="17dp"
         android:background="@drawable/arrow_back"
         android:translationX="3dp"
         android:translationY="3dp"
+        app:layout_constraintBottom_toTopOf="@+id/GreenFrameMain"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <!--Main Settings-->
+
+    <!--Main Profile-->
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/SettingsMain"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_gravity="center_vertical"
+        android:layout_marginBottom="22dp"
         android:background="@drawable/help"
-        android:translationX="300dp"
-        android:translationY="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/GreenFrameMain"
+        app:layout_constraintEnd_toStartOf="@+id/ProfilesMain"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <!--Main Profile-->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/ProfilesMain"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_gravity="center_vertical"
-        android:background="@drawable/settings"
-        android:translationX="355dp"
-        android:translationY="15dp"
+        android:layout_marginBottom="22dp"
+        android:background="@drawable/profile"
+        app:layout_constraintBottom_toTopOf="@+id/GreenFrameMain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.955"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <FrameLayout
@@ -87,10 +97,11 @@
             <ImageView
                 android:layout_width="117dp"
                 android:layout_height="117dp"
+                android:layout_gravity="left|top"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="70dp"
-                android:layout_gravity="left|top"
                 android:background="@drawable/push_up" />
+
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
@@ -109,6 +120,7 @@
                 android:text="30 min"
                 android:textColor="#592D1D"
                 android:textSize="25dp" />
+
             <FrameLayout
                 android:layout_width="150dp"
                 android:layout_height="40dp"
@@ -126,6 +138,7 @@
                     android:textColor="#592D1D"
                     android:textSize="25dp" />
             </FrameLayout>
+
             <FrameLayout
                 android:layout_width="300dp"
                 android:layout_height="60dp"
@@ -136,23 +149,25 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textAlignment="center"
                     android:fontFamily="@font/salsa"
                     android:text="Find a place with enough space and get ready"
+                    android:textAlignment="center"
                     android:textColor="#592D1D"
                     android:textSize="25dp" />
             </FrameLayout>
+
             <FrameLayout
                 android:layout_width="300dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="300dp"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginTop="300dp"
                 android:background="@drawable/lightshape">
+
                 <ImageView
                     android:layout_width="55dp"
                     android:layout_height="55dp"
-                    android:layout_marginLeft="10dp"
                     android:layout_gravity="left|center"
+                    android:layout_marginLeft="10dp"
                     android:background="@drawable/push_up" />
 
                 <!--Level Text -->
@@ -166,31 +181,33 @@
                     android:textColor="#592D1D"
                     android:textSize="25dp" />
             </FrameLayout>
+
             <FrameLayout
                 android:layout_width="300dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="160dp"
                 android:layout_gravity="center"
+                android:layout_marginTop="160dp"
                 android:background="@drawable/lightshape">
 
                 <!--Level Text -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textAlignment="center"
                     android:fontFamily="@font/salsa"
                     android:text="60 seconds rest between series"
+                    android:textAlignment="center"
                     android:textColor="#592D1D"
                     android:textSize="25dp" />
             </FrameLayout>
 
         </FrameLayout>
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/activitiesbuttonmain"
             android:layout_width="300dp"
             android:layout_height="60dp"
-            android:layout_marginBottom="10dp"
             android:layout_gravity="bottom|center"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/button"
             android:fontFamily="@font/salsa"
             android:text="start workout"

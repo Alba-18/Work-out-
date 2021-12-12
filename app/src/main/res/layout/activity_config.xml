@@ -43,23 +43,22 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <!-- Help config -->
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/helpConfig"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_gravity="center_vertical"
-        android:layout_marginHorizontal="25sp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="22dp"
+
         android:background="@drawable/help"
         app:layout_constraintBottom_toTopOf="@+id/profileLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/config"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="SpeakableTextPresentCheck"  />
 
     <LinearLayout
         android:id="@+id/profileLayout"

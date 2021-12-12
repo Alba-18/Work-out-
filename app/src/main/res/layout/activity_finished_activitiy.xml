@@ -15,9 +15,11 @@
         android:layout_marginHorizontal="25sp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="17dp"
         android:background="@drawable/arrow_back"
         android:translationX="3dp"
         android:translationY="3dp"
+        app:layout_constraintBottom_toTopOf="@+id/GreenFrameMain"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
@@ -65,8 +67,8 @@
             <ImageView
                 android:layout_width="130dp"
                 android:layout_height="130dp"
-                android:layout_marginTop="70dp"
                 android:layout_gravity="top|center"
+                android:layout_marginTop="70dp"
                 android:background="@drawable/clapping" />
 
             <!-- Time Text-->
@@ -86,11 +88,12 @@
                     android:textAlignment="center"
                     android:textColor="#592D1D"
                     android:textSize="25dp" />
+
                 <TextView
                     android:id="@+id/info_finished_exercise"
                     android:layout_width="match_parent"
-                    android:layout_marginTop="46dp"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="46dp"
                     android:fontFamily="@font/salsa"
                     android:text="*get from exercise*"
                     android:textAlignment="center"
@@ -99,12 +102,13 @@
             </FrameLayout>
 
         </FrameLayout>
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/activitiesbuttonmain"
             android:layout_width="300dp"
             android:layout_height="60dp"
-            android:layout_marginBottom="10dp"
             android:layout_gravity="bottom|center"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/button"
             android:fontFamily="@font/salsa"
             android:text="FINISH"
