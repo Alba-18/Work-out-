@@ -86,16 +86,29 @@
                     android:textAlignment="center"
                     android:textColor="#592D1D"
                     android:textSize="25dp" />
+
                 <TextView
-                    android:id="@+id/info_finished_exercise"
+                    android:id="@+id/info_finished_exercise_number"
                     android:layout_width="match_parent"
-                    android:layout_marginTop="46dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="40dp"
                     android:fontFamily="@font/salsa"
                     android:text="*get from exercise*"
                     android:textAlignment="center"
                     android:textColor="#592D1D"
                     android:textSize="25dp" />
+
+                <TextView
+                    android:id="@+id/info_finished_exercise"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:fontFamily="@font/salsa"
+                    android:text="*get from exercise*"
+                    android:textAlignment="center"
+                    android:textColor="#592D1D"
+                    android:textSize="25dp" />
+
             </FrameLayout>
 
         </FrameLayout>

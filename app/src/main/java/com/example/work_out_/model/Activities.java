@@ -4,10 +4,9 @@ public class Activities {
     private String description,name;
     private int[] sets = new int[]{2,3,4,5,2,3};
 
-    public Activities(String description, String name, User user) {
-        String level = user.getLevelOfExercise();
+    public Activities(String description, String name, String userDificulty) {
         int difficulty;
-        switch (level){
+        switch (userDificulty){
             case "Beginner":
                 difficulty = 1;
                 break;
