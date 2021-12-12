@@ -1,6 +1,7 @@
 package com.example.work_out_.activities;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -15,10 +16,13 @@ import com.example.work_out_.sensors.Gyroscope;
 
 public class RestActivity extends AppCompatActivity {
     private TextView counterView;
-
+    Intent getActualSet,goToPushUps;
+    int actualSet;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        getActualSet = getIntent();
+        actualSet = getActualSet.getIntExtra("sets",1);
         setContentView(R.layout.activity_rest);
         counterView = findViewById(R.id.rest_counter);
         timer();
@@ -26,7 +30,9 @@ public class RestActivity extends AppCompatActivity {
         View.OnClickListener actionButtonListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(RestActivity.this,"TERMINADO",Toast.LENGTH_SHORT).show();
+                goToPushUps = new Intent(getApplicationContext(),PushUpsDoingActivity.class);
+                goToPushUps.putExtra("sets",actualSet + 1);
+                startActivity(goToPushUps);
             }
         };
 
@@ -49,7 +55,9 @@ public class RestActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                Toast.makeText(RestActivity.this,"TERMINADO",Toast.LENGTH_SHORT).show();
+                goToPushUps = new Intent(getApplicationContext(),PushUpsDoingActivity.class);
+                goToPushUps.putExtra("sets",actualSet + 1);
+                startActivity(goToPushUps);
             }
         }.start();
     }

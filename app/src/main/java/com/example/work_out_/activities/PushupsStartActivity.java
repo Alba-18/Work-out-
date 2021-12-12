@@ -50,7 +50,7 @@ public class PushupsStartActivity extends AppCompatActivity implements View.OnCl
                 userProfile = snapshot.getValue(User.class);
 
                 if(userProfile != null){
-                    Activities activity = new Activities("description","push-ups",userProfile);
+                    Activities activity = new Activities("description","push-ups",userProfile.getLevelOfExercise());
                     setUpText(userProfile.getLevelOfExercise(),activity.getSets());
 
                 }

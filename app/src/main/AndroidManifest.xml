@@ -37,11 +37,18 @@
         <activity
             android:name=".ForgotPasswordActivity"
             android:exported="false" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".ProfileActivity" /> <!-- <activity android:name=".ConfigActivity" />¡ -->
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".ActivitiesActivity" />
-        <activity android:name=".ConfigActivity" />
         <activity android:name=".FinishedExerciseActivity" />
+        <activity android:name=".ConfigActivity" />
+        <activity android:name=".activities.PushupsStartActivity" />
+        <activity android:name=".activities.PushUpsDoingActivity"/>
+        <activity android:name=".activities.RunningStartActivity" />
+        <activity android:name=".activities.SitupsStartActivity" />
+        <activity android:name=".activities.WalkingStartActivity" />
+        <activity android:name=".activities.RestActivity"/>
+        <activity android:name=".ActivitiesActivity" />
 
 
         <service
@@ -55,7 +62,7 @@
             </intent-filter>
         </service> <!-- <activity android:name=".RegisterActivity"></activity> -->
         <activity
-            android:name=".HomeActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
