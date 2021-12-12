@@ -26,7 +26,7 @@
 
     <!-- Profile Row Back -->
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/goBackProfile"
+        android:id="@+id/goBackRegister"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_gravity="center_vertical"
@@ -34,6 +34,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/arrow_back"
+        android:onClick="onClick"
         android:translationX="3dp"
         android:translationY="3dp"
         app:layout_constraintStart_toStartOf="parent"

@@ -24,7 +24,7 @@
             android:layout_marginTop="40dp">
 
             <TextView
-                android:text="@string/help_text_activities"
+                android:text="In this screes you can find of the activities you can do. To get access to them, just tap on them."
                 android:layout_margin="30dp"
                 android:fontFamily="@font/salsa"
                 android:textSize="20dp"

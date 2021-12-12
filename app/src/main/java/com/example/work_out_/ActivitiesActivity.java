@@ -28,12 +28,12 @@ public class ActivitiesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_activities_screen);
         setUpText();
 
-        btn_open_popUp = (Button)findViewById(R.id.helpConfig);
+        btn_open_popUp = (Button)findViewById(R.id.HelpActivitiesScreen);
         btn_open_popUp.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View arg0){
                 layoutInflater =(LayoutInflater)getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
-                popupView = layoutInflater.inflate(R.layout.activity_config_help, null);
+                popupView = layoutInflater.inflate(R.layout.activity_help_pop_up, null);
                 popupWindow = new PopupWindow(popupView, RadioGroup.LayoutParams.WRAP_CONTENT,
                         RadioGroup.LayoutParams.WRAP_CONTENT);
                 btn_close = (Button)popupView.findViewById(R.id.id_close);
