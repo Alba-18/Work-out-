@@ -8,7 +8,7 @@
 
     <!--Main Row Back-->
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/MainRow"
+        android:id="@+id/Row_Push_Up"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_gravity="center_vertical"
@@ -24,12 +24,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <!--Main Help-->
-
-    <!--Main Settings-->
-
-    <!--Main Profile-->
-
+    <!--Help-->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/HelpMap"
         android:layout_width="48dp"
@@ -39,7 +34,7 @@
         android:background="@drawable/help"
 
         app:layout_constraintBottom_toTopOf="@+id/GreenFrameMain"
-        app:layout_constraintEnd_toStartOf="@+id/SettingsMain"
+        app:layout_constraintEnd_toStartOf="@+id/HelpPushUp"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -47,14 +42,14 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/SettingsMain"
+        android:id="@+id/HelpPushUp"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_gravity="center_vertical"
         android:layout_marginBottom="22dp"
         android:background="@drawable/settings"
         app:layout_constraintBottom_toTopOf="@+id/GreenFrameMain"
-        app:layout_constraintEnd_toStartOf="@+id/ProfilesMain"
+        app:layout_constraintEnd_toStartOf="@+id/ProfileWalking"
         app:layout_constraintHorizontal_bias="0.996"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -62,7 +57,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/ProfilesMain"
+        android:id="@+id/ProfileWalking"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_gravity="center_vertical"

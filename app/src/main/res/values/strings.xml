@@ -16,19 +16,15 @@
     <string name="font_size">Font Size:</string>
     <string name="save_button">SAVE</string>
 
-    <string name="help_text_activities">En esta pantalla podrás encontrar todas las actividades que
-    puedes realizar. Para acceder a ellas, simplemente presiona sobre su recuadro.</string>
+    <string name="help_text_activities">On this screen you can find all the activities that you can you can do. To access them, just click on the box</string>
 
-    <string name="help_text_config">En esta pantalla podrás subir y bajar el brillo de la pantalla y
-        activar o desactivar las notificaciones</string>
+    <string name="help_text_config">On this screen you can raise and lower the brightness of the screen and activate or turn notifications on or off</string>
 
-    <string name="help_text_activity">En esta pantalla podrás subir y bajar el brillo de la pantalla y
-        activar o desactivar las notificaciones</string>
+    <string name="help_text_activity">On this screen you will see the detailed information for each activity</string>
 
-    <string name="help_text_map">En esta pantalla podrás ver todos los lugares recomendados para
-    hacer ejercicio al aire libre</string>
+    <string name="help_text_map">On this screen you will be able to see all the places recommended for outdoor exercise</string>
 
-    <string name="help_text_profile">En esta pantalla podrás modificar y ver tus datos personales</string>
+    <string name="help_text_profile">In this screen you will be able to modify and view your personal data</string>
 
     <string name="home_image">Home screen image</string>
 </resources>

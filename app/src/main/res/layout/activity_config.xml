@@ -15,7 +15,7 @@
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/salsa"
         android:text="@string/configuration"
-        android:textColor="#592D1D"
+        android:textColor="#000000"
         android:textSize="35sp"
         app:layout_constraintBottom_toTopOf="@+id/profileLayout"
         app:layout_constraintEnd_toEndOf="parent"
