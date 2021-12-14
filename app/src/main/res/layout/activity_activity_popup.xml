@@ -24,6 +24,7 @@
             android:layout_marginTop="40dp">
 
             <TextView
+                android:id="@+id/textActivitiesPopup"
                 android:text="@string/help_text_activity"
                 android:layout_margin="30dp"
                 android:fontFamily="@font/salsa"
