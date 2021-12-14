@@ -24,7 +24,7 @@
             android:layout_marginTop="40dp">
 
             <TextView
-                android:text="@string/help_text_map"
+                android:text="In this screen you can see the recommended places neary to workout outdoor."
                 android:layout_margin="30dp"
                 android:fontFamily="@font/salsa"
                 android:textSize="20dp"

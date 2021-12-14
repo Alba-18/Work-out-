@@ -15,6 +15,7 @@ import android.widget.TextView;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.work_out_.activities.MapActivity;
 import com.example.work_out_.activities.PushupsStartActivity;
 import com.example.work_out_.activities.RunningStartActivity;
 import com.example.work_out_.activities.SitupsStartActivity;
@@ -105,13 +106,18 @@ public class ActivitiesActivity extends AppCompatActivity implements View.OnClic
             case R.id.SecondActivity:
                 startActivity(new Intent(getApplicationContext(), WalkingStartActivity.class));
                 break;
-
             case R.id.ThirdActivity:
                 startActivity(new Intent(getApplicationContext(), RunningStartActivity.class));
                 break;
             case R.id.FourthActivity:
                 startActivity(new Intent(getApplicationContext(), SitupsStartActivity.class));
                 break;
+            case R.id.mapbuttonmain:
+                startActivity(new Intent(getApplicationContext(), MapActivity.class));
+            case R.id.ProfileWalking:
+                startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+            case R.id.HelpPushUp:
+                startActivity(new Intent(getApplicationContext(), ConfigActivity.class));
         }
 
     }
