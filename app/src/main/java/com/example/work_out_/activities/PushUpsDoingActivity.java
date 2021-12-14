@@ -44,7 +44,6 @@ public class PushUpsDoingActivity extends AppCompatActivity {
             counterView = findViewById(R.id.pushups_counter);
             getActualSet = getIntent();
             int actualSet = getActualSet.getIntExtra("sets",0);
-            Toast.makeText(getApplicationContext(),Integer.toString(actualSet),Toast.LENGTH_LONG).show();
             user = FirebaseAuth.getInstance().getCurrentUser();
             reference = FirebaseDatabase.getInstance().getReference("users");
             userID = user.getUid();
@@ -65,6 +64,8 @@ public class PushUpsDoingActivity extends AppCompatActivity {
 
                 }
             });
+
+            numberOfPushUpsView.setText("objective:" + activity.getSets()[actualSet]);
             View.OnClickListener actionButtonListener = v -> {
 
                 String initialCounter = counterView.getText().toString();

@@ -28,31 +28,26 @@ public class MainActivity extends AppCompatActivity {
  */
 package com.example.work_out_;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText emailView, passView;
-    private Button loginButton;
 
     private FirebaseAuth mAuth;
 
@@ -63,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstance);
         setContentView(R.layout.activity_login);
 
-        loginButton = (Button) findViewById(R.id.login_button);
+        Button loginButton = (Button) findViewById(R.id.login_button);
         loginButton.setOnClickListener(this);
 
         emailView = (EditText) findViewById(R.id.user_Name);
@@ -85,11 +80,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.login_button:
-                userLogin();
+        if (v.getId() == R.id.login_button) {
+            userLogin();
         }
     }
 
@@ -112,26 +107,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             passView.requestFocus();
         }
 
-        mAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
+        mAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(task -> {
+            if(task.isSuccessful()){
 
-                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-                    if(user.isEmailVerified()){
-                        startActivity(new Intent(MainActivity.this,ProfileActivity.class));
-                    }
-                    else{
-                        user.sendEmailVerification();
-                        Toast.makeText(MainActivity.this, "Check your email to verify",Toast.LENGTH_SHORT).show();
-
-                    }
-
-                }else{
-                    Toast.makeText(MainActivity.this, "Failed to login" , Toast.LENGTH_LONG).show();
+                assert user != null;
+                if(user.isEmailVerified()){
+                    startActivity(new Intent(MainActivity.this,ProfileActivity.class));
+                }
+                else{
+                    user.sendEmailVerification();
+                    Toast.makeText(MainActivity.this, "Check your email to verify",Toast.LENGTH_SHORT).show();
 
                 }
+
+            }else{
+                Toast.makeText(MainActivity.this, "Failed to login" , Toast.LENGTH_LONG).show();
+
             }
         });
     }

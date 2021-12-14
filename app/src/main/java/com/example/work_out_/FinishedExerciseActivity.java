@@ -3,17 +3,23 @@ package com.example.work_out_;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class FinishedExerciseActivity extends AppCompatActivity {
+public class FinishedExerciseActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private Button finishButton;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finished_activitiy);
+        finishButton = findViewById(R.id.activitiesbuttonmain);
+        finishButton.setOnClickListener(this);
         setUpText();
     }
 
@@ -27,5 +33,10 @@ public class FinishedExerciseActivity extends AppCompatActivity {
         String input = new String(name);
         numberView.setText(Integer.toString(number));
         info.setText(input);
+    }
+
+    @Override
+    public void onClick(View v) {
+        startActivity(new Intent(getApplicationContext(),ActivitiesActivity.class));
     }
 }

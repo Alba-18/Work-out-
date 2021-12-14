@@ -1,11 +1,13 @@
 package com.example.work_out_;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.PopupWindow;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -13,7 +15,12 @@ import android.widget.TextView;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ActivitiesActivity extends AppCompatActivity {
+import com.example.work_out_.activities.PushupsStartActivity;
+import com.example.work_out_.activities.RunningStartActivity;
+import com.example.work_out_.activities.SitupsStartActivity;
+import com.example.work_out_.activities.WalkingStartActivity;
+
+public class ActivitiesActivity extends AppCompatActivity implements View.OnClickListener {
     @RequiresApi(api = Build.VERSION_CODES.M)
 
     Button btn_open_popUp;
@@ -30,6 +37,7 @@ public class ActivitiesActivity extends AppCompatActivity {
 
         btn_open_popUp = (Button)findViewById(R.id.HelpActivitiesScreen);
         btn_open_popUp.setOnClickListener(new Button.OnClickListener(){
+            @SuppressLint("InflateParams")
             @Override
             public void onClick(View arg0){
                 layoutInflater =(LayoutInflater)getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
@@ -47,6 +55,14 @@ public class ActivitiesActivity extends AppCompatActivity {
 
             }});
 
+        FrameLayout activity1 = findViewById(R.id.FirstActivity);
+        FrameLayout activity2 = findViewById(R.id.SecondActivity);
+        FrameLayout activity3 = findViewById(R.id.ThirdActivity);
+        FrameLayout activity4 = findViewById(R.id.FourthActivity);
+        activity1.setOnClickListener(this);
+        activity2.setOnClickListener(this);
+        activity3.setOnClickListener(this);
+        activity4.setOnClickListener(this);
 
     }
 
@@ -75,6 +91,28 @@ public class ActivitiesActivity extends AppCompatActivity {
         timeSitups.setText(inputTS);
         timeWalking.setText(inputTW);
         timeRunning.setText(inputTR);
+
+
     }
 
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.FirstActivity:
+                startActivity(new Intent(getApplicationContext(), PushupsStartActivity.class));
+                break;
+            case R.id.SecondActivity:
+                startActivity(new Intent(getApplicationContext(), WalkingStartActivity.class));
+                break;
+
+            case R.id.ThirdActivity:
+                startActivity(new Intent(getApplicationContext(), RunningStartActivity.class));
+                break;
+            case R.id.FourthActivity:
+                startActivity(new Intent(getApplicationContext(), SitupsStartActivity.class));
+                break;
+        }
+
+    }
 }
