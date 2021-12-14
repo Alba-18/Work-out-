@@ -18,11 +18,14 @@ public class RestActivity extends AppCompatActivity {
     private TextView counterView;
     Intent getActualSet,goToPushUps;
     int actualSet;
+    String activityName ;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         getActualSet = getIntent();
         actualSet = getActualSet.getIntExtra("sets",1);
+        activityName = new String(getActualSet.getCharArrayExtra("name"));
+
         setContentView(R.layout.activity_rest);
         counterView = findViewById(R.id.rest_counter);
         timer();
@@ -30,9 +33,19 @@ public class RestActivity extends AppCompatActivity {
         View.OnClickListener actionButtonListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                goToPushUps = new Intent(getApplicationContext(),PushUpsDoingActivity.class);
-                goToPushUps.putExtra("sets",actualSet + 1);
-                startActivity(goToPushUps);
+                if(activityName.equals("pushups")){
+                    goToPushUps = new Intent(getApplicationContext(),PushUpsDoingActivity.class);
+                    goToPushUps.putExtra("sets",actualSet + 1);
+
+                    startActivity(goToPushUps);
+                }
+                else if(activityName.equals("sit-ups")){
+                    goToPushUps = new Intent(getApplicationContext(),SitUpsDoingActivity.class);
+                    goToPushUps.putExtra("sets",actualSet + 1);
+
+                    startActivity(goToPushUps);
+                }
+
             }
         };
 

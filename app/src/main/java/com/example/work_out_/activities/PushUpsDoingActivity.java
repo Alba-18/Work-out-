@@ -55,6 +55,7 @@ public class PushUpsDoingActivity extends AppCompatActivity {
 
                     if(userProfile != null){
                         activity = new Activities("description","pushups",userProfile.getLevelOfExercise());
+                        numberOfPushUpsView.setText("objective:" + activity.getSets()[actualSet]);
 
                     }
                 }
@@ -65,7 +66,6 @@ public class PushUpsDoingActivity extends AppCompatActivity {
                 }
             });
 
-            numberOfPushUpsView.setText("objective:" + activity.getSets()[actualSet]);
             View.OnClickListener actionButtonListener = v -> {
 
                 String initialCounter = counterView.getText().toString();
@@ -76,6 +76,7 @@ public class PushUpsDoingActivity extends AppCompatActivity {
 
                 if(activity.getSets()[actualSet] == number){
                     goToRest = new Intent(getApplicationContext(),RestActivity.class);
+                    goToRest.putExtra("name",activity.getName().toCharArray());
                     goToRest.putExtra("sets",actualSet);
                     startActivity(goToRest);
                 }
