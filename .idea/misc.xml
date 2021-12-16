@@ -18,8 +18,8 @@
         <entry key="..\:/Users/Pc/AndroidStudioProjects/Work-out-/app/src/main/res/layout/fragment_map.xml" value="0.1796875" />
         <entry key="..\:/Users/Pc/AndroidStudioProjects/Work-out-/app/src/main/res/layout/fragment_second.xml" value="0.1546875" />
         <entry key="app/src/main/res/drawable/activityshape.xml" value="0.3260416666666667" />
-        <entry key="app/src/main/res/layout/activity_activities_screen.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/activity_activity_popup.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_activities_screen.xml" value="0.1341991341991342" />
+        <entry key="app/src/main/res/layout/activity_activity_popup.xml" value="0.17549668874172186" />
         <entry key="app/src/main/res/layout/activity_config.xml" value="0.32608695652173914" />
         <entry key="app/src/main/res/layout/activity_config_help.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_finished_activitiy.xml" value="0.3098958333333333" />
@@ -30,11 +30,11 @@
         <entry key="app/src/main/res/layout/activity_main_screen.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_map.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_map_popup.xml" value="0.3098958333333333" />
-        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.250814332247557" />
         <entry key="app/src/main/res/layout/activity_profile_popup.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_pullups_doing.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_pushups.xml" value="0.3098958333333333" />
-        <entry key="app/src/main/res/layout/activity_pushups_doing.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_pushups_doing.xml" value="0.16725978647686832" />
         <entry key="app/src/main/res/layout/activity_pushups_start.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_rest.xml" value="0.3098958333333333" />
