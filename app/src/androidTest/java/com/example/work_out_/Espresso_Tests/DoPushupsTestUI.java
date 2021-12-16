@@ -1,4 +1,4 @@
-package com.example.work_out_.activities;
+package com.example.work_out_.Espresso_Tests;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;

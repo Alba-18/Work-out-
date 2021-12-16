@@ -1,4 +1,4 @@
-package com.example.work_out_.activities;
+package com.example.work_out_.Espresso_Tests;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,12 +18,9 @@ import android.widget.RadioGroup;
 
 import com.example.work_out_.ActivitiesActivity;
 import com.example.work_out_.ConfigActivity;
-import com.example.work_out_.ForgotPasswordActivity;
 import com.example.work_out_.JsonParser;
-import com.example.work_out_.LoginActivity;
 import com.example.work_out_.ProfileActivity;
 import com.example.work_out_.R;
-import com.example.work_out_.RegisterActivity;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;

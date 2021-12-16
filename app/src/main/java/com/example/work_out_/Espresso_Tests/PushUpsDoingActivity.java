@@ -1,4 +1,4 @@
-package com.example.work_out_.activities;
+package com.example.work_out_.Espresso_Tests;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +14,6 @@ import com.example.work_out_.FinishedExerciseActivity;
 import com.example.work_out_.R;
 import com.example.work_out_.model.Activities;
 import com.example.work_out_.model.User;
-import com.example.work_out_.sensors.Gyroscope;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;

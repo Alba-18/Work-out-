@@ -1,18 +1,15 @@
-package com.example.work_out_.activities;
+package com.example.work_out_.Espresso_Tests;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.work_out_.R;
-import com.example.work_out_.sensors.Gyroscope;
 
 public class RestActivity extends AppCompatActivity {
     private TextView counterView;

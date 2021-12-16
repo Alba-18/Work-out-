@@ -15,11 +15,11 @@ import android.widget.TextView;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.work_out_.activities.MapActivity;
-import com.example.work_out_.activities.PushupsStartActivity;
-import com.example.work_out_.activities.RunningStartActivity;
-import com.example.work_out_.activities.SitupsStartActivity;
-import com.example.work_out_.activities.WalkingStartActivity;
+import com.example.work_out_.Espresso_Tests.MapActivity;
+import com.example.work_out_.Espresso_Tests.PushupsStartActivity;
+import com.example.work_out_.Espresso_Tests.RunningStartActivity;
+import com.example.work_out_.Espresso_Tests.SitupsStartActivity;
+import com.example.work_out_.Espresso_Tests.WalkingStartActivity;
 
 public class ActivitiesActivity extends AppCompatActivity implements View.OnClickListener {
     @RequiresApi(api = Build.VERSION_CODES.M)

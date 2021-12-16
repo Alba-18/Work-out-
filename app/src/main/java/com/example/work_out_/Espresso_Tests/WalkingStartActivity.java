@@ -1,4 +1,4 @@
-package com.example.work_out_.activities;
+package com.example.work_out_.Espresso_Tests;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.work_out_.R;
 
-public class RunningStartActivity extends AppCompatActivity {
+public class WalkingStartActivity extends AppCompatActivity {
 
     Button btn_open_popUp;
     Button btn_close;
@@ -24,10 +24,10 @@ public class RunningStartActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_running_start);
+        setContentView(R.layout.activity_walking_start);
         setUpText();
 
-        btn_open_popUp = (Button)findViewById(R.id.HelpRunning);
+        btn_open_popUp = (Button)findViewById(R.id.HelpWalking);
         btn_open_popUp.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View arg0){
@@ -48,8 +48,8 @@ public class RunningStartActivity extends AppCompatActivity {
     }
 
     private void setUpText(){
-        TextView time = findViewById(R.id.time_start_running);
-        TextView difficulty = findViewById(R.id.difficulty_start_running);
+        TextView time = findViewById(R.id.time_start_walking);
+        TextView difficulty = findViewById(R.id.difficulty_start_walking);
 
         //Get from database
         //is a series needed for running and walking???
