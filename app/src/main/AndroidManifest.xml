@@ -6,9 +6,12 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INSTALL_GRANT_RUNTIME_PERMISSIONS"/>
+
     <uses-permission
         android:name="android.permission.WRITE_SETTINGS"
-        android:maxSdkVersion="31" />
+        android:maxSdkVersion="31"
+        />
 
     <application
         android:allowBackup="true"
@@ -47,7 +50,7 @@
         <activity android:name=".activities.PushupsStartActivity" android:exported="true"/>
         <activity android:name=".activities.PushUpsDoingActivity" android:exported="true"/>
         <activity android:name=".activities.RestActivity" android:exported="true"/>
-
+        <activity android:name=".activities.SitUpsDoingActivity" android:exported="true"/>
 
         <service
             android:name=".NotificationService"

@@ -59,4 +59,17 @@ public class ForgotPasswordActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void onClick(View v){
+        switch (v.getId()){
+
+            case R.id.goBackForgotPassword:
+                startActivity(new Intent(ForgotPasswordActivity.this, LoginActivity.class));
+                break;
+        }
+
+    }
+
+
+
 }

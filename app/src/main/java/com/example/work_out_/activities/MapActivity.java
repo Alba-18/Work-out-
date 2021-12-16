@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.AsyncTask;
@@ -15,8 +16,14 @@ import android.widget.Button;
 import android.widget.PopupWindow;
 import android.widget.RadioGroup;
 
+import com.example.work_out_.ActivitiesActivity;
+import com.example.work_out_.ConfigActivity;
+import com.example.work_out_.ForgotPasswordActivity;
 import com.example.work_out_.JsonParser;
+import com.example.work_out_.LoginActivity;
+import com.example.work_out_.ProfileActivity;
 import com.example.work_out_.R;
+import com.example.work_out_.RegisterActivity;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -199,4 +206,19 @@ public class MapActivity extends AppCompatActivity {
             }
         }
     }
+
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.activitiesbuttonmain:
+                startActivity(new Intent(MapActivity.this, ActivitiesActivity.class));
+                break;
+            case R.id.ProfileWalking:
+                startActivity(new Intent(MapActivity.this, ProfileActivity.class));
+                break;
+            case R.id.HelpPushUp:
+                startActivity(new Intent(MapActivity.this, ConfigActivity.class));
+                break;
+        }
+    }
+
 }
