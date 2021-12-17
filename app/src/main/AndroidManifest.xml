@@ -39,19 +39,17 @@
             android:value="AIzaSyCqbo86VByiGB8AKpuMo5MK9b6ZHULj_vs"
             />
 
-        <activity
-            android:name=".ForgotPasswordActivity"
-            android:exported="true" />
+        <activity android:name=".ForgotPasswordActivity" android:exported="true" />
         <activity android:name=".LoginActivity" android:exported="true"/>
         <activity android:name=".RegisterActivity" android:exported="true"/>
         <activity android:name=".ActivitiesActivity" android:exported="true"/>
         <activity android:name=".ConfigActivity" android:exported="true"/>
-        <activity android:name=".FinishedExerciseActivity" android:exported="false"/>
+        <activity android:name=".FinishedExerciseActivity" android:exported="true"/>
         <activity android:name=".Espresso_Tests.PushupsStartActivity" android:exported="true"/>
-        <activity android:name=".Espresso_Tests.PushUpsDoingActivity" android:exported="false"/>
+        <activity android:name=".Espresso_Tests.PushUpsDoingActivity" android:exported="true"/>
         <activity android:name=".Espresso_Tests.RestActivity" android:exported="true"/>
         <activity android:name=".Espresso_Tests.SitUpsDoingActivity" android:exported="true"/>
-        <activity android:name=".ProfileActivity" android:exported="false"/>
+        <activity android:name=".ProfileActivity" android:exported="true"/>
 
         <service
             android:name=".NotificationService"

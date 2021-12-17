@@ -132,7 +132,7 @@
 
         <!--Map Button-->
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/mapbuttonmain"
+            android:id="@+id/gotomapbuttonmain"
             android:layout_width="182dp"
             android:layout_height="60dp"
             android:layout_gravity="bottom|right"

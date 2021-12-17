@@ -112,7 +112,7 @@ public class ActivitiesActivity extends AppCompatActivity implements View.OnClic
             case R.id.FourthActivity:
                 startActivity(new Intent(getApplicationContext(), SitupsStartActivity.class));
                 break;
-            case R.id.mapbuttonmain:
+            case R.id.gotomapbuttonmain:
                 startActivity(new Intent(getApplicationContext(), MapActivity.class));
             case R.id.ProfileWalking:
                 startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
