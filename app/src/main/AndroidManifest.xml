@@ -48,9 +48,10 @@
         <activity android:name=".ConfigActivity" android:exported="true"/>
         <activity android:name=".FinishedExerciseActivity" android:exported="false"/>
         <activity android:name=".Espresso_Tests.PushupsStartActivity" android:exported="true"/>
-        <activity android:name=".Espresso_Tests.PushUpsDoingActivity" android:exported="true"/>
+        <activity android:name=".Espresso_Tests.PushUpsDoingActivity" android:exported="false"/>
         <activity android:name=".Espresso_Tests.RestActivity" android:exported="true"/>
         <activity android:name=".Espresso_Tests.SitUpsDoingActivity" android:exported="true"/>
+        <activity android:name=".ProfileActivity" android:exported="false"/>
 
         <service
             android:name=".NotificationService"
