@@ -78,7 +78,7 @@ public class PushUpsDoingActivity extends AppCompatActivity {
                     goToRest.putExtra("sets",actualSet);
                     startActivity(goToRest);
                 }
-                else if(actualSet == 5){
+                else{
                     Intent goToFinishExercise = new Intent(getApplicationContext(),FinishedExerciseActivity.class);
                     int[] numberOfPushUps = activity.getSets();
                     int n = 0;

@@ -82,7 +82,7 @@
 
                 <!-- Register Name -->
                 <EditText
-                    android:id="@+id/user_Name"
+                    android:id="@+id/user_Name_Register"
                     android:layout_width="200dp"
                     android:layout_height="40dp"
                     android:background="@drawable/edit_text"

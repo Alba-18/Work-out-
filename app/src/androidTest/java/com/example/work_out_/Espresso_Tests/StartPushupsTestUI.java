@@ -20,8 +20,6 @@ public class StartPushupsTestUI {
 
     @Test
     public void openPopup(){
-        LoginTestUI login = new LoginTestUI();
-        login.doLogin();
         onView(withId(R.id.HelpPushUp)).perform(click());
         onView(withId(R.id.textActivitiesPopup)).check(matches(withText("On this screen you will see the detailed information for each activity")));
     }

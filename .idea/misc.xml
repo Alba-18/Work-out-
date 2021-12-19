@@ -3,6 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Antonio/AndroidStudioProjects/Work-out-/app/src/main/res/layout/activity_activities_screen.xml" value="0.264" />
+        <entry key="..\:/Users/Antonio/AndroidStudioProjects/Work-out-/app/src/main/res/layout/activity_activity_popup.xml" value="0.4" />
+        <entry key="..\:/Users/Antonio/AndroidStudioProjects/Work-out-/app/src/main/res/layout/activity_config_help.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Antonio/AndroidStudioProjects/Work-out-/app/src/main/res/layout/activity_finished_activitiy.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Antonio/AndroidStudioProjects/Work-out-/app/src/main/res/layout/activity_home_screen.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Antonio/AndroidStudioProjects/Work-out-/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Antonio/AndroidStudioProjects/Work-out-/app/src/main/res/layout/activity_map_pop_up.xml" value="0.4" />
+        <entry key="..\:/Users/Antonio/AndroidStudioProjects/Work-out-/app/src/main/res/layout/activity_profile.xml" value="0.2536231884057971" />
+        <entry key="..\:/Users/Antonio/AndroidStudioProjects/Work-out-/app/src/main/res/layout/activity_profile_popup.xml" value="0.72" />
+        <entry key="..\:/Users/Antonio/AndroidStudioProjects/Work-out-/app/src/main/res/layout/activity_pushups_doing.xml" value="0.24048913043478262" />
+        <entry key="..\:/Users/Antonio/AndroidStudioProjects/Work-out-/app/src/main/res/layout/activity_pushups_start.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Antonio/AndroidStudioProjects/Work-out-/app/src/main/res/layout/activity_register.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Antonio/AndroidStudioProjects/Work-out-/app/src/main/res/layout/activity_running_start.xml" value="0.1453804347826087" />
+        <entry key="..\:/Users/Antonio/AndroidStudioProjects/Work-out-/app/src/main/res/layout/activity_runningwalking_doing.xml" value="0.1" />
+        <entry key="..\:/Users/Antonio/AndroidStudioProjects/Work-out-/app/src/main/res/layout/activity_situps_doing.xml" value="0.15534420289855072" />
+        <entry key="..\:/Users/Antonio/AndroidStudioProjects/Work-out-/app/src/main/res/layout/activity_situps_start.xml" value="0.2" />
         <entry key="..\:/Users/Pc/AndroidStudioProjects/Work-out-/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/Pc/AndroidStudioProjects/Work-out-/app/src/main/res/drawable/arrow_back.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/Pc/AndroidStudioProjects/Work-out-/app/src/main/res/drawable/button.xml" value="0.19583333333333333" />
@@ -17,30 +33,19 @@
         <entry key="..\:/Users/Pc/AndroidStudioProjects/Work-out-/app/src/main/res/layout/fragment_first.xml" value="0.1546875" />
         <entry key="..\:/Users/Pc/AndroidStudioProjects/Work-out-/app/src/main/res/layout/fragment_map.xml" value="0.1796875" />
         <entry key="..\:/Users/Pc/AndroidStudioProjects/Work-out-/app/src/main/res/layout/fragment_second.xml" value="0.1546875" />
-        <entry key="..\:/Users/sergi/StudioProjects/Work-out-/app/src/main/res/layout/activity_activities_screen.xml" value="0.16394927536231885" />
-        <entry key="..\:/Users/sergi/StudioProjects/Work-out-/app/src/main/res/layout/activity_forget_password.xml" value="0.10597826086956522" />
-        <entry key="..\:/Users/sergi/StudioProjects/Work-out-/app/src/main/res/layout/activity_map.xml" value="0.10597826086956522" />
-        <entry key="..\:/Users/sergi/StudioProjects/Work-out-/app/src/main/res/layout/activity_profile.xml" value="0.11911231884057971" />
-        <entry key="..\:/Users/sergi/StudioProjects/Work-out-/app/src/main/res/layout/activity_register.xml" value="0.10597826086956522" />
         <entry key="app/src/main/res/drawable/activityshape.xml" value="0.3260416666666667" />
-        <entry key="app/src/main/res/layout/activity_activities_screen.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/activity_activity_popup.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_activities_screen.xml" value="0.1578125" />
         <entry key="app/src/main/res/layout/activity_config.xml" value="0.32608695652173914" />
-        <entry key="app/src/main/res/layout/activity_config_help.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_finished_activitiy.xml" value="0.3098958333333333" />
-        <entry key="app/src/main/res/layout/activity_forget_password.xml" value="0.16621376811594202" />
-        <entry key="app/src/main/res/layout/activity_help_pop_up.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_home_screen.xml" value="0.32563405797101447" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.26979166666666665" />
         <entry key="app/src/main/res/layout/activity_main_screen.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_map.xml" value="0.375" />
-        <entry key="app/src/main/res/layout/activity_map_popup.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_map.xml" value="0.2028847992588998" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.3098958333333333" />
-        <entry key="app/src/main/res/layout/activity_profile_popup.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_pullups_doing.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_pushups.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_pushups_doing.xml" value="0.3098958333333333" />
-        <entry key="app/src/main/res/layout/activity_pushups_start.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_pushups_start.xml" value="0.1766304347826087" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_rest.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_running.xml" value="0.3098958333333333" />
@@ -48,9 +53,9 @@
         <entry key="app/src/main/res/layout/activity_runningwalking_doing.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_situps.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_situps_doing.xml" value="0.3098958333333333" />
-        <entry key="app/src/main/res/layout/activity_situps_start.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_situps_start.xml" value="0.1766304347826087" />
         <entry key="app/src/main/res/layout/activity_walking.xml" value="0.3098958333333333" />
-        <entry key="app/src/main/res/layout/activity_walking_start.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_walking_start.xml" value="0.1766304347826087" />
         <entry key="app/src/main/res/layout/fragment_activities_list.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/fragment_map.xml" value="0.24010416666666667" />

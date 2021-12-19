@@ -22,8 +22,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 public class SitUpsDoingActivity extends AppCompatActivity {
 
     private TextView counterView,numberOfSitUpsView;
@@ -64,23 +62,24 @@ public class SitUpsDoingActivity extends AppCompatActivity {
 
             }
         });
-        AtomicInteger count = new AtomicInteger();
+        final int[] count = {0};
         counterView.setText(Integer.toString(0));
         gyroscope = new Gyroscope(this);
 
         gyroscope.setListener((rx,ry,rz)-> {
             if(rx > 5.0f){
-                count.addAndGet(1);
-                counterView.setText(Integer.toString(count.get()));
-                if(activity.getSets()[actualSet] == count.get()){
-                    goToRest = new Intent(getApplicationContext(),RestActivity.class);
-                    goToRest.putExtra("name",activity.getName().toCharArray());
-                    goToRest.putExtra("sets",actualSet);
-                    startActivity(goToRest);
+                count[0] += 1 ;
+                counterView.setText(Integer.toString(count[0]));
+                if(actualSet < 5) {
+                    if (activity.getSets()[actualSet] == count[0]) {
+                        goToRest = new Intent(getApplicationContext(), RestActivity.class);
+                        goToRest.putExtra("name", activity.getName().toCharArray());
+                        goToRest.putExtra("sets", actualSet);
+                        startActivity(goToRest);
+                    }
                 }
-                else if(actualSet >= 5 ){
+                else{
                     Intent goToFinishExercise = new Intent(getApplicationContext(), FinishedExerciseActivity.class);
-                    goToRest.putExtra("sets",actualSet);
                     int[] numberOfSitUps = activity.getSets();
                     int n = 0;
                     for(int i = 0;i < numberOfSitUps.length; i++){
@@ -90,11 +89,8 @@ public class SitUpsDoingActivity extends AppCompatActivity {
                     goToFinishExercise.putExtra("number",n);
                     startActivity(goToFinishExercise);
                 }
-
-
             }
         });
-
 
     }
 

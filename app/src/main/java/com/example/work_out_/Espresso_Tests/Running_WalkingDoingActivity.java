@@ -22,6 +22,10 @@ import com.example.work_out_.sensors.CLocation;
 import java.util.Formatter;
 import java.util.Locale;
 
+/*
+ *  I did this class with the help of this video: https://www.youtube.com/watch?v=1vHlLWtjJAw
+ */
+
 public class Running_WalkingDoingActivity extends AppCompatActivity implements LocationListener {
 
     private TextView speedView;
