@@ -22,8 +22,8 @@ public class LoginTestUI {
 
     @Test
     public void doLogin(){
-        onView(withId(R.id.user_Name)).perform(typeText("23"), ViewActions.closeSoftKeyboard());
-        onView(withId(R.id.user_Password)).perform(typeText("23"), ViewActions.closeSoftKeyboard());
+        onView(withId(R.id.user_Name)).perform(typeText("aguchu2000m@gmail.com"), ViewActions.closeSoftKeyboard());
+        onView(withId(R.id.user_Password)).perform(typeText("123456"), ViewActions.closeSoftKeyboard());
         onView(withId(R.id.login_button)).perform(click());
     }
 }
