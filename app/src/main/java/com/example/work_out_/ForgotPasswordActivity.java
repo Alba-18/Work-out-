@@ -19,6 +19,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
 
     FirebaseAuth auth;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

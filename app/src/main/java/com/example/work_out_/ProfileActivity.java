@@ -1,6 +1,9 @@
 package com.example.work_out_;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -19,7 +22,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.request.RequestOptions;
 import com.example.work_out_.model.User;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -27,6 +33,12 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+
+import java.io.IOException;
 
 
 public class ProfileActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
@@ -57,6 +69,10 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
     private View popupView;
     private PopupWindow popupWindow;
 
+
+    private FirebaseStorage storage;
+    private StorageReference storageReference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,7 +83,8 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(intent, 3);
+                intent.setType("image/*");
+                startActivityForResult(intent, 1);
             }
         });
 
@@ -146,47 +163,75 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
                     String objetive = userProfile.getObjetive();
                     profileImageUri = userProfile.getImage();
 
-                    //profileImageView.setImageURI(profileImageUri);
+
+                    RequestOptions options = new RequestOptions()
+                            .centerCrop()
+                            .placeholder(R.mipmap.ic_launcher_round)
+                            .error(R.mipmap.ic_launcher_round);
+                    profileImageView = findViewById(R.id.profileImage);
+
+
+                    storage = FirebaseStorage.getInstance();
+                    StorageReference aaa
+                            = storage.getReference()
+                            .child(
+                                    "images/" + user.getUid().toString());
+
+                    //https://stackoverflow.com/questions/53617681/how-to-set-image-view-from-firebase-storage
+                    final long ONE_MEGABYTE = 1024 * 1024;
+                    aaa.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+                        @Override
+                        public void onSuccess(byte[] bytes) {
+                            Bitmap bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                            profileImageView.setImageBitmap(bmp);
+
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception exception) {
+                            //pass
+                        }
+                    });
+
                     profileNameView.setText(fullName);
                     profileAgeView.setText(age);
                     profileWeightView.setText(weight);
                     profileHeightView.setText(height);
 
-
                     switch (levelOfExercise){
                         case "Beginner":
-                            levelOfExerciseSpinner.setSelection(1);
+                            levelOfExerciseSpinner.setSelection(0);
                             break;
                         case "Intermediate":
-                            levelOfExerciseSpinner.setSelection(2);
+                            levelOfExerciseSpinner.setSelection(1);
                             break;
                         case "Advanced":
-                            levelOfExerciseSpinner.setSelection(3);
+                            levelOfExerciseSpinner.setSelection(2);
                             break;
                     }
 
                     switch (exerciseImpact){
                         case "Low":
-                            exerciseImpactSpinner.setSelection(1);
+                            exerciseImpactSpinner.setSelection(0);
                             break;
                         case "High":
-                            exerciseImpactSpinner.setSelection(2);
+                            exerciseImpactSpinner.setSelection(1);
                             break;
                     }
 
                     switch (objetive){
                         case "7 days":
-                            objetiveSpinner.setSelection(1);
+                            objetiveSpinner.setSelection(0);
                             break;
                         case "15 days":
-                            objetiveSpinner.setSelection(2);
+                            objetiveSpinner.setSelection(1);
                             break;
                         case "30 days":
-                            objetiveSpinner.setSelection(3);
+                            objetiveSpinner.setSelection(2);
                             break;
                     }
 
-                    Toast.makeText(ProfileActivity.this,fullName,Toast.LENGTH_LONG).show();
+                    Toast.makeText(ProfileActivity.this,"Welcome "+fullName,Toast.LENGTH_LONG).show();
 
 
 
@@ -224,21 +269,118 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
     }
 
 
+    //Code inspired from the following source: https://www.geeksforgeeks.org/android-how-to-upload-an-image-on-firebase-storage/
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        //Hay que checkear el tamaño de la imagen
-        if(resultCode == RESULT_OK && data != null ){
-            Uri selectedImage = data.getData();
-            ImageView imageView = findViewById(R.id.profileImage);
-            imageView.setImageURI(selectedImage);
-            userProfile.setImage(selectedImage);
-            reference.child(userID).setValue(userProfile);
-            //imageView.setBackground(Drawable.createFromPath("#B2BE50"));
+        if (requestCode == PICK_IMAGE
+                && resultCode == RESULT_OK
+                && data != null
+                && data.getData() != null) {
+
+            // Get the Uri of data
+            Uri filePath = data.getData();
+            try {
+
+                // Setting image on image view using Bitmap
+                Bitmap bitmap = MediaStore
+                        .Images
+                        .Media
+                        .getBitmap(
+                                getContentResolver(),
+                                filePath);
+                ImageView imageView = findViewById(R.id.profileImage);
+                imageView.setImageBitmap(bitmap);
+            }
+
+            catch (IOException e) {
+                // Log the exception
+                e.printStackTrace();
+            }
+
+
+
+
+
+            if (filePath != null) {
+
+                storage = FirebaseStorage.getInstance();
+                storageReference = storage.getReference();
+                // Code for showing progressDialog while uploading
+                ProgressDialog progressDialog
+                        = new ProgressDialog(this);
+                progressDialog.setTitle("Uploading...");
+                progressDialog.show();
+
+                // Defining the child of storageReference
+                StorageReference ref
+                        = storageReference
+                        .child(
+                                "images/"
+                                        + user.getUid().toString());
+
+                // adding listeners on upload
+                // or failure of image
+                ref.putFile(filePath)
+                        .addOnSuccessListener(
+                                new OnSuccessListener<UploadTask.TaskSnapshot>() {
+
+                                    @Override
+                                    public void onSuccess(
+                                            UploadTask.TaskSnapshot taskSnapshot)
+                                    {
+
+                                        // Image uploaded successfully
+                                        // Dismiss dialog
+                                        progressDialog.dismiss();
+                                        Toast
+                                                .makeText(ProfileActivity.this,
+                                                        "Image Uploaded!!",
+                                                        Toast.LENGTH_SHORT)
+                                                .show();
+                                    }
+                                })
+
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e)
+                            {
+
+                                // Error, Image not uploaded
+                                progressDialog.dismiss();
+                                Toast
+                                        .makeText(ProfileActivity.this,
+                                                "Failed " + e.getMessage(),
+                                                Toast.LENGTH_SHORT)
+                                        .show();
+                            }
+                        })
+                        .addOnProgressListener(
+                                new OnProgressListener<UploadTask.TaskSnapshot>() {
+
+                                    // Progress Listener for loading
+                                    // percentage on the dialog box
+                                    @Override
+                                    public void onProgress(
+                                            UploadTask.TaskSnapshot taskSnapshot)
+                                    {
+                                        double progress
+                                                = (100.0
+                                                * taskSnapshot.getBytesTransferred()
+                                                / taskSnapshot.getTotalByteCount());
+                                        progressDialog.setMessage(
+                                                "Uploaded "
+                                                        + (int)progress + "%");
+                                    }
+                                });
+            }
+        }
 
         }
 
-    }
+
+
+
 
 
     public void onItemSelected(AdapterView<?> parent, View view,
@@ -272,9 +414,15 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
             case R.id.profileSaveButton:
                 saveUser();
                 break;
-            case R.id.helpProfile:
+            case R.id.goBackProfile:
                 startActivity(new Intent(ProfileActivity.this,ActivitiesActivity.class));
                 break;
+            case R.id.logOutProfile:
+                FirebaseAuth.getInstance().signOut();
+                Toast.makeText(ProfileActivity.this,"Loggin out...",Toast.LENGTH_LONG).show();
+                startActivity(new Intent(ProfileActivity.this,LoginActivity.class));
+                break;
+
         }
     }
 
@@ -289,5 +437,6 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
         userProfile.setCardio(profileCardio);
 
         reference.child(userID).setValue(userProfile);
+        Toast.makeText(ProfileActivity.this,"Data saved",Toast.LENGTH_LONG).show();
     }
 }
