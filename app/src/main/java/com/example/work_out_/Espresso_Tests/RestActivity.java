@@ -13,7 +13,7 @@ import com.example.work_out_.R;
 
 public class RestActivity extends AppCompatActivity {
     private TextView counterView;
-    Intent getActualSet,goToPushUps;
+    Intent getActualSet,goToPushUps, goToSitups;
     int actualSet;
     String activityName ;
     @Override
@@ -37,10 +37,10 @@ public class RestActivity extends AppCompatActivity {
                     startActivity(goToPushUps);
                 }
                 else if(activityName.equals("sit-ups")){
-                    goToPushUps = new Intent(getApplicationContext(),SitUpsDoingActivity.class);
-                    goToPushUps.putExtra("sets",actualSet + 1);
+                    goToSitups = new Intent(getApplicationContext(),SitUpsDoingActivity.class);
+                    goToSitups.putExtra("sets",actualSet + 1);
 
-                    startActivity(goToPushUps);
+                    startActivity(goToSitups);
                 }
 
             }

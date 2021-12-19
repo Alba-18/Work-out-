@@ -47,8 +47,12 @@
         <activity android:name=".FinishedExerciseActivity" android:exported="true"/>
         <activity android:name=".Espresso_Tests.PushupsStartActivity" android:exported="true"/>
         <activity android:name=".Espresso_Tests.PushUpsDoingActivity" android:exported="true"/>
-        <activity android:name=".Espresso_Tests.RestActivity" android:exported="true"/>
         <activity android:name=".Espresso_Tests.SitUpsDoingActivity" android:exported="true"/>
+        <activity android:name=".Espresso_Tests.RestActivity" android:exported="true"/>
+        <activity android:name=".Espresso_Tests.SitupsStartActivity" android:exported="true"/>
+        <activity android:name=".Espresso_Tests.WalkingStartActivity" android:exported="true"/>
+        <activity android:name=".Espresso_Tests.Running_WalkingDoingActivity" android:exported="true"/>
+        <activity android:name=".Espresso_Tests.RunningStartActivity" android:exported="true"/>
         <activity android:name=".ProfileActivity" android:exported="true"/>
 
         <service
