@@ -16,9 +16,9 @@
     <string name="font_size">Font Size:</string>
     <string name="save_button">SAVE</string>
 
-    <string name="help_text_activities">On this screen you can find all the activities that you can you can do. To access them, just click on the box</string>
+    <string name="help_text_activities">On this screen you can find all the activities that you can do To access them, just click on the box</string>
 
-    <string name="help_text_config">On this screen you can raise and lower the brightness of the screen and activate or turn notifications on or off</string>
+    <string name="help_text_config">On this screen you can raise and lower the brightness of the screen and enable or disable notifications</string>
 
     <string name="help_text_activity">On this screen you will see the detailed information for each activity</string>
 

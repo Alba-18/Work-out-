@@ -114,10 +114,13 @@ public class ActivitiesActivity extends AppCompatActivity implements View.OnClic
                 break;
             case R.id.gotomapbuttonmain:
                 startActivity(new Intent(getApplicationContext(), MapActivity.class));
-            case R.id.ProfileWalking:
-                startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
-            case R.id.HelpPushUp:
-                startActivity(new Intent(getApplicationContext(), ConfigActivity.class));
+                break;
+            case R.id.ActivitiesGoToProfile:
+                startActivity(new Intent(ActivitiesActivity.this, ProfileActivity.class));
+                break;
+            case R.id.ActivitiesGoToConfig:
+                startActivity(new Intent(ActivitiesActivity.this, ConfigActivity.class));
+                break;
         }
 
     }
