@@ -19,6 +19,8 @@ public class DoPushupsTestUI {
 
     @Test
     public void doPushups(){
+        LoginTestUI login = new LoginTestUI();
+        login.doLogin();
         onView(withId(R.id.dopushup)).perform(click());
         onView(withId(R.id.pushups_counter)).check(matches(withText("1")));
     }

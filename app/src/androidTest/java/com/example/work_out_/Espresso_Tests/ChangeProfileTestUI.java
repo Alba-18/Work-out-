@@ -19,6 +19,8 @@ public class ChangeProfileTestUI {
 
     @Test
     public void changeAgeProfile(){
+        LoginTestUI login = new LoginTestUI();
+        login.doLogin();
         onView(withId(R.id.profileAge)).perform(typeText("23"), ViewActions.closeSoftKeyboard());
         onView(withId(R.id.profileSaveButton)).perform(click());
         onView(withId(R.id.profileAge)).check(matches(withText("23")));
