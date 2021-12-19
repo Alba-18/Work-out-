@@ -1,7 +1,7 @@
 package com.example.work_out_.model;
 
 public class Activities {
-    private String description,name;
+    private String description,name, userDificulty;
     private int[] sets = new int[]{2,3,4,5,2,3};
 
     public Activities(String description, String name, String userDificulty) {
@@ -25,6 +25,7 @@ public class Activities {
         }
         this.description = description;
         this.name = name;
+        this.userDificulty = userDificulty;
     }
 
 
@@ -46,6 +47,14 @@ public class Activities {
 
     public int[] getSets() {
         return sets;
+    }
+
+    public String getUserDificulty() {
+        return userDificulty;
+    }
+
+    public void setUserDificulty(String userDificulty) {
+        this.userDificulty = userDificulty;
     }
 
     public void setSets(int[] sets) {
