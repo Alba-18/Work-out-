@@ -7,22 +7,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <!--Main Row Back-->
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/Row_Push_Up"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_gravity="center_vertical"
-        android:layout_marginHorizontal="25sp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="17dp"
-        android:background="@drawable/arrow_back"
-        android:translationX="3dp"
-        android:translationY="3dp"
-        app:layout_constraintBottom_toTopOf="@+id/GreenFrameMain"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
 
     <!--Main Help-->
 
@@ -39,7 +23,7 @@
 
         android:background="@drawable/help"
         app:layout_constraintBottom_toTopOf="@+id/GreenFrameMain"
-        app:layout_constraintEnd_toStartOf="@+id/HelpPushUp"
+        app:layout_constraintEnd_toStartOf="@+id/ActivitiesGoToConfig"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -47,14 +31,15 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/HelpPushUp"
+        android:id="@+id/ActivitiesGoToConfig"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_gravity="center_vertical"
         android:layout_marginBottom="22dp"
         android:background="@drawable/settings"
+        android:onClick="onClick"
         app:layout_constraintBottom_toTopOf="@+id/GreenFrameMain"
-        app:layout_constraintEnd_toStartOf="@+id/ProfileWalking"
+        app:layout_constraintEnd_toStartOf="@+id/ActivitiesGoToProfile"
         app:layout_constraintHorizontal_bias="0.993"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -62,7 +47,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/ProfileWalking"
+        android:id="@+id/ActivitiesGoToProfile"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_gravity="center_vertical"

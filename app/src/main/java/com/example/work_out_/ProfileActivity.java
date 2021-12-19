@@ -1,10 +1,6 @@
 package com.example.work_out_;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -19,6 +15,9 @@ import android.widget.PopupWindow;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.work_out_.model.User;
 import com.google.firebase.auth.FirebaseAuth;
@@ -147,7 +146,7 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
                     String objetive = userProfile.getObjetive();
                     profileImageUri = userProfile.getImage();
 
-                    profileImageView.setImageURI(profileImageUri);
+                    //profileImageView.setImageURI(profileImageUri);
                     profileNameView.setText(fullName);
                     profileAgeView.setText(age);
                     profileWeightView.setText(weight);
