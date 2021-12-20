@@ -121,7 +121,7 @@ public class MapActivity extends AppCompatActivity {
                             map = googleMap;
                             map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(currentLat,currentLong),10));
                             String url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json" + "?location="+currentLat
-                                    + "," + currentLong + "&radius=1000" + "&type=" + "park" + "&sensor=true" + "&key="+"AIzaSyC9tRF0tFPZBseAFJ0WsLdUD_RulwZH9t8";
+                                    + "," + currentLong + "&radius=1000" + "&type=" + "park" + "&sensor=true" + "&key="+"";
 
                             new PlaceTask().execute(url);
                         }

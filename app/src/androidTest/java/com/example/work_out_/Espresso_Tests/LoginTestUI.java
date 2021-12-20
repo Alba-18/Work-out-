@@ -18,9 +18,10 @@ public class LoginTestUI {
     @Rule
     public ActivityTestRule<LoginActivity> loginRule = new ActivityTestRule<>(LoginActivity.class);
 
+    //This espresso test logs with an existing user and sees if the login is done successfully
     @Test
     public void doLogin(){
-        onView(withId(R.id.user_Name_Login)).perform(typeText("aguchu2000m@gmail.com"), ViewActions.closeSoftKeyboard());
+        onView(withId(R.id.user_Name_Login)).perform(typeText("miriamdefco@gmail.com"), ViewActions.closeSoftKeyboard());
         onView(withId(R.id.user_Password)).perform(typeText("123456"), ViewActions.closeSoftKeyboard());
         onView(withId(R.id.login_button)).perform(click());
     }
