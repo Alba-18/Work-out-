@@ -12,6 +12,8 @@ import android.os.Build;
 
 import androidx.core.app.NotificationCompat;
 
+
+//Code inspired from https://stackoverflow.com/questions/33055129/how-to-show-a-notification-everyday-at-acertain-time-even-when-the-app-is-close
 public class Notifications extends BroadcastReceiver {
 
     @Override

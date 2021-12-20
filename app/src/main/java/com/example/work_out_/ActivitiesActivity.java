@@ -36,6 +36,10 @@ public class ActivitiesActivity extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.activity_activities_screen);
         setUpText();
 
+        //Code inspired from the following resources:
+        // https://www.youtube.com/watch?v=6l3zWexsXyo&ab_channel=ChekoPeralta
+        // https://www.youtube.com/watch?v=nX9E5k0xhLQ&ab_channel=OscarCelis
+        // http://trucosandroidstudio.blogspot.com/2015/03/como-crear-un-popup-window-xlm-y-codigo.html
         btn_open_popUp = (Button)findViewById(R.id.HelpActivitiesScreen);
         btn_open_popUp.setOnClickListener(new Button.OnClickListener(){
             @SuppressLint("InflateParams")
