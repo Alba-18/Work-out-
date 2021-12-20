@@ -7,7 +7,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 
 public class Gyroscope {
-
+    //This code was inspired by this video: https://youtu.be/OPsVr44uCb8
     public interface Listener{
         void onRotation(float rx, float ry, float rz);
     }
