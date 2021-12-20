@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+/*This class has been done by following this tutorial: https://www.youtube.com/watch?v=pjFcJ6EB8Dg&t=912s
+ * by Android Coding on youtube*/
 public class JsonParser {
     private HashMap<String,String> parseJsonObject(JSONObject object){
         HashMap<String,String> dataList = new HashMap<>();

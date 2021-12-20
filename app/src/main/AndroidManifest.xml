@@ -45,14 +45,14 @@
         <activity android:name=".ActivitiesActivity" android:exported="true"/>
         <activity android:name=".ConfigActivity" android:exported="true"/>
         <activity android:name=".FinishedExerciseActivity" android:exported="true"/>
-        <activity android:name=".Espresso_Tests.PushupsStartActivity" android:exported="true"/>
-        <activity android:name=".Espresso_Tests.PushUpsDoingActivity" android:exported="true"/>
-        <activity android:name=".Espresso_Tests.SitUpsDoingActivity" android:exported="true"/>
-        <activity android:name=".Espresso_Tests.RestActivity" android:exported="true"/>
-        <activity android:name=".Espresso_Tests.SitupsStartActivity" android:exported="true"/>
-        <activity android:name=".Espresso_Tests.WalkingStartActivity" android:exported="true"/>
-        <activity android:name=".Espresso_Tests.Running_WalkingDoingActivity" android:exported="true"/>
-        <activity android:name=".Espresso_Tests.RunningStartActivity" android:exported="true"/>
+        <activity android:name=".Activities.PushupsStartActivity" android:exported="true"/>
+        <activity android:name=".Activities.PushUpsDoingActivity" android:exported="true"/>
+        <activity android:name=".Activities.SitUpsDoingActivity" android:exported="true"/>
+        <activity android:name=".Activities.RestActivity" android:exported="true"/>
+        <activity android:name=".Activities.SitupsStartActivity" android:exported="true"/>
+        <activity android:name=".Activities.WalkingStartActivity" android:exported="true"/>
+        <activity android:name=".Activities.Running_WalkingDoingActivity" android:exported="true"/>
+        <activity android:name=".Activities.RunningStartActivity" android:exported="true"/>
         <activity android:name=".ProfileActivity" android:exported="true"/>
 
         <service

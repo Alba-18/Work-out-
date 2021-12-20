@@ -1,4 +1,4 @@
-package com.example.work_out_.Espresso_Tests;
+package com.example.work_out_.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package com.example.work_out_.Espresso_Tests;
+package com.example.work_out_.Activities;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;

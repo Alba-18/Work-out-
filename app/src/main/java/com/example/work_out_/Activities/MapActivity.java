@@ -1,4 +1,4 @@
-package com.example.work_out_.Espresso_Tests;
+package com.example.work_out_.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -44,6 +44,8 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
 
+/*This class has been done by following this tutorial: https://www.youtube.com/watch?v=pjFcJ6EB8Dg&t=912s
+* by Android Coding on youtube*/
 public class MapActivity extends AppCompatActivity {
     SupportMapFragment supportMapFragment;
     GoogleMap map;
@@ -62,10 +64,9 @@ public class MapActivity extends AppCompatActivity {
         setContentView(R.layout.activity_map);
         supportMapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.google_map);
 
-        String placeType = "park";
-
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
+        //Check if the user has the permissions activated for the app to get the current location
         if (ActivityCompat.checkSelfPermission(MapActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             getCurrentLocation();
 
@@ -73,6 +74,7 @@ public class MapActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(MapActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION},44);
         }
 
+        //This is the help pop-up button
         btn_open_popUp = (Button)findViewById(R.id.HelpMap);
         btn_open_popUp.setOnClickListener(new Button.OnClickListener(){
             @Override
@@ -93,6 +95,7 @@ public class MapActivity extends AppCompatActivity {
             }});
     }
 
+    //This method gets the location of the user and searches the parks that are nearby
     private void getCurrentLocation() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
@@ -107,6 +110,7 @@ public class MapActivity extends AppCompatActivity {
         Task<Location> task = fusedLocationProviderClient.getLastLocation();
         task.addOnSuccessListener(new OnSuccessListener<Location>() {
             @Override
+            //If we can get the last location, the method recieves the coordinates and executes the url
             public void onSuccess(Location location) {
                 if(location != null){
                     currentLat = location.getLatitude();
@@ -117,7 +121,7 @@ public class MapActivity extends AppCompatActivity {
                             map = googleMap;
                             map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(currentLat,currentLong),10));
                             String url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json" + "?location="+currentLat
-                                    + "," + currentLong + "&radius=500" + "&type=" + "park" + "&sensor=true" + "&key="+"AIzaSyCqbo86VByiGB8AKpuMo5MK9b6ZHULj_vs";
+                                    + "," + currentLong + "&radius=1000" + "&type=" + "park" + "&sensor=true" + "&key="+"AIzaSyCqbo86VByiGB8AKpuMo5MK9b6ZHULj_vs";
 
                             new PlaceTask().execute(url);
                         }
@@ -155,7 +159,7 @@ public class MapActivity extends AppCompatActivity {
             new ParserTask().execute(s);
         }
     }
-
+    //Download the url with the info for the map
     private String downloadUrl(String string) throws IOException {
         URL url = new URL(string);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -175,6 +179,7 @@ public class MapActivity extends AppCompatActivity {
 
     private class ParserTask extends AsyncTask<String,Integer,List<HashMap<String,String>>>{
         @Override
+        //Get the list of the map places
         protected List<HashMap<String, String>> doInBackground(String... strings) {
             JsonParser jsonParser = new JsonParser();
             List<HashMap<String,String>> mapList = null;
@@ -189,6 +194,7 @@ public class MapActivity extends AppCompatActivity {
         }
 
         @Override
+        //After executing the screen
         protected void onPostExecute(List<HashMap<String,String>> hashMaps){
             for(int i=0; i<hashMaps.size(); i++){
                 HashMap<String,String> hashMapList = hashMaps.get(i);
@@ -206,12 +212,15 @@ public class MapActivity extends AppCompatActivity {
 
     public void onClick(View v) {
         switch (v.getId()){
+            //Go to the main activity
             case R.id.activitiesbuttonmain:
                 startActivity(new Intent(MapActivity.this, ActivitiesActivity.class));
                 break;
+                //Go to profile
             case R.id.profile_pushup:
                 startActivity(new Intent(MapActivity.this, ProfileActivity.class));
                 break;
+                //Go to help
             case R.id.HelpPushUp:
                 startActivity(new Intent(MapActivity.this, ConfigActivity.class));
                 break;
