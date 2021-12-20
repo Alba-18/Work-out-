@@ -13,6 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.work_out_.ActivitiesActivity;
+import com.example.work_out_.ProfileActivity;
 import com.example.work_out_.R;
 import com.example.work_out_.model.Activities;
 import com.example.work_out_.model.User;
@@ -36,6 +38,7 @@ public class PushupsStartActivity extends AppCompatActivity implements View.OnCl
 
     Button btn_open_popUp;
     Button btn_close;
+    Button btn_profile;
     LayoutInflater layoutInflater;
     View popupView;
     PopupWindow popupWindow;
@@ -88,6 +91,15 @@ public class PushupsStartActivity extends AppCompatActivity implements View.OnCl
                 popupWindow.showAsDropDown(btn_open_popUp);
 
             }});
+
+        btn_profile = (Button) findViewById(R.id.profile_pushup);
+        btn_profile.setOnClickListener(new Button.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PushupsStartActivity.this, ProfileActivity.class));
+            }
+        });
     }
 
     private void setUpText(String difficult,int[] setUps){

@@ -36,7 +36,7 @@
         android:layout_marginBottom="22dp"
         android:background="@drawable/help"
         app:layout_constraintBottom_toTopOf="@+id/GreenFrameMain"
-        app:layout_constraintEnd_toStartOf="@+id/ProfileWalking"
+        app:layout_constraintEnd_toStartOf="@+id/profile_pushup"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -44,7 +44,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/ProfileWalking"
+        android:id="@+id/profile_pushup"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_gravity="center_vertical"

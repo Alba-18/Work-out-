@@ -209,7 +209,7 @@ public class MapActivity extends AppCompatActivity {
             case R.id.activitiesbuttonmain:
                 startActivity(new Intent(MapActivity.this, ActivitiesActivity.class));
                 break;
-            case R.id.ProfileWalking:
+            case R.id.profile_pushup:
                 startActivity(new Intent(MapActivity.this, ProfileActivity.class));
                 break;
             case R.id.HelpPushUp:
