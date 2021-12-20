@@ -48,7 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/salsa"
-                android:text="speed:"
+                android:text="time:"
                 android:textAlignment="center"
                 android:textColor="#592D1D"
                 android:textSize="25dp" />
