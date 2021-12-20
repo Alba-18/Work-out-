@@ -108,16 +108,17 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="150dp"
-                android:layout_marginTop="70dp"
+                android:layout_marginTop="105dp"
                 android:background="@drawable/stopwatch" />
 
             <!-- Time Text-->
+
             <TextView
                 android:id="@+id/time_start_pushups"
                 android:layout_width="80dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="190dp"
-                android:layout_marginTop="75dp"
+                android:layout_marginTop="110dp"
                 android:fontFamily="@font/salsa"
                 android:text="30 min"
                 android:textColor="#592D1D"
