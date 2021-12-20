@@ -60,4 +60,8 @@ public class Running_WalkingDoingActivity extends AppCompatActivity implements V
         goToFinish.putExtra("number",(SystemClock.elapsedRealtime()-chronometer.getBase()));
         startActivity(goToFinish);
     }
+    @Override
+    public void onBackPressed(){
+
+    }
 }

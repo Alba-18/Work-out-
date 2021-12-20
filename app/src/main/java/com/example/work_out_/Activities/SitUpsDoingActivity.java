@@ -3,12 +3,14 @@ package com.example.work_out_.Activities;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.work_out_.ActivitiesActivity;
 import com.example.work_out_.FinishedExerciseActivity;
 import com.example.work_out_.R;
 import com.example.work_out_.model.Activities;
@@ -92,6 +94,17 @@ public class SitUpsDoingActivity extends AppCompatActivity {
             }
         });
 
+    }
+    @Override
+    public void onBackPressed(){
+
+    }
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case (R.id.activitiesbuttonmain):
+                startActivity(new Intent(SitUpsDoingActivity.this, ActivitiesActivity.class));
+                break;
+        }
     }
 
     @Override

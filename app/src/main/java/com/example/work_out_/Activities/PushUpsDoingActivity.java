@@ -10,8 +10,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.work_out_.ActivitiesActivity;
 import com.example.work_out_.FinishedExerciseActivity;
+import com.example.work_out_.ForgotPasswordActivity;
+import com.example.work_out_.LoginActivity;
 import com.example.work_out_.R;
+import com.example.work_out_.RegisterActivity;
 import com.example.work_out_.model.Activities;
 import com.example.work_out_.model.User;
 import com.google.firebase.auth.FirebaseAuth;
@@ -46,6 +50,7 @@ public class PushUpsDoingActivity extends AppCompatActivity {
             reference = FirebaseDatabase.getInstance().getReference("users");
             userID = user.getUid();
 
+
             reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -78,7 +83,7 @@ public class PushUpsDoingActivity extends AppCompatActivity {
                     goToRest.putExtra("sets",actualSet);
                     startActivity(goToRest);
                 }
-                else{
+                else if(actualSet == 5){
                     Intent goToFinishExercise = new Intent(getApplicationContext(),FinishedExerciseActivity.class);
                     int[] numberOfPushUps = activity.getSets();
                     int n = 0;
@@ -96,6 +101,18 @@ public class PushUpsDoingActivity extends AppCompatActivity {
             Button buttonDoPushup = (Button) findViewById(R.id.dopushup);
             buttonDoPushup.setOnClickListener(actionButtonListener);
 
+
+        }
+    public void onClick(View v) {
+            switch (v.getId()) {
+                case (R.id.activityendpushups):
+                startActivity(new Intent(PushUpsDoingActivity.this, ActivitiesActivity.class));
+                break;
+            }
+    }
+
+    @Override
+        public void onBackPressed(){
 
         }
 

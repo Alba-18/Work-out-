@@ -72,4 +72,9 @@ public class RestActivity extends AppCompatActivity {
         }.start();
     }
 
+    @Override
+    public void onBackPressed(){
+
+    }
+
 }

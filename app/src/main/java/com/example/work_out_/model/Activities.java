@@ -2,7 +2,7 @@ package com.example.work_out_.model;
 
 public class Activities {
     private String description,name, userDificulty;
-    private int[] sets = new int[]{2,3,4,5,2,3};
+    private int[] sets = new int[]{2,3,4,5,2,1};
 
     public Activities(String description, String name, String userDificulty) {
         int difficulty;
