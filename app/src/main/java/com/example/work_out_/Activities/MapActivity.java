@@ -1,9 +1,5 @@
 package com.example.work_out_.Activities;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -15,6 +11,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.PopupWindow;
 import android.widget.RadioGroup;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.example.work_out_.ActivitiesActivity;
 import com.example.work_out_.ConfigActivity;
@@ -121,7 +121,7 @@ public class MapActivity extends AppCompatActivity {
                             map = googleMap;
                             map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(currentLat,currentLong),10));
                             String url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json" + "?location="+currentLat
-                                    + "," + currentLong + "&radius=1000" + "&type=" + "park" + "&sensor=true" + "&key="+"AIzaSyCqbo86VByiGB8AKpuMo5MK9b6ZHULj_vs";
+                                    + "," + currentLong + "&radius=1000" + "&type=" + "park" + "&sensor=true" + "&key="+"AIzaSyC9tRF0tFPZBseAFJ0WsLdUD_RulwZH9t8";
 
                             new PlaceTask().execute(url);
                         }

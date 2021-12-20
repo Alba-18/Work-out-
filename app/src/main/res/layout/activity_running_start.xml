@@ -107,24 +107,6 @@
                 android:textSize="25dp" />
 
             <FrameLayout
-                android:layout_width="150dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="150dp"
-                android:layout_marginTop="130dp"
-                android:background="@drawable/lightshape">
-
-                <!--Level Text -->
-                <TextView
-                    android:id="@+id/difficulty_start_running"
-                    android:layout_width="150dp"
-                    android:layout_height="40dp"
-                    android:fontFamily="@font/salsa"
-                    android:text="Intermediate"
-                    android:textColor="#592D1D"
-                    android:textSize="25dp" />
-            </FrameLayout>
-
-            <FrameLayout
                 android:layout_width="300dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"

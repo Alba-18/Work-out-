@@ -161,23 +161,6 @@
                             android:textSize="25dp" />
 
                         <!--Level Frame -->
-                        <FrameLayout
-                            android:layout_width="150dp"
-                            android:layout_height="40dp"
-                            android:layout_marginLeft="150dp"
-                            android:layout_marginTop="100dp"
-                            android:background="@drawable/lightshape">
-
-                            <!--Level Text -->
-                            <TextView
-                                android:id="@+id/difficulty_pushups"
-                                android:layout_width="150dp"
-                                android:layout_height="40dp"
-                                android:fontFamily="@font/salsa"
-                                android:text="Intermediate"
-                                android:textColor="#592D1D"
-                                android:textSize="25dp" />
-                        </FrameLayout>
 
 
                     </FrameLayout>
@@ -229,23 +212,6 @@
                             android:textSize="25dp" />
 
                         <!--Level Frame -->
-                        <FrameLayout
-                            android:layout_width="150dp"
-                            android:layout_height="40dp"
-                            android:layout_marginLeft="150dp"
-                            android:layout_marginTop="100dp"
-                            android:background="@drawable/lightshape">
-
-                            <!--Level Text -->
-                            <TextView
-                                android:id="@+id/difficulty_walking"
-                                android:layout_width="150dp"
-                                android:layout_height="40dp"
-                                android:fontFamily="@font/salsa"
-                                android:text="Intermediate"
-                                android:textColor="#592D1D"
-                                android:textSize="25dp" />
-                        </FrameLayout>
                     </FrameLayout>
 
                     <!-- Third Activity -->
@@ -296,23 +262,6 @@
 
 
                         <!--Level Frame -->
-                        <FrameLayout
-                            android:layout_width="150dp"
-                            android:layout_height="40dp"
-                            android:layout_marginLeft="150dp"
-                            android:layout_marginTop="100dp"
-                            android:background="@drawable/lightshape">
-
-                            <TextView
-                                android:id="@+id/difficulty_running"
-                                android:layout_width="match_parent"
-                                android:layout_height="40dp"
-                                android:fontFamily="@font/salsa"
-                                android:text="Intermediate"
-                                android:textColor="#592D1D"
-                                android:textSize="25dp" />
-                            <!--Level Text -->
-                        </FrameLayout>
                     </FrameLayout>
 
                     <!-- Fourth Activity -->
@@ -362,23 +311,6 @@
                             android:textSize="25dp" />
 
                         <!--Level Frame -->
-                        <FrameLayout
-                            android:layout_width="150dp"
-                            android:layout_height="40dp"
-                            android:layout_marginLeft="150dp"
-                            android:layout_marginTop="100dp"
-                            android:background="@drawable/lightshape">
-
-                            <!--Level Text -->
-                            <TextView
-                                android:id="@+id/difficulty_situps"
-                                android:layout_width="150dp"
-                                android:layout_height="40dp"
-                                android:fontFamily="@font/salsa"
-                                android:text="Intermediate"
-                                android:textColor="#592D1D"
-                                android:textSize="25dp" />
-                        </FrameLayout>
 
                     </FrameLayout>
 
