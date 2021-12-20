@@ -61,17 +61,11 @@
             android:layout_marginTop="120dp"
             android:background="@drawable/lightshape">
 
-            <!--Level Text -->
-            <TextView
-                android:id="@+id/speedView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fontFamily="@font/salsa"
-                android:text="0
-                            km/h"
-                android:textAlignment="center"
-                android:textColor="#592D1D"
-                android:textSize="50dp" />
+            <Chronometer
+                android:id="@+id/chronometer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="35sp" />
         </FrameLayout>
 
 

@@ -15,10 +15,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.work_out_.ActivitiesActivity;
 import com.example.work_out_.R;
 
-public class WalkingStartActivity extends AppCompatActivity {
+public class WalkingStartActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button btn_open_popUp;
     Button btn_close;
+    Button btn_goToWalk;
     LayoutInflater layoutInflater;
     View popupView;
     PopupWindow popupWindow;
@@ -28,7 +29,8 @@ public class WalkingStartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_walking_start);
         setUpText();
-
+        btn_goToWalk = findViewById(R.id.btn_goToWalk);
+        btn_goToWalk.setOnClickListener(this);
         btn_open_popUp = (Button)findViewById(R.id.HelpWalking);
         btn_open_popUp.setOnClickListener(new Button.OnClickListener(){
             @Override
@@ -65,6 +67,9 @@ public class WalkingStartActivity extends AppCompatActivity {
         switch (v.getId()){
             case R.id.Row_Push_Up:
                 startActivity(new Intent(WalkingStartActivity.this, ActivitiesActivity.class));
+                break;
+            case R.id.btn_goToWalk:
+                startActivity(new Intent(getApplicationContext(),Running_WalkingDoingActivity.class));
                 break;
         }
     }

@@ -29,9 +29,17 @@ public class FinishedExerciseActivity extends AppCompatActivity implements View.
         TextView numberView = findViewById(R.id.info_finished_exercise_number);
         Intent getExercise = getIntent();
         char[] name = getExercise.getCharArrayExtra("name");
-        int number = getExercise.getIntExtra("number",0);
+
         String input = new String(name);
-        numberView.setText(Integer.toString(number));
+        if(input.equals("time")){
+            long number = getExercise.getLongExtra("number",0);
+            numberView.setText(Long.toString(number/60000) + " minutes");
+        }
+        else{
+            int number = getExercise.getIntExtra("number",0);
+            numberView.setText(Integer.toString(number));
+        }
+
         info.setText(input);
     }
 

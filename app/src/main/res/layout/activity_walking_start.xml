@@ -169,7 +169,7 @@
         </FrameLayout>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/activitiesbuttonmain"
+            android:id="@+id/btn_goToWalk"
             android:layout_width="300dp"
             android:layout_height="60dp"
             android:layout_gravity="bottom|center"

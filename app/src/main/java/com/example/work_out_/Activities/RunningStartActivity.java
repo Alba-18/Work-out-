@@ -15,10 +15,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.work_out_.ActivitiesActivity;
 import com.example.work_out_.R;
 
-public class RunningStartActivity extends AppCompatActivity {
+public class RunningStartActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button btn_open_popUp;
     Button btn_close;
+    Button btn_goToRun;
     LayoutInflater layoutInflater;
     View popupView;
     PopupWindow popupWindow;
@@ -29,6 +30,8 @@ public class RunningStartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_running_start);
         setUpText();
 
+        btn_goToRun = findViewById(R.id.btnGoToRun);
+        btn_goToRun.setOnClickListener(this);
         btn_open_popUp = (Button)findViewById(R.id.HelpRunning);
         btn_open_popUp.setOnClickListener(new Button.OnClickListener(){
             @Override
@@ -66,6 +69,8 @@ public class RunningStartActivity extends AppCompatActivity {
             case R.id.Row_Push_Up:
                 startActivity(new Intent(RunningStartActivity.this, ActivitiesActivity.class));
                 break;
+            case R.id.btnGoToRun:
+                startActivity(new Intent(getApplicationContext(),Running_WalkingDoingActivity.class));
         }
 
 
