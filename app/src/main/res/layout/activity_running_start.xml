@@ -126,32 +126,6 @@
             <FrameLayout
                 android:layout_width="300dp"
                 android:layout_height="60dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="300dp"
-                android:background="@drawable/lightshape">
-
-                <ImageView
-                    android:layout_width="55dp"
-                    android:layout_height="55dp"
-                    android:layout_gravity="left|center"
-                    android:layout_marginLeft="10dp"
-                    android:background="@drawable/running" />
-
-                <!--Level Text -->
-                <TextView
-                    android:id="@+id/running_exercise_serie"
-                    android:layout_width="208dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right|center"
-                    android:fontFamily="@font/salsa"
-                    android:text="10-11-12-14-10-9"
-                    android:textColor="#592D1D"
-                    android:textSize="25dp" />
-            </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="300dp"
-                android:layout_height="60dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="160dp"
                 android:background="@drawable/lightshape">
