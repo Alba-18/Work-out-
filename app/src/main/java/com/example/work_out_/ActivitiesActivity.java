@@ -68,16 +68,6 @@ public class ActivitiesActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void setUpText(){
-        TextView difficultyPushups = findViewById(R.id.difficulty_pushups);
-        TextView difficultySitups = findViewById(R.id.difficulty_situps);
-        TextView difficultyWalking = findViewById(R.id.difficulty_walking);
-        TextView difficultyRunning = findViewById(R.id.difficulty_running);
-        //Change this for the difficulty chosen by the user
-        String inputDifficulty = "high";
-        difficultyPushups.setText(inputDifficulty);
-        difficultySitups.setText(inputDifficulty);
-        difficultyWalking.setText(inputDifficulty);
-        difficultyRunning.setText(inputDifficulty);
 
         TextView timePushups = findViewById(R.id.time_pushups);
         TextView timeSitups = findViewById(R.id.time_situps);
