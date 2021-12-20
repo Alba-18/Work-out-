@@ -42,7 +42,6 @@ public class SitUpsDoingActivity extends AppCompatActivity {
         counterView = findViewById(R.id.situps_counter);
         Intent getActualSet = getIntent();
         int actualSet = getActualSet.getIntExtra("sets",0);
-        Toast.makeText(getApplicationContext(),Integer.toString(actualSet),Toast.LENGTH_LONG).show();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
         assert user != null;
@@ -72,7 +71,7 @@ public class SitUpsDoingActivity extends AppCompatActivity {
             if(rx > 5.0f){
                 count[0] += 1 ;
                 counterView.setText(Integer.toString(count[0]));
-                if(actualSet < 5) {
+                if(activity.getSets()[actualSet] == count[0] && actualSet < 5) {
                     if (activity.getSets()[actualSet] == count[0]) {
                         goToRest = new Intent(getApplicationContext(), RestActivity.class);
                         goToRest.putExtra("name", activity.getName().toCharArray());
@@ -80,7 +79,7 @@ public class SitUpsDoingActivity extends AppCompatActivity {
                         startActivity(goToRest);
                     }
                 }
-                else{
+                else if (actualSet == 5) {
                     Intent goToFinishExercise = new Intent(getApplicationContext(), FinishedExerciseActivity.class);
                     int[] numberOfSitUps = activity.getSets();
                     int n = 0;

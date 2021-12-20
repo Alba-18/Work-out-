@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.work_out_.R;
 
-public class RestActivity extends AppCompatActivity {
+public class RestActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView counterView;
     Intent getActualSet,goToPushUps, goToSitups;
     int actualSet;
@@ -26,28 +26,8 @@ public class RestActivity extends AppCompatActivity {
         setContentView(R.layout.activity_rest);
         counterView = findViewById(R.id.rest_counter);
         timer();
-
-        View.OnClickListener actionButtonListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(activityName.equals("pushups")){
-                    goToPushUps = new Intent(getApplicationContext(),PushUpsDoingActivity.class);
-                    goToPushUps.putExtra("sets",actualSet + 1);
-
-                    startActivity(goToPushUps);
-                }
-                else if(activityName.equals("sit-ups")){
-                    goToSitups = new Intent(getApplicationContext(),SitUpsDoingActivity.class);
-                    goToSitups.putExtra("sets",actualSet + 1);
-
-                    startActivity(goToSitups);
-                }
-
-            }
-        };
-
         Button buttonFinishRest = (Button) findViewById(R.id.finish_rest);
-        buttonFinishRest.setOnClickListener(actionButtonListener);
+        buttonFinishRest.setOnClickListener(this);
 
     }
 
@@ -77,4 +57,19 @@ public class RestActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onClick(View v) {
+        if(activityName.equals("pushups")){
+            goToPushUps = new Intent(getApplicationContext(),PushUpsDoingActivity.class);
+            goToPushUps.putExtra("sets",actualSet + 1);
+
+            startActivity(goToPushUps);
+        }
+        else if(activityName.equals("sit-ups")){
+            goToSitups = new Intent(getApplicationContext(),SitUpsDoingActivity.class);
+            goToSitups.putExtra("sets",actualSet + 1);
+
+            startActivity(goToSitups);
+        }
+    }
 }

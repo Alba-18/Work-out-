@@ -13,12 +13,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class FinishedExerciseActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button finishButton;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finished_activitiy);
-        finishButton = findViewById(R.id.activitiesbuttonmain);
+        Button finishButton = findViewById(R.id.activitiesbuttonmain);
         finishButton.setOnClickListener(this);
         setUpText();
     }
