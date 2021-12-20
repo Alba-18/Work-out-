@@ -17,6 +17,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="17dp"
         android:background="@drawable/arrow_back"
+        android:onClick="onClick"
         android:translationX="3dp"
         android:translationY="3dp"
         app:layout_constraintBottom_toTopOf="@+id/GreenFrameMain"
@@ -27,11 +28,13 @@
     <!--Main Settings-->
 
     <!--Help -->
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/HelpPushUp"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_gravity="center_vertical"
+        android:layout_marginStart="344dp"
         android:layout_marginBottom="22dp"
         android:background="@drawable/help"
         app:layout_constraintBottom_toTopOf="@+id/GreenFrameMain"
@@ -209,6 +212,7 @@
             android:layout_marginBottom="10dp"
             android:background="@drawable/button"
             android:fontFamily="@font/salsa"
+            android:onClick="onClick"
             android:text="start workout"
             android:textColor="#FFE9C5"
             android:textSize="30dp"

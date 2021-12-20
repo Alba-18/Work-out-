@@ -1,5 +1,6 @@
 package com.example.work_out_.Espresso_Tests;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.work_out_.ActivitiesActivity;
 import com.example.work_out_.R;
 
 public class RunningStartActivity extends AppCompatActivity {
@@ -59,4 +61,16 @@ public class RunningStartActivity extends AppCompatActivity {
         time.setText(inputTime);
         difficulty.setText(inputDifficulty);
     }
+
+
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.Row_Push_Up:
+                startActivity(new Intent(RunningStartActivity.this, ActivitiesActivity.class));
+                break;
+        }
+
+
+    }
+
 }

@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.work_out_.ActivitiesActivity;
 import com.example.work_out_.R;
 import com.example.work_out_.model.Activities;
 import com.example.work_out_.model.User;
@@ -103,11 +104,21 @@ public class SitupsStartActivity extends AppCompatActivity implements View.OnCli
         serie.setText(inputSerie);
     }
 
+
+
     @Override
     public void onClick(View v) {
-        Intent goToDoingPushUps = new Intent(getApplicationContext(),SitUpsDoingActivity.class);
-        goToDoingPushUps.putExtra("sets",0);
-        startActivity(goToDoingPushUps);
+        switch (v.getId()){
+            case R.id.activitiesbuttonmain:
+                Intent goToDoingPushUps = new Intent(getApplicationContext(),SitUpsDoingActivity.class);
+                goToDoingPushUps.putExtra("sets",0);
+                startActivity(goToDoingPushUps);
+                break;
+            case R.id.Row_Push_Up:
+                startActivity(new Intent(SitupsStartActivity.this, ActivitiesActivity.class));
+                break;
+        }
+
 
     }
 }

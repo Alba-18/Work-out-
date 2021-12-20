@@ -119,8 +119,17 @@ public class PushupsStartActivity extends AppCompatActivity implements View.OnCl
 
     @Override
     public void onClick(View v) {
-        Intent goToDoingPushUps = new Intent(getApplicationContext(),PushUpsDoingActivity.class);
-        goToDoingPushUps.putExtra("sets",0);
-        startActivity(goToDoingPushUps);
+        switch (v.getId()){
+            case R.id.activitiesbuttonmain:
+                Intent goToDoingPushUps = new Intent(getApplicationContext(),PushUpsDoingActivity.class);
+                goToDoingPushUps.putExtra("sets",0);
+                startActivity(goToDoingPushUps);
+                break;
+            case R.id.Row_Push_Up:
+                startActivity(new Intent(PushupsStartActivity.this, ActivitiesActivity.class));
+                break;
+        }
+
+
     }
 }

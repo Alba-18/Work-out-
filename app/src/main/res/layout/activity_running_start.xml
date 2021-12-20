@@ -17,6 +17,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="17dp"
         android:background="@drawable/arrow_back"
+        android:onClick="onClick"
         android:translationX="3dp"
         android:translationY="3dp"
         app:layout_constraintBottom_toTopOf="@+id/GreenFrameMain"
@@ -27,31 +28,16 @@
     <!--Main Settings-->
 
     <!--Help -->
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/HelpRunning"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_gravity="center_vertical"
+        android:layout_marginStart="340dp"
         android:layout_marginBottom="22dp"
         android:background="@drawable/help"
         app:layout_constraintBottom_toTopOf="@+id/GreenFrameMain"
-        app:layout_constraintEnd_toStartOf="@+id/profile_pushup"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/profile_pushup"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_gravity="center_vertical"
-        android:layout_marginBottom="22dp"
-        android:background="@drawable/profile"
-        app:layout_constraintBottom_toTopOf="@+id/GreenFrameMain"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.955"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
