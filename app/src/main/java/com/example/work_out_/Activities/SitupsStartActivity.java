@@ -91,7 +91,6 @@ public class SitupsStartActivity extends AppCompatActivity implements View.OnCli
 
     private void setUpText(String difficult, int[] setUps){
         TextView time = findViewById(R.id.time_start_situps);
-        TextView difficulty = findViewById(R.id.difficulty_start_situps);
         TextView serie = findViewById(R.id.situps_exercise_serie);
 
         //Get from database
@@ -100,7 +99,6 @@ public class SitupsStartActivity extends AppCompatActivity implements View.OnCli
         String inputSerie = Arrays.toString(setUps).replace(",","-");
 
         time.setText(inputTime);
-        difficulty.setText(inputDifficulty);
         serie.setText(inputSerie);
     }
 

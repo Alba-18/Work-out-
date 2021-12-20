@@ -51,7 +51,6 @@ public class RunningStartActivity extends AppCompatActivity {
 
     private void setUpText(){
         TextView time = findViewById(R.id.time_start_running);
-        TextView difficulty = findViewById(R.id.difficulty_start_running);
 
         //Get from database
         //is a series needed for running and walking???
@@ -59,7 +58,6 @@ public class RunningStartActivity extends AppCompatActivity {
         String inputDifficulty = "High";
 
         time.setText(inputTime);
-        difficulty.setText(inputDifficulty);
     }
 
 
