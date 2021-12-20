@@ -96,6 +96,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     }
 
 
+    //Retrieves the information from the spinners
     public void onItemSelected(AdapterView<?> parent, View view,
                                int pos, long id) {
         switch (parent.getId()) {

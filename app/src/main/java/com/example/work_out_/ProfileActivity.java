@@ -22,7 +22,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.bumptech.glide.request.RequestOptions;
 import com.example.work_out_.model.User;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -52,11 +51,10 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
     private EditText profileWeightView;
     private EditText profileHeightView;
 
-    private Uri profileImageUri;
     private ImageView profileImageView;
 
     private Button buttonUpdateProfile;
-    private String profileLevelOfExercise, profileName, profileAge, profileWeight, profileHeight, profileCardio, profileExerciseImpact, profileObjetive;
+    private String profileLevelOfExercise, profileCardio, profileExerciseImpact, profileObjetive;
 
     private User userProfile;
     private FirebaseUser user;
@@ -78,6 +76,8 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+
+        //Button for changing the profile image
         Button imageProfile = findViewById(R.id.editImageProfile);
         imageProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,6 +103,7 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
         buttonUpdateProfile.setOnClickListener(this);
 
         //Creation of Spinners
+        //Code inspiration from https://developer.android.com/guide/topics/ui/controls/spinner
         //Creation of Profile Level of Exercise Spinner
         this.levelOfExerciseSpinner = (Spinner) findViewById(R.id.profileLevelOfExercise);
         // Create an ArrayAdapter using the string array and a default spinner layout
@@ -148,6 +149,7 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
         this.objetiveSpinner.setOnItemSelectedListener(this);
 
 
+        //Loads user information to put it on screen
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -161,15 +163,16 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
                     String levelOfExercise = userProfile.getLevelOfExercise();
                     String exerciseImpact = userProfile.getExerciseImpact();
                     String objetive = userProfile.getObjetive();
-                    profileImageUri = userProfile.getImage();
 
 
+                    /*
                     RequestOptions options = new RequestOptions()
                             .centerCrop()
                             .placeholder(R.mipmap.ic_launcher_round)
                             .error(R.mipmap.ic_launcher_round);
-                    profileImageView = findViewById(R.id.profileImage);
 
+                     */
+                    profileImageView = findViewById(R.id.profileImage);
 
                     storage = FirebaseStorage.getInstance();
                     StorageReference aaa
@@ -177,7 +180,7 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
                             .child(
                                     "images/" + user.getUid().toString());
 
-                    //https://stackoverflow.com/questions/53617681/how-to-set-image-view-from-firebase-storage
+                    //Code inspiration from: https://stackoverflow.com/questions/53617681/how-to-set-image-view-from-firebase-storage
                     final long ONE_MEGABYTE = 1024 * 1024;
                     aaa.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
                         @Override
@@ -247,6 +250,8 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
             }
         });
 
+
+        //Help pop-up
         btn_open_popUp = (Button)findViewById(R.id.helpProfile);
         btn_open_popUp.setOnClickListener(new Button.OnClickListener(){
             @Override
@@ -297,9 +302,6 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
                 // Log the exception
                 e.printStackTrace();
             }
-
-
-
 
 
             if (filePath != null) {
