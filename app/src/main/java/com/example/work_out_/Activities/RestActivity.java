@@ -14,6 +14,7 @@ import com.example.work_out_.R;
 public class RestActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView counterView;
     Intent getActualSet,goToPushUps, goToSitups;
+    private CountDownTimer count ;
     int actualSet;
     String activityName ;
     @Override
@@ -33,7 +34,7 @@ public class RestActivity extends AppCompatActivity implements View.OnClickListe
 
     private void timer(){
         int restTime = 60*1000;
-        CountDownTimer count = new CountDownTimer(restTime, 1000) {
+        count = new CountDownTimer(restTime, 1000) {
             @Override
             public void onTick(long l) {
                 System.out.println("Texto del contador: "+counterView.getText());
@@ -41,6 +42,7 @@ public class RestActivity extends AppCompatActivity implements View.OnClickListe
                 long time = l/1000;
                 String input = ""+time;
                 counterView.setText(input);
+
             }
 
             @Override
@@ -62,13 +64,13 @@ public class RestActivity extends AppCompatActivity implements View.OnClickListe
         if(activityName.equals("pushups")){
             goToPushUps = new Intent(getApplicationContext(),PushUpsDoingActivity.class);
             goToPushUps.putExtra("sets",actualSet + 1);
-
+            count.cancel();
             startActivity(goToPushUps);
         }
         else if(activityName.equals("sit-ups")){
             goToSitups = new Intent(getApplicationContext(),SitUpsDoingActivity.class);
             goToSitups.putExtra("sets",actualSet + 1);
-
+            count.cancel();
             startActivity(goToSitups);
         }
     }

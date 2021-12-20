@@ -33,13 +33,15 @@ public class FinishedExerciseActivity extends AppCompatActivity implements View.
         if(input.equals("time")){
             long number = getExercise.getLongExtra("number",0);
             numberView.setText(Long.toString(number/60000) + " minutes");
+            info.setText("Well done!!!");
         }
         else{
             int number = getExercise.getIntExtra("number",0);
             numberView.setText(Integer.toString(number));
+            info.setText(input);
         }
 
-        info.setText(input);
+
     }
 
     @Override

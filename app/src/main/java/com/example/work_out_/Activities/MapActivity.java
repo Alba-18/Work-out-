@@ -98,13 +98,7 @@ public class MapActivity extends AppCompatActivity {
     //This method gets the location of the user and searches the parks that are nearby
     private void getCurrentLocation() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
+
             return;
         }
         Task<Location> task = fusedLocationProviderClient.getLastLocation();
@@ -119,9 +113,9 @@ public class MapActivity extends AppCompatActivity {
                         @Override
                         public void onMapReady(@NonNull GoogleMap googleMap) {
                             map = googleMap;
-                            map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(currentLat,currentLong),10));
+                            map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(currentLat,currentLong),15));
                             String url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json" + "?location="+currentLat
-                                    + "," + currentLong + "&radius=1000" + "&type=" + "park" + "&sensor=true" + "&key="+"";
+                                    + "," + currentLong + "&radius=1000" + "&type=" + "park" + "&sensor=true" + "&key="+"AIzaSyC9tRF0tFPZBseAFJ0WsLdUD_RulwZH9t8";
 
                             new PlaceTask().execute(url);
                         }
