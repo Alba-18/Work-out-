@@ -27,7 +27,7 @@ public class NotificationService extends Service {
 
     public void notificationAlarm(int number_of_days_interval) {
         Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.HOUR_OF_DAY, 20);
+        calendar.set(Calendar.HOUR_OF_DAY, 10);
         calendar.set(Calendar.MINUTE, 1);
         calendar.set(Calendar.SECOND, 1);
 
