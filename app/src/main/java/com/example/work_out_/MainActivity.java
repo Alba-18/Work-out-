@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             userLogin();
         }
     }
-
+    //this method checks the user information and try to find the user in the realtime Database
     private void userLogin() {
         String email = emailView.getText().toString().trim();
         String pass = passView.getText().toString().trim();

@@ -18,7 +18,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
-
+    //User and login was inspired by this video: https://www.youtube.com/watch?v=Y4-roxOZqc8&list=PL65Ccv9j4eZJ_bg0TlmxA7ZNbS8IMyl5i
     private TextView forgotPassView,registerView;
     private EditText emailView, passView;
     private Button loginButton;
