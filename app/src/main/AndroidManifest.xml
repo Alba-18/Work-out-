@@ -36,7 +36,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCqbo86VByiGB8AKpuMo5MK9b6ZHULj_vs"
+            android:value=""
             />
 
         <activity android:name=".ForgotPasswordActivity" android:exported="true" />
@@ -46,6 +46,7 @@
         <activity android:name=".ConfigActivity" android:exported="true"/>
         <activity android:name=".FinishedExerciseActivity" android:exported="true"/>
         <activity android:name=".Activities.PushupsStartActivity" android:exported="true"/>
+        <activity android:name=".Activities.MapActivity" android:exported="true"/>
         <activity android:name=".Activities.PushUpsDoingActivity" android:exported="true"/>
         <activity android:name=".Activities.SitUpsDoingActivity" android:exported="true"/>
         <activity android:name=".Activities.RestActivity" android:exported="true"/>
